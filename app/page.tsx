@@ -2,6 +2,7 @@ import Container from "@/components/container";
 import Image from "next/image";
 import SectionOne from "./sections/1/SectionOne";
 import SectionTwo from "./sections/2/SectionOne";
+import SectionThree from "./sections/3/SectionThree";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       </div>
       <Container>
         <SectionTwo />
+        <SectionThree />
       </Container>
     </>
   );
