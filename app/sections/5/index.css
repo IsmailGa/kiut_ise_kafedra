@@ -1,0 +1,8 @@
+.bg-section_five-one::after {
+    content: " ";
+    position: absolute;
+    background-image: url("../../../public/assets/section_five/bg_one.png");
+    background-repeat: no-repeat;
+    right: 0px;
+    bottom: 0;
+}
