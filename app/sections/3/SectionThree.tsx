@@ -1,12 +1,14 @@
-import React from "react";
+"use client"
+import React, { useState } from "react";
 import teacher from "@/public/assets/teacher.png";
 import teacher_icon from "@/public/assets/teacher_icon.jpeg";
 import Image from "next/image";
-import arrow_right from "@/public/assets/arrow_right.svg"
-import arrow_left from "@/public/assets/arrow_left.svg"
-import { ArrowRight } from "@/public/icons"
+import { ArrowRight, ArrowLeft } from "@/public/icons"
 
 const SectionThree = () => {
+  const [count, setCount] = useState(1);
+  const maxCount = 5;
+  const minCount = 1;
   return (
     <section className="flex flex-col w-full mt-[120px]" id="3">
       {/* WRAPPER */}
@@ -60,10 +62,12 @@ const SectionThree = () => {
             </div>
           </div>
           <div className="flex items-center gap-[10px] mt-[70px]">
-            <button className="text-[#666666] text-[]"><Image src={arrow_left} alt="arrow left" /></button>
-            <span className="">1/5</span>
-            <button className="bg-primary rounded-[10px] relative border-0 w-[45px] h-[45px] flex flex-col items-center justify-center">
-                <ArrowRight color="#FFFFFF" />
+            <button className="flex w-[45px] h-[45px] items-center justify-center" onClick={() => setCount(Math.max(count - 1, minCount))}><ArrowLeft color="#666666" /></button>
+            <span className="">{count}/5</span>
+            <button className="bg-primary rounded-[10px] relative border-0 w-[45px] h-[45px] flex flex-col items-center justify-center"
+              onClick={() => setCount(Math.min(count + 1, maxCount))}
+            >
+              <ArrowRight color="#FFFFFF" />
             </button>
           </div>
         </div>
