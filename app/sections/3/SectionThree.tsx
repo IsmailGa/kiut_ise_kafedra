@@ -62,8 +62,8 @@ const SectionThree = () => {
             </div>
           </div>
           <div className="flex items-center gap-[10px] mt-[70px]">
-            <button className="flex w-[45px] h-[45px] items-center justify-center" onClick={() => setCount(Math.max(count - 1, minCount))}><ArrowLeft color="#666666" /></button>
-            <span className="">{count}/5</span>
+            <button className="flex w-[45px] h-[45px] items-center justify-center bg-white rounded-[10px]" onClick={() => setCount(Math.max(count - 1, minCount))}><ArrowLeft color="#666666" /></button>
+            <span className="block">{count}/5</span>
             <button className="bg-primary rounded-[10px] relative border-0 w-[45px] h-[45px] flex flex-col items-center justify-center"
               onClick={() => setCount(Math.min(count + 1, maxCount))}
             >
