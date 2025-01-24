@@ -128,11 +128,11 @@ const Footer = () => {
             </div>
             {
               firstRowLinks.map((item, index) => (
-                <div className="flex flex-col gap-[32px]" key={"card "+index}>
+                <div className="flex flex-col gap-[32px]" key={"card " + index}>
                   <h1 className="text-black text-[20px] leading-[32px] font-semibold">{item.title}</h1>
                   <ul className="flex flex-col gap-[16px]">
-                    {item.links.map((link) => (
-                      <li className="text-[#666666] leading-[24px] font-normal text-[16px]">
+                    {item.links.map((link, index) => (
+                      <li className="text-[#666666] leading-[24px] font-normal text-[16px]" key={index}>
                         <Link href={link.link}>{link.label}</Link>
                       </li>
                     ))}
@@ -144,11 +144,11 @@ const Footer = () => {
           <div className="w-full flex border-b-[#666666]">
             {
               secondRowLinks.map((item, index) => (
-                <div className="flex flex-col gap-[32px]" key={"card "+index}>
+                <div className="flex flex-col gap-[32px]" key={"card " + index}>
                   <h1 className="text-black text-[20px] leading-[32px] font-semibold">{item.title}</h1>
                   <ul className="flex flex-col gap-[16px]">
-                    {item.links.map((link) => (
-                      <li className="text-[#666666] leading-[24px] font-normal text-[16px]">
+                    {item.links.map((link, index) => (
+                      <li className="text-[#666666] leading-[24px] font-normal text-[16px]" key={index}>
                         <Link href={link.link}>{link.label}</Link>
                       </li>
                     ))}
