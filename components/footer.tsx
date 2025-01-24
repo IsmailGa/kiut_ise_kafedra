@@ -128,7 +128,7 @@ const Footer = () => {
             </div>
             {
               firstRowLinks.map((item, index) => (
-                <div className="flex flex-col gap-[32px]" key={index}>
+                <div className="flex flex-col gap-[32px]" key={"card "+index}>
                   <h1 className="text-black text-[20px] leading-[32px] font-semibold">{item.title}</h1>
                   <ul className="flex flex-col gap-[16px]">
                     {item.links.map((link) => (
@@ -144,7 +144,7 @@ const Footer = () => {
           <div className="w-full flex border-b-[#666666]">
             {
               secondRowLinks.map((item, index) => (
-                <div className="flex flex-col gap-[32px]" key={index}>
+                <div className="flex flex-col gap-[32px]" key={"card "+index}>
                   <h1 className="text-black text-[20px] leading-[32px] font-semibold">{item.title}</h1>
                   <ul className="flex flex-col gap-[16px]">
                     {item.links.map((link) => (
