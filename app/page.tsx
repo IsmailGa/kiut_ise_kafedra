@@ -4,6 +4,7 @@ import SectionTwo from "./sections/2/SectionOne";
 import SectionThree from "./sections/3/SectionThree";
 import SectionFour from "./sections/4/SectionFour";
 import SectionFive from "./sections/5/SectionFive";
+import SectionSix from "./sections/6/SectionSix";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         <SectionThree />
         <SectionFour />
         <SectionFive />
+        <SectionSix />
       </Container>
     </>
   );

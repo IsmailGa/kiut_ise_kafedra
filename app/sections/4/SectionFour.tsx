@@ -9,7 +9,7 @@ const SectionFour = () => {
     return (
         <section className="w-full flex flex-col gap-[65px] mt-[120px]">
             <h1 className="text-[56px] font-semibold">Мы предлагаем студентам</h1>
-            <div className="flex items-stretch gap-[30px]">
+            <div className="flex items-stretch gap-[30px] ">
                 {[
                     { icon: icon_one, text: "Учебные программы обновляются с учётом результатов опроса студентов" },
                     { icon: icon_two, text: "Куратор и наставник сопровождают студента на всех этапах обучения" },
@@ -18,10 +18,10 @@ const SectionFour = () => {
                 ].map((item, index) => (
                     <div
                         key={index}
-                        className="flex flex-col gap-[25px] p-[25px] border-[1px] border-[#CEDAE0] rounded-[25px] flex-grow"
+                        className="flex flex-col gap-[25px] p-[25px] border-[1px] border-[#CEDAE0] rounded-[25px] flex-grow cursor-pointer hover:scale-[1.1] transition-transform duration-300"
                     >
                         <Image src={item.icon} alt={`icon ${index + 1}`} />
-                        <p className="font-normal text-[18px] max-w-[255px] leading-[135%] flex-grow flex items-center justify-center">
+                        <p className="font-normal text-[18px] max-w-[255px] leading-[135%] flex-grow flex items-center justify-center ">
                             {item.text}
                         </p>
                     </div>
