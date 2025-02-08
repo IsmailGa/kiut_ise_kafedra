@@ -9,7 +9,7 @@ import SectionSix from "./sections/6/SectionSix";
 export default function Home() {
   return (
     <>
-      <div className="bg-black/50">
+      <div className="bg-[url('/assets/banner-hero.png')] bg-cover bg-center h-screen">
         <Container>
           <SectionOne />
         </Container>

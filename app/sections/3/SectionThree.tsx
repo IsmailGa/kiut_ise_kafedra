@@ -9,6 +9,7 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 import { EffectFade } from "swiper/modules";
 import SwiperCore, { Swiper as SwiperType } from "swiper";
+import Link from "next/link";
 
 SwiperCore.use([EffectFade]);
 
@@ -76,9 +77,9 @@ const SectionThree = () => {
             <p className="text-[40px] font-semibold leading-[140%] max-w-[565px]">
               высококвалифицированных менторы в сфере IT
             </p>
-            <button className="bg-primary text-center rounded-[15px] text-white py-[16px] px-[24px] self-start">
+            <Link href="/teachers" className="bg-primary text-center rounded-[15px] text-white py-[16px] px-[24px] self-start">
               Подробнее
-            </button>
+            </Link>
           </div>
         </div>
         {/* SECOND COL */}
@@ -100,8 +101,8 @@ const SectionThree = () => {
             {/* Slide 1 */}
             <SwiperSlide>
               <div className="flex flex-col gap-[28px] animate-fade-up">
-                <div className="rounded-[20px]">
-                  <Image src={teacher} alt="teacher" />
+                <div className="h-[300px]">
+                  <Image src={teacher} alt="teacher" className="w-full h-full object-cover  rounded-[20px]"/>
                 </div>
                 <h1 className="text-[30px] font-semibold leading-[120%]">
                   Имя Учителя 1
@@ -116,8 +117,8 @@ const SectionThree = () => {
             {/* Slide 2 */}
             <SwiperSlide>
               <div className="flex flex-col gap-[28px] animate-fade-up">
-                <div className="rounded-[20px]">
-                  <Image src={teacher} alt="teacher" />
+                <div className="h-[300px]">
+                  <Image src={teacher} alt="teacher" className="w-full h-full object-cover  rounded-[20px]"/>
                 </div>
                 <h1 className="text-[30px] font-semibold leading-[120%]">
                   Имя Учителя 2
@@ -132,8 +133,8 @@ const SectionThree = () => {
             {/* Slide 3 */}
             <SwiperSlide>
               <div className="flex flex-col gap-[28px] animate-fade-up">
-                <div className="rounded-[20px]">
-                  <Image src={teacher} alt="teacher" />
+                <div className="h-[300px]">
+                  <Image src={teacher} alt="teacher" className="w-full h-full object-cover  rounded-[20px]"/>
                 </div>
                 <h1 className="text-[30px] font-semibold leading-[120%]">
                   Имя Учителя 3
@@ -148,8 +149,8 @@ const SectionThree = () => {
             {/* Slide 4 */}
             <SwiperSlide>
               <div className="flex flex-col gap-[28px] animate-fade-up">
-                <div className="rounded-[20px]">
-                  <Image src={teacher} alt="teacher" />
+                <div className="h-[300px]">
+                  <Image src={teacher} alt="teacher" className="w-full h-full object-cover  rounded-[20px]"/>
                 </div>
                 <h1 className="text-[30px] font-semibold leading-[120%]">
                   Имя Учителя 4
@@ -164,8 +165,8 @@ const SectionThree = () => {
             {/* Slide 5 */}
             <SwiperSlide>
               <div className="flex flex-col gap-[28px] animate-fade-up">
-                <div className="rounded-[20px]">
-                  <Image src={teacher} alt="teacher" />
+                <div className="h-[300px]">
+                  <Image src={teacher} alt="teacher" className="w-full h-full object-cover  rounded-[20px]"/>
                 </div>
                 <h1 className="text-[30px] font-semibold leading-[120%]">
                   Имя Учителя 5
