@@ -44,39 +44,21 @@ const Navbar = () => {
                   >
                     <div className="py-1">
                       <MenuItem>
-                        <a
+                        <Link
                           href="#"
                           className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 data-[focus]:outline-none"
                         >
-                          Account settings
-                        </a>
+                          О нас
+                        </Link>
                       </MenuItem>
                       <MenuItem>
-                        <a
-                          href="#"
+                        <Link
+                          href="/teachers"
                           className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 data-[focus]:outline-none"
                         >
-                          Support
-                        </a>
+                          Учительский состав
+                        </Link>
                       </MenuItem>
-                      <MenuItem>
-                        <a
-                          href="#"
-                          className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 data-[focus]:outline-none"
-                        >
-                          License
-                        </a>
-                      </MenuItem>
-                      <form action="#" method="POST">
-                        <MenuItem>
-                          <button
-                            type="submit"
-                            className="block w-full px-4 py-2 text-left text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 data-[focus]:outline-none"
-                          >
-                            Sign out
-                          </button>
-                        </MenuItem>
-                      </form>
                     </div>
                   </MenuItems>
                 </Menu>

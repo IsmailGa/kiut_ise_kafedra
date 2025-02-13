@@ -1,5 +1,5 @@
 import Image from "next/image";
-import logo from "@/public/assets/logo_blue.png";
+import logo from "@/public/assets/logo_blue_small.png";
 import React from "react";
 import Container from "./container";
 import Link from "next/link";
@@ -117,7 +117,7 @@ const Footer = () => {
             {/* LOGO */}
             <div className="flex flex-col gap-[32px]">
               <Image src={logo} alt="logo" />
-              <h1 className="font-normal text-[18px] leading-[26px] max-w-[256px]">Международный университет Кимё</h1>
+              <h1 className="font-normal text-[18px] leading-[26px] max-w-[min-content]">Международный университет Кимё</h1>
             </div>
             {/* FIRST ROW */}
             {
