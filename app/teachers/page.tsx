@@ -1,22 +1,23 @@
-import React from 'react'
+import React from "react";
 import Container from "@/components/container";
-import Banner from "./Banner"
-import Catalog from './Catalog';
-
+import Banner from "./sections/Banner";
+import Catalog from "./sections/Catalog";
+import Navbar from "@/components/navbar";
 
 const Teachers = () => {
   return (
     <>
+      <Navbar />
       <div className="bg-black/50">
         <Container>
-          <Banner/>
+          <Banner />
         </Container>
       </div>
       <Container>
-        <Catalog/>
+        <Catalog />
       </Container>
     </>
-  )
-}
+  );
+};
 
-export default Teachers
+export default Teachers;
