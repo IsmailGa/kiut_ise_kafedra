@@ -8,7 +8,7 @@ import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import Link from "next/link";
 import History from "./sections/history";
 
-const Teachers = ({ params }: { params: { teachersId: string } }) => {
+const Teachers = () => {
   return (
     <div className="w-full flex flex-col items-center justify-center">
       <header className="w-full flex items-center py-[25px]">
