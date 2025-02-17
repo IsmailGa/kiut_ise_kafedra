@@ -1,14 +1,37 @@
+"use client";
 import Image from "next/image";
 import logo from "@/public/assets/logo_blue.png";
 import profileTeacher from "@/public/assets/teacher_profile.png";
-import React from "react";
+import React, { useEffect } from "react";
 import Container from "@/components/container";
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import Link from "next/link";
 import History from "./sections/history";
+import api from "@/api/axios";
+import { TeachersType } from "@/types/teachers";
 
 const Teachers = () => {
+  const [data, setData] = React.useState<TeachersType>([]);
+  const [error, setError] = React.useState(null);
+
+  useEffect(() => {
+    api
+      .get("/teachers")
+      .then((response) => {
+        console.log("Response:", response.data); // Debugging API response
+        setData(response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching teachers:", error.message);
+        setError(error.message);
+      });
+  }, []);
+
+  useEffect(() => {
+    console.log("Teachers Data:", data);
+  }, [data]);
+
   return (
     <div className="w-full flex flex-col items-center justify-center">
       <header className="w-full flex items-center py-[25px]">
@@ -139,12 +162,12 @@ const Teachers = () => {
             <div className="flex flex-col max-w-[934px]">
               {/* NAME */}
               <h1 className="font-semibold leading-[55px] text-[40px]">
-                Дмитрий Занин
+                {data[0].full_name}
               </h1>
               {/* Job Title */}
               <div className="flex flex-col gap-[8px] mt-[16px]">
                 <h2 className="text-[#666666] text-[18px] leading-[25px] font-normal">
-                  Head of the department
+                  {data[0].role}
                 </h2>
                 <h2 className="text-[#666666] text-[18px] leading-[25px] font-normal">
                   Professor of applied Informatics

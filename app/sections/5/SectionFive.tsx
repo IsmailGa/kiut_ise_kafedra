@@ -81,9 +81,9 @@ const SectionFive = () => {
           </div>
         </div>
       </div>
-      <button className="bg-primary text-center rounded-[15px] text-white py-[16px] px-[24px] self-center">
+      {/* <button className="bg-primary text-center rounded-[15px] text-white py-[16px] px-[24px] self-center">
         Все направления
-      </button>
+      </button> */}
     </section>
   );
 };
