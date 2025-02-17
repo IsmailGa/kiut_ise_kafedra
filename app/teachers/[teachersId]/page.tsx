@@ -13,7 +13,6 @@ import { TeachersType } from "@/types/teachers";
 
 const Teachers = () => {
   const [data, setData] = React.useState<TeachersType>([]);
-  const [error, setError] = React.useState(null);
 
   useEffect(() => {
     api
@@ -24,7 +23,6 @@ const Teachers = () => {
       })
       .catch((error) => {
         console.error("Error fetching teachers:", error.message);
-        setError(error.message);
       });
   }, []);
 
