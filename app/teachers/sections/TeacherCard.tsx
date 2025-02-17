@@ -1,36 +1,67 @@
 import Image from "next/image";
 import teacher_img from "public/assets/teacher.png";
+import { useEffect, useState } from "react";
+import { teacherService } from "@/app/services/teacherService";
+import { teacher } from "@/app/teachers/sections/Catalog";
+import Link from "next/link";
 
-const TeacherCard = () => {
+type Props = {
+  teacher: teacher;
+};
+
+const TeacherCard = ({ teacher }: Props) => {
+  const [ImageSrc, setImageSrc] = useState<string | undefined>(undefined);
+
+  useEffect(() => {
+    if (teacher.image) {
+      teacherService
+        .getImage(teacher.image)
+        .then((response) => {
+          setImageSrc(response.data);
+        })
+        .catch((error) => {
+          console.error("Error fetching image", error);
+          setImageSrc('/assets/teacher.png');
+        });
+    }
+  }, [teacher]);
+
   return (
     <div className="flex p-[25px] gap-[25px] rounded-[25px] bg-[#F4F4F4]/65 relative group">
       <div className="flex-1 aspect-square">
-        <Image
-          src={teacher_img}
-          alt="?"
-          className="w-full h-full object-cover rounded-[20px]"
-        />
+        {ImageSrc ? (
+          <Image
+            src={ImageSrc}
+            alt={teacher.full_name}
+            className="w-full h-full object-cover rounded-[20px]"
+            width={200}
+            height={200}
+          />
+        ) : (
+          <Image
+            src={teacher_img}
+            alt=""
+            className="w-full h-full object-cover rounded-[20px]"
+            width={200}
+            height={200}
+          />
+        )}
       </div>
       <div className="flex flex-1 flex-col justify-between">
         <div className="h-full flex flex-col justify-between gap-[16px]">
           <div className="flex flex-col gap-[16px]">
             <div className="flex-col gap-[8px] pb-[16px] border-b-[1px] border-[#CEDAE0]">
-              <h3 className="text-[24px] font-semibold">Дмитрий Занин</h3>
+              <h3 className="text-[24px] font-semibold">{teacher.full_name}</h3>
               <h5 className="text-[16px] font-medium text-[#666666]">
-                Head of the department
+                {teacher.role}
               </h5>
             </div>
             <div className="flex flex-col gap-[8px]">
-              <div className="text-16px font-medium">
-                +998 78 129-40-40 (136)
-              </div>
-              <div className="text-16px font-medium">j.yusupov@kiut.uz</div>
-              <div className="text-16px font-medium">
-                Пн - Сб, 10:30 - 18:00
-              </div>
+              <div className="text-[18px] font-medium">{teacher.email}</div>
+              <div className="text-[18px] font-medium">Пн - Сб, 10:30 - 18:00</div>
             </div>
           </div>
-          <button className="flex items-center justify-between transition-all duration-200 ease-in-out h-[48px] hover:bg-primary hover:border-none rounded-[15px] hover:text-white border-[1px] border-[#CEDAE0] hover:fill-black text-[18px] text-black px-[24px]">
+          <Link href={`teachers/${teacher.uuid}`} className="flex items-center justify-between transition-all duration-200 ease-in-out h-[48px] hover:bg-primary hover:border-none rounded-[15px] hover:text-white border-[1px] border-[#CEDAE0] hover:fill-black text-[18px] text-black px-[24px]">
             <span>Подробнее</span>
             <svg
               width="19"
@@ -44,7 +75,7 @@ const TeacherCard = () => {
                 fill="currentColor"
               />
             </svg>
-          </button>
+          </Link>
         </div>
       </div>
     </div>
