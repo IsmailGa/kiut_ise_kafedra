@@ -2,11 +2,11 @@ import Image from "next/image";
 import teacher_img from "public/assets/teacher.png";
 import { useEffect, useState } from "react";
 import { teacherService } from "@/app/services/teacherService";
-import { teacher } from "@/app/teachers/sections/Catalog";
+import { Teacher } from "@/types/teachers";
 import Link from "next/link";
 
 type Props = {
-  teacher: teacher;
+  teacher: Teacher;
 };
 
 const TeacherCard = ({ teacher }: Props) => {

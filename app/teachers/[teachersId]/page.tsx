@@ -8,27 +8,33 @@ import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import Link from "next/link";
 import History from "./sections/history";
-import api from "@/api/axios";
-import { TeachersType } from "@/types/teachers";
+import { teacherService } from "@/app/services/teacherService";
+import { Teacher } from "@/types/teachers";
+import { useParams } from "next/navigation";
+
+const SkeletonLoader = () => (
+  <div className="flex flex-col flex-1 animate-pulse">
+    <div className="h-10 w-2/3 bg-gray-300 rounded-md"></div>
+    <div className="h-6 w-1/2 bg-gray-300 rounded-md mt-2"></div>
+    <div className="w-full h-[1px] bg-gray-300 mt-[16px] mb-[10px]"></div>
+    <h1 className="text-black text-[20px] leading-[27px] font-medium mb-[16px]">
+      Biography
+    </h1>
+    <div className="h-28 bg-gray-300 rounded-md"></div>
+  </div>
+);
 
 const Teachers = () => {
-  const [data, setData] = React.useState<TeachersType>([]);
+  const [data, setData] = React.useState<Teacher | null>(null);
+  const params = useParams();
+  const id = params?.teachersId as string;
 
   useEffect(() => {
-    api
-      .get("/teachers")
-      .then((response) => {
-        console.log("Response:", response.data); // Debugging API response
-        setData(response.data);
-      })
-      .catch((error) => {
-        console.error("Error fetching teachers:", error.message);
-      });
+    console.log("ID: ",id)
+    if (id) {
+      teacherService.getTeacher(String(id)).then(setData);
+    }
   }, []);
-
-  useEffect(() => {
-    console.log("Teachers Data:", data);
-  }, [data]);
 
   return (
     <div className="w-full flex flex-col items-center justify-center">
@@ -153,50 +159,36 @@ const Teachers = () => {
             <Image
               src={profileTeacher}
               alt="profileTeacher"
-              className="w-full h-[100%]"
+              className="max-w-[350px] shrink-0 aspect-[350/370] h-[100%] object-cover"
             />
 
             {/* RIGHT SIDE */}
-            <div className="flex flex-col max-w-[934px]">
-              {/* NAME */}
-              <h1 className="font-semibold leading-[55px] text-[40px]">
-                {data[0].full_name}
-              </h1>
-              {/* Job Title */}
-              <div className="flex flex-col gap-[8px] mt-[16px]">
-                <h2 className="text-[#666666] text-[18px] leading-[25px] font-normal">
-                  {data[0].role}
-                </h2>
-                <h2 className="text-[#666666] text-[18px] leading-[25px] font-normal">
-                  Professor of applied Informatics
-                </h2>
-              </div>
-              <span className="w-full h-[1px] bg-[#CEDAE0] mt-[16px] mb-[10px]"></span>
-              {/* Bio */}
-              <div className="flex flex-col gap-[8px]">
-                <h1 className="text-black text-[20px] leading-[27px] font-medium">
-                  Biography
+            {data ? (
+              <div className="flex flex-col flex-1">
+                {/* NAME */}
+                <h1 className="font-semibold leading-[55px] text-[40px]">
+                  {data?.full_name}
                 </h1>
-                <p className="text-[#666666] text-[16px] font-normal leading-[165%]">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                  cupidatat non proident, sunt in culpa qui officia deserunt
-                  mollit anim id est laborum. Sed ut perspiciatis unde omnis
-                  iste natus error sit voluptatem accusantium doloremque
-                  laudantium, totam rem aperiam, eaque ipsa quae ab illo
-                  inventore veritatis et quasi architecto beatae vitae dicta
-                  sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-                  aspernatur aut odit aut fugit, sed quia consequuntur magni
-                  dolores eos qui ratione voluptatem sequi nesciunt.
-                </p>
+                {/* Job Title */}
+                <h2 className="text-[#666666] text-[18px] leading-[25px] font-normal">
+                  {data?.role}
+                </h2>
+                <span className="w-full h-[1px] bg-[#CEDAE0] mt-[16px] mb-[10px]"></span>
+                {/* Bio */}
+                <div className="flex flex-col gap-[8px]">
+                  <h1 className="text-black text-[20px] leading-[27px] font-medium">
+                    Biography
+                  </h1>
+                  <p className="text-[#666666] text-[16px] font-normal leading-[165%]">
+                    {data.biography ? (data?.biography) : ('Нет данных')}
+                  </p>
+                </div>
               </div>
-            </div>
+            ) : (
+              <SkeletonLoader/>
+            )}
           </div>
-          <History />
+          <History data={data ?? null}/>
         </Container>
       </div>
     </div>

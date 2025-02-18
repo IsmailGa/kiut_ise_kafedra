@@ -41,3 +41,4 @@ export interface ResearchInterest {
   }
   
   export type TeachersType = Teacher[];
+  export type TeacherType = Teacher;
