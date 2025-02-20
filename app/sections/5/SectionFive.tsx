@@ -1,8 +1,6 @@
 import React from "react";
 import bg_one from "@/public/assets/section_five/bg_one.png";
 import bg_two from "@/public/assets/section_five/bg_two.png";
-import bg_three from "@/public/assets/section_five/bg_three.png";
-import bg_four from "@/public/assets/section_five/bg_four.png";
 import Image from "next/image";
 
 const SectionFive = () => {
@@ -23,7 +21,7 @@ const SectionFive = () => {
         <div className=" h-[310px] flex flex-col justify-between p-[25px] rounded-[25px] bg-[#F4F4F4]/65 overflow-hidden relative group">
           <div className="flex items-start justify-between w-full">
             <h1 className="text-[36px] font-semibold leading-[135%]">
-              Кибербезопасность
+            ISE (Бакалавр)
             </h1>
           </div>
           <p className="text-[14px] font-semibold py-[10px] px-[15px] bg-white rounded-[10px] self-start">
@@ -37,7 +35,7 @@ const SectionFive = () => {
         <div className=" h-[310px] flex flex-col justify-between p-[25px] rounded-[25px] bg-[#F4F4F4]/65 overflow-hidden relative group">
           <div className="flex items-start justify-between w-full ">
             <h1 className="text-[36px] font-semibold leading-[135%]">
-              Веб-разработка
+            AI (Магистраттура )
             </h1>
           </div>
           <p className="text-[14px] font-semibold py-[10px] px-[15px] bg-white rounded-[10px] self-start">
@@ -45,39 +43,6 @@ const SectionFive = () => {
           </p>
           <div className="absolute w-fit h-full aspect-square right-0 translate-y-[10%]  translate-x-[10%] bg-gradient-to-br from-[#85C8ED] to-[#CBA2E4] rounded-full">
             <Image src={bg_two} alt="section_five_bg 2" />
-          </div>
-        </div>
-        {/* CARD THREE */}
-        <div className=" h-[310px] flex flex-col justify-between p-[25px] rounded-[25px] bg-[#F4F4F4]/65 overflow-hidden relative group">
-          <div className="flex items-start justify-between w-full">
-            <h1 className="text-[36px] font-semibold leading-[135%] max-w-[283px]">
-              Искусственный Интеллект
-            </h1>
-          </div>
-          <div className="flex gap-[10px] items-center">
-            <p className="text-[14px] font-semibold py-[10px] px-[15px] bg-white rounded-[10px]">
-              2 курс
-            </p>
-            <span className="block bg-primary text-white py-[10px] px-[15px] rounded-[10px]">
-              Новинка
-            </span>
-          </div>
-          <div className="absolute w-fit h-full aspect-square right-0 translate-y-[10%] translate-x-[10%] bg-gradient-to-br from-[#8EA9EC] via-[#E5CA6A] to-[#F5F5F4] rounded-full">
-            <Image src={bg_three} alt="section_five_bg 2" />
-          </div>
-        </div>
-        {/* CARD FOUR */}
-        <div className=" h-[310px] flex flex-col justify-between p-[25px] rounded-[25px] bg-[#F4F4F4]/65 overflow-hidden relative group">
-          <div className="flex items-start justify-between w-full">
-            <h1 className="text-[36px] font-semibold leading-[135%] max-w-[283px]">
-              Дата Сайнс
-            </h1>
-          </div>
-          <p className="text-[14px] font-semibold py-[10px] px-[15px] bg-white rounded-[10px] self-start">
-            2 курс
-          </p>
-          <div className="absolute w-fit h-full aspect-square right-0 translate-y-[10%] translate-x-[10%] bg-gradient-to-br from-[#7D9DE0] to-[#2FCCD410] rounded-full">
-            <Image src={bg_four} alt="section_five_bg 2" />
           </div>
         </div>
       </div>

@@ -8,9 +8,8 @@ import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import Link from "next/link";
 import History from "./sections/history";
-import { teacherService } from "@/app/services/teacherService";
 import { Teacher } from "@/types/teachers";
-import { useParams } from "next/navigation";
+import api from "@/api/axios";
 
 const SkeletonLoader = () => (
   <div className="flex flex-col flex-1 animate-pulse">
@@ -24,16 +23,18 @@ const SkeletonLoader = () => (
   </div>
 );
 
-const Teachers = () => {
+const Teachers = ({ params }: { params: { teachersId: string } }) => {
   const [data, setData] = React.useState<Teacher | null>(null);
-  const params = useParams();
-  const id = params?.teachersId as string;
 
   useEffect(() => {
-    console.log("ID: ",id)
-    if (id) {
-      teacherService.getTeacher(String(id)).then(setData);
-    }
+    api
+      .get(`/teachers/${params.teachersId}`)
+      .then((res) => {
+        setData(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }, []);
 
   return (
@@ -180,15 +181,15 @@ const Teachers = () => {
                     Biography
                   </h1>
                   <p className="text-[#666666] text-[16px] font-normal leading-[165%]">
-                    {data.biography ? (data?.biography) : ('Нет данных')}
+                    {data.biography ? data?.biography : "Нет данных"}
                   </p>
                 </div>
               </div>
             ) : (
-              <SkeletonLoader/>
+              <SkeletonLoader />
             )}
           </div>
-          <History data={data ?? null}/>
+          <History data={data ?? null} />
         </Container>
       </div>
     </div>
