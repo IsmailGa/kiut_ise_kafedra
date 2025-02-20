@@ -26,6 +26,7 @@ const SkeletonLoader = () => (
 
 const Teachers = () => {
   const [data, setData] = React.useState<Teacher | null>(null);
+  const [error, setError] = React.useState(null);
 
 
   useEffect(() => {
