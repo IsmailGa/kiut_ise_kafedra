@@ -8,9 +8,9 @@ import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import Link from "next/link";
 import History from "./sections/history";
-import { teacherService } from "@/app/services/teacherService";
 import { Teacher } from "@/types/teachers";
-import { useParams } from "next/navigation";
+import api from "@/api/axios";
+
 
 const SkeletonLoader = () => (
   <div className="flex flex-col flex-1 animate-pulse">
@@ -26,8 +26,8 @@ const SkeletonLoader = () => (
 
 const Teachers = () => {
   const [data, setData] = React.useState<Teacher | null>(null);
-  const params = useParams();
-  const id = params?.teachersId as string;
+  const [error, setError] = React.useState(null);
+
 
   useEffect(() => {
     api
