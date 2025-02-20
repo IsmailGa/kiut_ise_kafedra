@@ -9,6 +9,8 @@ import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import Link from "next/link";
 import History from "./sections/history";
 import { Teacher } from "@/types/teachers";
+import api from "@/api/axios";
+
 
 const SkeletonLoader = () => (
   <div className="flex flex-col flex-1 animate-pulse">
