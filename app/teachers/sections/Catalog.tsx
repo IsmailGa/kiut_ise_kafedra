@@ -3,22 +3,10 @@ import TeacherCard from "./TeacherCard";
 
 import { useEffect, useState } from "react";
 import { teacherService } from "@/app/services/teacherService";
-
-export type teacher = {
-    uuid: string;
-    full_name: string;
-    email: string;
-    role: string;
-    scopus_link?: string;
-    image?: string;
-    research_interests?: string[];
-    publications?: string[];
-    work_experiences?: string[];
-    educations?: string[];
-  };
+import { TeachersType } from "@/types/teachers";
 
 const Teachers = () => {
-    const [teachers, setTeachers] = useState<teacher[]>([]);
+    const [teachers, setTeachers] = useState<TeachersType>([]);
 
     useEffect(() => {
         teacherService.getAllTeachers().then(setTeachers);

@@ -1,79 +1,76 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { Teacher, Education, WorkExperience, Publication, ResearchInterest } from "@/types/teachers";
 
-const History = () => {
-  const [content, setContent] = React.useState({ title: "", description: "" });
-  const [isActive, setIsActive] = React.useState(0);
-  const links = [
-    "Образование",
-    "Опыт работы",
-    "Достижения",
-    "Научные статьи",
-    "Проекты",
-  ];
+const links = ["Образование", "Опыт работы", "Достижения", "Научные статьи"];
 
-  const contentData = [
-    {
-      title: "National University of Uzbekistan",
-      description:
-        "В 2009 году в Национальном университете Узбекистана была получена степень доктора наук",
-    },
-    {
-      title: "Turin Polytechnic University In Tashkent",
-      description:
-        "Окончил докторантуру в Политехническом университете Турина, получив степень PhD в области производственных систем и промышленного дизайна.",
-    },
-    {
-      title: "Награда за кандидатскую диссертацию",
-      description:
-        "Награжден за лучшую кандидатскую диссертацию, присуждаемой Департаментом управления и производственного инжиниринга Политехнического университета Турина.",
-    },
-    {
-      title: "Научные статьи",
-      description:
-        "Опубликовал более 50 научных статей в международных журналах и конференциях.",
-    },
-    {
-      title: "Проекты",
-      description:
-        "Участвовал в более чем 20 проектах, связанных с производственными системами и промышленным дизайном.",
-    },
-  ];
+const dataKeys: (keyof Teacher)[] = [
+  "educations",
+  "work_experiences",
+  "publications",
+  "research_interests",
+];
 
-  const handleClick = (index: number) => {
-    setIsActive(index);
-    setContent(contentData[index]);
-  };
+type Props = {
+  data: Teacher | null;
+};
+
+type ContentItem = Education | WorkExperience | Publication | ResearchInterest;
+
+const SkeletonLoader = () => (
+  <div className="animate-pulse space-y-4">
+    {[...Array(3)].map((_, i) => (
+      <div key={i} className="flex items-center justify-between py-7 border-b border-gray-300">
+        <div className="h-6 bg-gray-300 rounded w-1/3"></div>
+        <div className="h-6 bg-gray-300 rounded w-1/4"></div>
+      </div>
+    ))}
+  </div>
+);
+
+const History = ({ data }: Props) => {
+  const [isActive, setIsActive] = useState(0);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (data) {
+      setLoading(false);
+    }
+  }, [data]);
+
+  const content: ContentItem[] = (data?.[dataKeys[isActive]] as ContentItem[]) || [];
+
+  const renderTitle = (item: ContentItem) => ("title" in item ? item.title : item.place || "Unknown");
 
   return (
-    <div className="flex flex-col mt-[53px]">
-      <h1 className="text-black font-semibold text-[56px] leading-[76px]">
-        История
-      </h1>
-      {/* LINKS */}
-      <div className="flex gap-[16px] mt-[42px]">
+    <div className="flex flex-col mt-14">
+      <h1 className="text-black font-semibold text-5xl leading-[76px]">История</h1>
+      <div className="flex gap-4 mt-10">
         {links.map((link, index) => (
           <button
             key={index}
-            className={`text-center text-black h-[50px] px-[25px] outline-0 rounded-[15px] border-[#CEDAE0] border-[1px] ${
+            className={`text-center text-black h-12 px-6 outline-0 rounded-xl border border-gray-300 ${
               isActive === index ? "bg-primary text-white" : ""
             }`}
-            onClick={() => handleClick(index)}
+            onClick={() => setIsActive(index)}
           >
             {link}
           </button>
         ))}
       </div>
-      {/* CONTENT */}
-      <div className="mt-[42px]">
-        <div className="flex items-center justify-between py-[24px] border-b-[1px] border-[#CEDAE0]">
-          <h1 className="text-[32px] leading-[44px] font-semibold text-black max-w-[334px]">
-            {content.title}
-          </h1>
-          <p className="text-[18px] font-normal leading-[165%] text-black max-w-[520px]">
-            {content.description}
-          </p>
-        </div>
+      <div className="mt-10">
+        {loading ? (
+          <SkeletonLoader />
+        ) : content.length > 0 ? (
+          content.map((item, index) => (
+            <div key={index} className="flex items-center justify-between py-7 border-b border-gray-300">
+              <h1 className="text-3xl font-semibold text-black max-w-[334px]">{renderTitle(item)}</h1>
+              <p className="text-lg text-black max-w-[520px]">{"degree" in item ? item.degree : ""}</p>
+            </div>
+          ))
+        ) : (
+          <p className="text-lg text-black max-w-[520px]">Нет данных</p>
+        )}
       </div>
     </div>
   );
