@@ -22,9 +22,9 @@ const Teachers = () => {
         console.log("Response:", response.data); // Debugging API response
         setData(response.data);
       })
-      .catch((error) => {
-        console.error("Error fetching teachers:", error.message);
-        setError(error.message);
+      .catch((err) => {
+        setError(err.message);
+        console.error("Error fetching teachers:", error);
       });
   }, []);
 

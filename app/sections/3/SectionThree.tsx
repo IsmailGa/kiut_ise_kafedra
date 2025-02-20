@@ -1,17 +1,11 @@
 "use client";
-import React, { useState, useRef } from "react";
-import teacher from "@/public/assets/teacher.png";
+import React from "react";
 import teacher_icon from "@/public/assets/teacher_icon.jpeg";
 import Image from "next/image";
-import { ArrowRight, ArrowLeft } from "@/public/icons";
-import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-fade";
-import { EffectFade } from "swiper/modules";
-import SwiperCore, { Swiper as SwiperType } from "swiper";
 import Link from "next/link";
 
-SwiperCore.use([EffectFade]);
 
 const SectionThree = () => {
   return (
