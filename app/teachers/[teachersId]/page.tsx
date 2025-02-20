@@ -30,11 +30,22 @@ const Teachers = () => {
   const id = params?.teachersId as string;
 
   useEffect(() => {
-    console.log("ID: ",id)
-    if (id) {
-      teacherService.getTeacher(String(id)).then(setData);
-    }
+    api
+      .get("/teachers")
+      .then((response) => {
+        console.log("Response:", response.data); // Debugging API response
+        setData(response.data);
+      })
+      .catch((err) => {
+        setError(err.message);
+        console.error("Error fetching teachers:", error);
+      });
   }, []);
+
+  useEffect(() => {
+    console.log("Teachers Data:", data);
+  }, [data]);
+
 
   return (
     <div className="w-full flex flex-col items-center justify-center">

@@ -1,8 +1,8 @@
 import React from "react";
 import bg_one from "@/public/assets/section_five/bg_one.png";
 import bg_two from "@/public/assets/section_five/bg_two.png";
-import bg_three from "@/public/assets/section_five/bg_three.png";
-import bg_four from "@/public/assets/section_five/bg_four.png";
+// import bg_three from "@/public/assets/section_five/bg_three.png";
+// import bg_four from "@/public/assets/section_five/bg_four.png";
 import Image from "next/image";
 
 const SectionFive = () => {
