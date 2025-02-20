@@ -14,36 +14,22 @@ import Link from "next/link";
 SwiperCore.use([EffectFade]);
 
 const SectionThree = () => {
-  const [count, setCount] = useState(1);
-  const swiperRef = useRef<SwiperType | null>(null); 
-
-  const handlePrev = () => {
-    if (swiperRef.current) {
-      swiperRef.current.slidePrev();
-    }
-  };
-
-  const handleNext = () => {
-    if (swiperRef.current) {
-      swiperRef.current.slideNext();
-    }
-  };
-
   return (
     <section className="flex flex-col w-full mt-[120px]" id="3">
       {/* WRAPPER */}
       <div className="flex justify-between">
         {/* FIRST COL */}
-        <div className="w-full flex flex-col justify-between">
+        <div className="w-full flex justify-between">
           {/* FIRST ROW */}
           <div className="flex flex-col gap-[25px]">
             <h1 className="text-[56px] font-semibold leading-[120%]">
               Учительский состав
             </h1>
             <p className="max-w-[640px] font-normal text-[18px] text-[#666666] leading-[120%]">
-              Научный совет и преподаватели курса — выдающиеся российские ученые,
-              доктора и кандидаты наук известные во всем мире. Практикующие
-              специалисты превентивной, интегральной и антивозрастной медицины.
+              Научный совет и преподаватели курса — выдающиеся российские
+              ученые, доктора и кандидаты наук известные во всем мире.
+              Практикующие специалисты превентивной, интегральной и
+              антивозрастной медицины.
             </p>
           </div>
           {/* SECOND ROW */}
@@ -77,125 +63,12 @@ const SectionThree = () => {
             <p className="text-[40px] font-semibold leading-[140%] max-w-[565px]">
               высококвалифицированных менторы в сфере IT
             </p>
-            <Link href="/teachers" className="bg-primary text-center rounded-[15px] text-white py-[16px] px-[24px] self-start">
+            <Link
+              href="/teachers"
+              className="bg-primary text-center rounded-[15px] text-white py-[16px] px-[24px] self-start"
+            >
               Подробнее
             </Link>
-          </div>
-        </div>
-        {/* SECOND COL */}
-        {/* CARD WITH SWIPER */}
-        <div className="p-[30px] max-w-[480px] w-full rounded-[30px] flex flex-col justify-between bg-[#F7F7F7]">
-          <Swiper
-            onSwiper={(swiper: SwiperType) => {
-              swiperRef.current = swiper;
-              setCount(swiper.realIndex + 1);
-            }}
-            modules={[EffectFade]}
-            effect="fade"
-            fadeEffect={{ crossFade: true }} 
-            className="w-full"
-            onSlideChange={(swiper: SwiperType) => {
-              setCount(swiper.realIndex + 1);
-            }}
-          >
-            {/* Slide 1 */}
-            <SwiperSlide>
-              <div className="flex flex-col gap-[28px] animate-fade-up">
-                <div className="h-[300px]">
-                  <Image src={teacher} alt="teacher" className="w-full h-full object-cover  rounded-[20px]"/>
-                </div>
-                <h1 className="text-[30px] font-semibold leading-[120%]">
-                  Имя Учителя 1
-                </h1>
-                <span className="block w-full bg-[#CEDAE0] h-[1px]"></span>
-                <div className="flex flex-col text-[#666666] text-[18px] font-normal leading-[120%]">
-                  <h2>Head of the department</h2>
-                  <h3>Professor of applied Informatics</h3>
-                </div>
-              </div>
-            </SwiperSlide>
-            {/* Slide 2 */}
-            <SwiperSlide>
-              <div className="flex flex-col gap-[28px] animate-fade-up">
-                <div className="h-[300px]">
-                  <Image src={teacher} alt="teacher" className="w-full h-full object-cover  rounded-[20px]"/>
-                </div>
-                <h1 className="text-[30px] font-semibold leading-[120%]">
-                  Имя Учителя 2
-                </h1>
-                <span className="block w-full bg-[#CEDAE0] h-[1px]"></span>
-                <div className="flex flex-col text-[#666666] text-[18px] font-normal leading-[120%]">
-                  <h2>Head of the department</h2>
-                  <h3>Professor of applied Informatics</h3>
-                </div>
-              </div>
-            </SwiperSlide>
-            {/* Slide 3 */}
-            <SwiperSlide>
-              <div className="flex flex-col gap-[28px] animate-fade-up">
-                <div className="h-[300px]">
-                  <Image src={teacher} alt="teacher" className="w-full h-full object-cover  rounded-[20px]"/>
-                </div>
-                <h1 className="text-[30px] font-semibold leading-[120%]">
-                  Имя Учителя 3
-                </h1>
-                <span className="block w-full bg-[#CEDAE0] h-[1px]"></span>
-                <div className="flex flex-col text-[#666666] text-[18px] font-normal leading-[120%]">
-                  <h2>Head of the department</h2>
-                  <h3>Professor of applied Informatics</h3>
-                </div>
-              </div>
-            </SwiperSlide>
-            {/* Slide 4 */}
-            <SwiperSlide>
-              <div className="flex flex-col gap-[28px] animate-fade-up">
-                <div className="h-[300px]">
-                  <Image src={teacher} alt="teacher" className="w-full h-full object-cover  rounded-[20px]"/>
-                </div>
-                <h1 className="text-[30px] font-semibold leading-[120%]">
-                  Имя Учителя 4
-                </h1>
-                <span className="block w-full bg-[#CEDAE0] h-[1px]"></span>
-                <div className="flex flex-col text-[#666666] text-[18px] font-normal leading-[120%]">
-                  <h2>Head of the department</h2>
-                  <h3>Professor of applied Informatics</h3>
-                </div>
-              </div>
-            </SwiperSlide>
-            {/* Slide 5 */}
-            <SwiperSlide>
-              <div className="flex flex-col gap-[28px] animate-fade-up">
-                <div className="h-[300px]">
-                  <Image src={teacher} alt="teacher" className="w-full h-full object-cover  rounded-[20px]"/>
-                </div>
-                <h1 className="text-[30px] font-semibold leading-[120%]">
-                  Имя Учителя 5
-                </h1>
-                <span className="block w-full bg-[#CEDAE0] h-[1px]"></span>
-                <div className="flex flex-col text-[#666666] text-[18px] font-normal leading-[120%]">
-                  <h2>Head of the department</h2>
-                  <h3>Professor of applied Informatics</h3>
-                </div>
-              </div>
-            </SwiperSlide>
-          </Swiper>
-          {/* Navigation Buttons */}
-          <div className="flex items-center gap-[10px] mt-[70px]">
-            <button
-              className="flex w-[45px] h-[45px] items-center justify-center bg-white rounded-[10px]"
-              onClick={handlePrev}
-            >
-              <ArrowLeft color="#666666" />
-            </button>
-            <span className="block">
-              {count}/5 {/* Display current slide */}
-            </span>
-            <button
-              className="bg-primary rounded-[10px] relative border-0 w-[45px] h-[45px] flex flex-col items-center justify-center"
-              onClick={handleNext}
-            >
-              <ArrowRight color="#FFFFFF" />
-            </button>
           </div>
         </div>
       </div>
