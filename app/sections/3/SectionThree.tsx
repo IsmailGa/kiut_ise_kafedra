@@ -2,10 +2,7 @@
 import React from "react";
 import teacher_icon from "@/public/assets/teacher_icon.jpeg";
 import Image from "next/image";
-import "swiper/css";
-import "swiper/css/effect-fade";
 import Link from "next/link";
-
 
 const SectionThree = () => {
   return (
