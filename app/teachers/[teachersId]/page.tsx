@@ -11,7 +11,6 @@ import History from "./sections/history";
 import { Teacher } from "@/types/teachers";
 import api from "@/api/axios";
 
-
 const SkeletonLoader = () => (
   <div className="flex flex-col flex-1 animate-pulse">
     <div className="h-10 w-2/3 bg-gray-300 rounded-md"></div>
@@ -24,16 +23,15 @@ const SkeletonLoader = () => (
   </div>
 );
 
-const Teachers = () => {
+const Teachers = ({ params }: { params: { teachersId: string } }) => {
   const [data, setData] = React.useState<Teacher | null>(null);
   const [error, setError] = React.useState(null);
 
-
   useEffect(() => {
     api
-      .get("/teachers")
+      .get("/teachers/" + params.teachersId)
       .then((response) => {
-        console.log("Response:", response.data); // Debugging API response
+        console.log("Response213:", response.data);
         setData(response.data);
       })
       .catch((err) => {
@@ -46,6 +44,9 @@ const Teachers = () => {
     console.log("Teachers Data:", data);
   }, [data]);
 
+  if (params.teachersId !== data?.uuid) {
+    return <div>Teacher not found</div>;
+  }
 
   return (
     <div className="w-full flex flex-col items-center justify-center">
@@ -191,15 +192,15 @@ const Teachers = () => {
                     Biography
                   </h1>
                   <p className="text-[#666666] text-[16px] font-normal leading-[165%]">
-                    {data.biography ? (data?.biography) : ('Нет данных')}
+                    {data.biography ? data?.biography : "Нет данных"}
                   </p>
                 </div>
               </div>
             ) : (
-              <SkeletonLoader/>
+              <SkeletonLoader />
             )}
           </div>
-          <History data={data ?? null}/>
+          <History data={data ?? null} />
         </Container>
       </div>
     </div>

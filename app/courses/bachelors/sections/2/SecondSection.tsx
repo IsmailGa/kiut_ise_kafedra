@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const SecondSection = () => {
   return (
-    <section className="max-h-[396px] overflow-hidden w-full mt-[80px] py-[35px] px-[40px] flex justify-between bg-[#F7F7F7] rounded-[30px] items-stretch">
+    <section className="overflow-hidden w-full mt-[80px] py-[35px] px-[40px] flex justify-between bg-[#F7F7F7] rounded-[30px] items-stretch">
       {/* LEFT SIDE */}
       <div className="flex flex-col gap-[25px] max-w-[690px]">
         <h1 className="text-[56px] leading-[78px] font-semibold">
@@ -24,9 +24,7 @@ const SecondSection = () => {
         </p>
       </div>
       {/* RIGHT SIDE */}
-      <div className="flex flex-col">
-        <Image src={code} alt="code" />
-      </div>
+      <Image src={code} alt="code" />
     </section>
   );
 };
