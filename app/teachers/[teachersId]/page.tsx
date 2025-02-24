@@ -24,6 +24,7 @@ const SkeletonLoader = () => (
 
 const Teachers = ({ params }: { params: { teachersId: string } }) => {
   const [data, setData] = React.useState<Teacher | null>(null);
+  const [imageError, setImageError] = React.useState(false);
 
   useEffect(() => {
     api
@@ -45,11 +46,14 @@ const Teachers = ({ params }: { params: { teachersId: string } }) => {
           <div className="flex items-stretch gap-[30px] mt-[25px]">
             {/* LEFT SIDE */}
             <Image
-              src={profileTeacher}
-              alt="profileTeacher"
-              className="max-w-[350px] shrink-0 aspect-[350/370] h-[100%] object-cover"
+              src={imageError || !data?.image ? profileTeacher : `http://ai.kiut.uz/${data?.image}`}
+              alt=""
+              width={350}
+              height={380}
+              loading="lazy"
+              className="max-w-[350px] shrink-0 aspect-[350/370] h-[100%] object-cover rounded-[20px] border border-solid"
+              onError={() => setImageError(true)}
             />
-
             {/* RIGHT SIDE */}
             {data ? (
               <div className="flex flex-col flex-1">
