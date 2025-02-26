@@ -1,13 +1,15 @@
 import Navbar from "@/components/navbar2";
 import { SearchIcon } from "@/public/icons";
+import NewsList from "./components/NewsList";
 import React from "react";
+import Container from "@/components/container";
 
 const News = () => {
   return (
     <>
       <Navbar />
       <div className="min-h-[60vh] flex flex-col items-center justify-center bg-[#F8F8F8]">
-        <div className="flex flex-col items-center">
+        <div className="w-full flex flex-col items-center">
           <h1 className="text-[#000000] text-[56px] leading-[120%] font-medium">
             Новости
           </h1>
@@ -18,12 +20,15 @@ const News = () => {
             <input
               placeholder="Поиск"
               type="text"
-              className="bg-transparent border-none outline-none max-w-[529px] w-full"
+              className="bg-transparent border-none outline-none w-full"
             />
             <SearchIcon />
           </label>
         </div>
       </div>
+      <Container>
+        <NewsList />
+      </Container>
     </>
   );
 };

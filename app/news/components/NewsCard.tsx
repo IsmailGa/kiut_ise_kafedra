@@ -1,30 +1,55 @@
 import Image from "next/image";
 import example from "@/public/assets/news/example.png";
 import Link from "next/link";
+import { CalendarIcon, ClockIcon } from "@/public/icons";
 
 export function NewsCard() {
+  const formattedDate = new Date().toLocaleDateString("ru-RU", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+  });
+  const formattedTime = new Date().toLocaleTimeString("ru-RU", {
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+
   return (
-    <div className="border rounded-lg p-4 hover:shadow-lg transition">
-      <Image
-        src={example}
-        alt="news"
-        className="w-full h-48 object-cover rounded-lg"
-      />
-      <div className="flex flex-col">
-        <h2 className="text-xl font-semibold mt-4">
-          KIUT и Япония: новые горизонты сотрудничества
-        </h2>
-        <p className="text-gray-600 mt-2">
-          Укрепляется сотрудничество Ташкентского международного университета
-          Кимё с японскими компаниями. 30 сентября текущего года наш университет
-          посетила делегация известной архитектурно – строительной компании
-          Terumasagumi Co., во главе с её президентом Теруей Кейтой. Компания
-          расположена в японской префектуре Окинава.
-        </p>
-        <div className="mt-4 text-gray-500">
-          {new Date().toLocaleDateString()}
+    <div className="flex w-full items-stretch rounded-[25px] border-[#CEDAE0] border-[1px] overflow-hidden">
+      <Image src={example} alt="news" className="w-full object-cover flex-1" />
+      {/* RIGHT SIDE */}
+      <div className="flex flex-col justify-between p-[25px] flex-1">
+        <div className="flex flex-col gap-[16px] text-ellipsis">
+          <h2 className="text-xl font-semibold mt-4">
+            KIUT и Япония: новые горизонты сотрудничества
+          </h2>
+          <p className="text-gray-600 mt-2">
+            Укрепляется сотрудничество Ташкентского международного университета
+            Кимё с японскими компаниями. 30 сентября текущего года наш
+            университет посетила делегация известной архитектурно – строительной
+            компании Terumasagumi Co., во главе с её президентом Теруей Кейтой.
+            Компания расположена в японской префектуре Окинава.
+          </p>
         </div>
-        <Link href="/news/1">Подробнее</Link>
+
+        <div className="flex justify-between items-end ">
+          <div className="flex gap-[15px]">
+            <div className="flex gap-[5px] items-center">
+              <CalendarIcon />
+              <span>{formattedDate}</span>
+            </div>
+            <div className="flex gap-[5px] items-center">
+              <ClockIcon />
+              <span>{formattedTime}</span>
+            </div>
+          </div>
+          <Link
+            href="/news/1"
+            className="text-[16px] font-semibold leading-[140%] px-[24px] py-[16px] bg-primary rounded-[15px] text-white"
+          >
+            Подробнее
+          </Link>
+        </div>
       </div>
     </div>
   );

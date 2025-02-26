@@ -12,7 +12,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           {/* LEFT SIDE */}
           <div className="flex items-center gap-[45px]">
-            <Link href="/">
+            <Link href="/">,
               <Image src={logo} alt="logo" />
             </Link>
           </div>
