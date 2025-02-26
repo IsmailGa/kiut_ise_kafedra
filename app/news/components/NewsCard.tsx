@@ -1,15 +1,30 @@
+import Image from "next/image";
+import example from "@/public/assets/news/example.png";
+import Link from "next/link";
+
 export function NewsCard() {
   return (
     <div className="border rounded-lg p-4 hover:shadow-lg transition">
-      <img
-        src={news.image}
-        alt={news.title}
+      <Image
+        src={example}
+        alt="news"
         className="w-full h-48 object-cover rounded-lg"
       />
-      <h2 className="text-xl font-semibold mt-4">{news.title}</h2>
-      <p className="text-gray-600 mt-2">{news.description}</p>
-      <div className="mt-4 text-gray-500">
-        {new Date(news.date).toLocaleDateString()}
+      <div className="flex flex-col">
+        <h2 className="text-xl font-semibold mt-4">
+          KIUT и Япония: новые горизонты сотрудничества
+        </h2>
+        <p className="text-gray-600 mt-2">
+          Укрепляется сотрудничество Ташкентского международного университета
+          Кимё с японскими компаниями. 30 сентября текущего года наш университет
+          посетила делегация известной архитектурно – строительной компании
+          Terumasagumi Co., во главе с её президентом Теруей Кейтой. Компания
+          расположена в японской префектуре Окинава.
+        </p>
+        <div className="mt-4 text-gray-500">
+          {new Date().toLocaleDateString()}
+        </div>
+        <Link href="/news/1">Подробнее</Link>
       </div>
     </div>
   );
