@@ -8,7 +8,7 @@ const News = () => {
   return (
     <>
       <Navbar />
-      <div className="min-h-[60vh] flex flex-col items-center justify-center bg-[#F8F8F8]">
+      <div className="min-h-[50vh] w-full flex flex-col justify-end bg-[#F8F8F8] pb-[56px]">
         <div className="w-full flex flex-col items-center">
           <h1 className="text-[#000000] text-[56px] leading-[120%] font-medium">
             Новости
