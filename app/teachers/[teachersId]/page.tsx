@@ -45,7 +45,23 @@ const Teachers = ({ params }: { params: { teachersId: string } }) => {
   }, [data]);
 
   if (params.teachersId !== data?.uuid) {
-    return <div>Teacher not found</div>;
+    return (
+      <div className="h-screen flex items-center justify-center w-full">
+        <Container>
+          <div className="w-full flex flex-col items-center">
+            <h1 className="text-center text-[56px] font-bold">
+              Teacher not found
+            </h1>
+            <Link
+              href="/teachers"
+              className="text-center text-primary flex gap-[12px] text-[30px] font-semibold leading-[135%]"
+            >
+              Back
+            </Link>
+          </div>
+        </Container>
+      </div>
+    );
   }
 
   return (
