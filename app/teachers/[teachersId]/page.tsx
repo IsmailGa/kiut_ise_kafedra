@@ -31,7 +31,7 @@ const Teachers = ({ params }: { params: { teachersId: string } }) => {
     api
       .get("/teachers/" + params.teachersId)
       .then((response) => {
-        console.log("Response213:", response.data);
+        console.log("Response:", response.data);
         setData(response.data);
       })
       .catch((err) => {
