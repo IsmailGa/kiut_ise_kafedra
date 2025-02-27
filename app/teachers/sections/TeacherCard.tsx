@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Image from "next/image";
 import teacher_img from "public/assets/teacher.png";
 import { Teacher } from "@/types/teachers";
@@ -8,15 +9,19 @@ type Props = {
 };
 
 const TeacherCard = ({ teacher }: Props) => {
+  const [imageError, setImageError] = useState(false);
+
   return (
     <div className="flex p-[25px] gap-[25px] rounded-[25px] bg-[#F4F4F4]/65 relative group">
       <div className="flex-1 aspect-square">
         <Image
-          src={teacher_img}
-          alt=""
-          className="w-full h-full object-cover rounded-[20px]"
+          src={imageError || !teacher.image ? teacher_img : `http://ai.kiut.uz/${teacher.image}`}
+          alt={teacher.full_name}
+          className="w-full h-full object-cover rounded-2xl"
           width={200}
           height={200}
+          priority
+          onError={() => setImageError(true)}
         />
       </div>
       <div className="flex flex-1 flex-col justify-between">
