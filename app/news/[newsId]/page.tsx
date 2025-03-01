@@ -1,28 +1,56 @@
-"use client"
+"use client";
 import Container from "@/components/container";
 import Navbar from "@/components/navbar2";
 import { BlueLArrowIcon, CalendarIcon, ClockIcon } from "@/public/icons";
 import example from "@/public/assets/news/example-big.png";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
-
+import React, { useEffect, useState } from "react";
+import { NewsItem } from "@/types/new";
 import japan_bg from "@/public/assets/section_six/japan_bg.jpg";
 import { ArrowRight, ArrowLeft } from "@/public/icons";
+import api from "@/api/axios";
 
-const NewsInfo = () => {
-  const [count, setCount] = React.useState(1);
+const NewsInfo = ({ params }: { params: { newsId: string } }) => {
+  const [news, setNews] = useState<NewsItem | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [count, setCount] = useState(1);
   const maxCount = 5;
   const minCount = 1;
-  const formattedDate = new Date().toLocaleDateString("ru-RU", {
+
+  useEffect(() => {
+    const fetchNews = async () => {
+      try {
+        const response = await api.get(`/announcements/${params.newsId}`);
+        setNews(response.data);
+      } catch (error) {
+        console.error("Failed to fetch news:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchNews();
+  }, [params.newsId]);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (!news) {
+    return <div>News not found</div>;
+  }
+
+  const formattedDate = new Date(news.created_at).toLocaleDateString("ru-RU", {
     day: "2-digit",
     month: "short",
     year: "numeric",
   });
-  const formattedTime = new Date().toLocaleTimeString("ru-RU", {
+  const formattedTime = new Date(news.created_at).toLocaleTimeString("ru-RU", {
     hour: "2-digit",
     minute: "2-digit",
   });
+
   return (
     <>
       <Navbar />
@@ -39,7 +67,7 @@ const NewsInfo = () => {
               </Link>
               <div className="flex flex-col gap-[18px]">
                 <h1 className="text-[40px] font-semibold leading-[135%]">
-                  KIUT и Япония: новые горизонты сотрудничества
+                  {news.title}
                 </h1>
                 <div className="flex gap-[15px]">
                   <div className="flex gap-[5px] items-center">
@@ -57,36 +85,16 @@ const NewsInfo = () => {
             <div className="flex flex-col gap-[32px] border-b border-[#CEDAE0] mt-[36px] pb-[36px]">
               <Image src={example} alt="example" />
               <p className="text-[18px] font-normal leading-[145%]">
-                Укрепляется сотрудничество Ташкентского международного
-                университета Кимё с японскими компаниями. 30 сентября текущего
-                года наш университет посетила делегация известной архитектурно –
-                строительной компании Terumasagumi Co., во главе с её
-                президентом Теруей Кейтой. Компания расположена в японской
-                префектуре Окинава. <br /> <br /> Гостей приветствовали ректор
-                университета Каримжон Ахмеджанов и руководитель направления
-                «Архитектура и строительство» Камаладдин Саидов. В ходе визита
-                члены делегации проявили большой интерес к инженерным
-                направлениям университета. Также в центре внимания был энтузиазм
-                студентов. Были организованы встречи со студентами и
-                увлекательные беседы со слушателями вновь созданных курсов
-                японского языка. <br /> <br /> Основной целью визита был
-                трудоустройство выпускников нашего университета в престижные
-                организации Японии, а также организация летних стажировок
-                студентов младших курсов и создание возможностей для повышения
-                квалификации профессоров и преподавателей. <br /> <br /> Теперь
-                это сотрудничество не ограничивается только местными
-                организациями, но и предоставляет возможность студентам и
-                преподавателям развивать свои знания и навыки в ведущих странах
-                мира.
+                {news.description}
               </p>
             </div>
             {/* LINKS */}
             <div className="w-full flex justify-center items-center mt-[36px] text-[20px] font-semibold leading-[145%] gap-[16px]">
               <p>Поделиться новостью:</p>
               <div className="flex gap-[16px]">
-                <p>Telegram</p>
+                <p className="cursor-pointer">Telegram</p>
                 <span className="bg-[#CEDAE0] h-[30px] w-[2px] block"></span>
-                <p>Ссылка</p>
+                <p className="cursor-pointer">Ссылка</p>
               </div>
             </div>
             {/* NEWS */}
