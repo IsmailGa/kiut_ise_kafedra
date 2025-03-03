@@ -1,30 +1,33 @@
+"use client"
 import Image from "next/image";
 import logo from "@/public/assets/logo.png";
-import React from "react";
+import React, { useState } from "react";
 import Container from "./container";
-import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
+import { Menu, MenuButton, MenuItem, MenuItems, Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import Link from "next/link";
 
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
-    <header className="absolute w-full top-[25px]">
+    <header className="absolute w-full top-0 py-[25px]">
       <Container>
         <div className="flex justify-between items-center">
           {/* LEFT SIDE */}
 
-          <div className="flex items-center gap-[45px]">
-            <Link href="/">
+          <div className="flex items-center xl:gap-[45px] gap-[25px]">
+            <Link href="/" className="flex aspect-square xl:w-[55px] w-[48px]">
               <Image src={logo} alt="logo" />
             </Link>
-            <button className="text-center bg-white/20 backdrop-blur-lg  text-white h-[50px] px-[25px] border-0 outline-0 rounded-[15px]">
+            <Link href="#" className="flex items-center bg-white/20 backdrop-blur-lg  text-white xl:h-[50px] h-[48px] xl:px-[25px] px-[23px] border-0 outline-0 rounded-[15px]">
               Все направления
-            </button>
+            </Link>
           </div>
           {/* RIGHT SIDE */}
 
-          <div className="flex items-center gap-[45px]">
-            <ul className="flex gap-[30px] text-white">
+          <div className="flex items-center xl:gap-[45px] gap-[25px]">
+            <ul className="flex gap-[30px] text-white max-xl:hidden">
               <li>
                 {" "}
                 <Menu as="div" className="relative inline-block text-left">
@@ -82,39 +85,21 @@ const Navbar = () => {
                   >
                     <div className="py-1">
                       <MenuItem>
-                        <a
-                          href="#"
+                        <Link
+                          href="courses/bachelors"
                           className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 data-[focus]:outline-none"
                         >
-                          Account settings
-                        </a>
+                          ISE (Бакалавриат)
+                        </Link>
                       </MenuItem>
                       <MenuItem>
-                        <a
-                          href="#"
+                        <Link
+                          href="courses/masters"
                           className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 data-[focus]:outline-none"
                         >
-                          Support
-                        </a>
+                          AI (Магистратура)
+                        </Link>
                       </MenuItem>
-                      <MenuItem>
-                        <a
-                          href="#"
-                          className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 data-[focus]:outline-none"
-                        >
-                          License
-                        </a>
-                      </MenuItem>
-                      <form action="#" method="POST">
-                        <MenuItem>
-                          <button
-                            type="submit"
-                            className="block w-full px-4 py-2 text-left text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 data-[focus]:outline-none"
-                          >
-                            Sign out
-                          </button>
-                        </MenuItem>
-                      </form>
                     </div>
                   </MenuItems>
                 </Menu>
@@ -123,11 +108,79 @@ const Navbar = () => {
                 <Link href="/news">Новости</Link>
               </li>
             </ul>
-            <button className="text-center bg-primary text-white h-[50px] px-[25px] border-0 outline-0 rounded-[15px]">
+            <button className="text-center bg-primary text-white xl:h-[50px] h-[48px] xl:px-[25px] px-[23px] border-0 outline-0 rounded-[15px]">
               Оставить заявку
+            </button>
+            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="relative xl:hidden flex aspect-square w-[48px] h-auto rounded-[15px] bg-white">
+              <span className="absolute w-[46%] h-[2px] bg-black left-[50%] top-[35%] translate-x-[-50%] translate-y-[-50%] rounded"></span>
+              <span className="absolute w-[46%] h-[2px] bg-black left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] rounded"></span>
+              <span className="absolute w-[46%] h-[2px] bg-black left-[50%] top-[65%] translate-x-[-50%] translate-y-[-50%] rounded"></span>
             </button>
           </div>
         </div>
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <div 
+            onClick={(e) => {
+              if (e.target === e.currentTarget) setIsMenuOpen(false);
+            }}
+            className="z-[5] fixed bg-black/50 top-0 right-0 w-full h-full"
+          >
+            <div className="relative w-full h-full">
+              <div className="fixed top-0 right-0 px-[25px] max-w-[360px] w-full h-full bg-[#F4F4F4]">
+                <div className="flex justify-between items-center py-4 mb-[52px]">
+                  <div className="text-[32px] text-primary font-medium">Меню</div>
+                  <button onClick={() => setIsMenuOpen(false)} className="relative flex aspect-square w-[48px] h-auto rounded-[15px] bg-white">
+                    <span className="absolute w-[46%] h-[2px] bg-black left-[50%] top-[50%] rotate-[45deg] translate-x-[-50%] translate-y-[-50%] rounded"></span>
+                    <span className="absolute w-[46%] h-[2px] bg-black left-[50%] top-[50%] rotate-[-45deg] translate-x-[-50%] translate-y-[-50%] rounded"></span>
+                  </button>
+                </div>
+                <div className="flex flex-col gap-[6px]">
+                  <Disclosure as="div">
+                    {({ open }) => (
+                      <>
+                        <DisclosureButton className="flex w-full justify-between items-center rounded-[15px] bg-white px-5 py-[10px] font-medium text-black">
+                          <div className="text-[24px] font-medium">Кафедра</div>
+                          <ChevronDownIcon
+                            className={`${open ? 'rotate-180 transform' : ''} h-7 w-7 text-black`}
+                          />
+                        </DisclosureButton>
+                        <DisclosurePanel className="px-4 pb-2 pt-4 text-[20px] text-gray-700">
+                          <Link href="/" className="block px-4 py-2 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 data-[focus]:outline-none">
+                            О нас
+                          </Link>
+                          <Link href="/teachers" className="block px-4 py-2 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 data-[focus]:outline-none">
+                            Учительский состав
+                          </Link>
+                        </DisclosurePanel>
+                      </>
+                    )}
+                  </Disclosure>
+                  <Disclosure as="div">
+                    {({ open }) => (
+                      <>
+                        <DisclosureButton className="flex w-full justify-between items-center rounded-[15px] bg-white px-5 py-[10px] font-medium text-black">
+                          <div className="text-[24px] font-medium">Направления</div>
+                          <ChevronDownIcon
+                            className={`${open ? 'rotate-180 transform' : ''} h-7 w-7 text-black`}
+                          />
+                        </DisclosureButton>
+                        <DisclosurePanel className="px-4 pb-2 pt-4 text-[20px] text-gray-700">
+                          <Link href="courses/bachelors" className="block px-4 py-2 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 data-[focus]:outline-none">
+                            ISE (Бакалавриат)
+                          </Link>
+                          <Link href="courses/masters" className="block px-4 py-2 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 data-[focus]:outline-none">
+                            AI (Магистратура)
+                          </Link>
+                        </DisclosurePanel>
+                      </>
+                    )}
+                  </Disclosure>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </Container>
     </header>
   );
