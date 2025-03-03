@@ -13,6 +13,7 @@ import api from "@/api/axios";
 
 const NewsInfo = ({ params }: { params: { newsId: string } }) => {
   const [news, setNews] = useState<NewsItem | null>(null);
+  const [image, setImage] = useState("");
   const [loading, setLoading] = useState(true);
   const [count, setCount] = useState(1);
   const maxCount = 5;
@@ -83,7 +84,13 @@ const NewsInfo = ({ params }: { params: { newsId: string } }) => {
             </div>
             {/* INFO */}
             <div className="flex flex-col gap-[32px] border-b border-[#CEDAE0] mt-[36px] pb-[36px]">
-              <Image src={example} alt="example" />
+              <Image
+                src={`http://ai.kiut.uz/${news.images[0]}`}
+                alt="example"
+                className="object-cover"
+                width={2000}
+                height={500}
+              />
               <p className="text-[18px] font-normal leading-[145%]">
                 {news.description}
               </p>
