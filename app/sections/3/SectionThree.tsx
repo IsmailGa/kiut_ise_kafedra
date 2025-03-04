@@ -13,10 +13,10 @@ const SectionThree = () => {
         <div className="w-full flex justify-between gap-[36px]">
           {/* FIRST ROW */}
           <div className="flex flex-col gap-[25px]">
-            <h1 className="2xl:text-[56px] text-[40px] font-semibold leading-[120%]">
+            <h1 className="2xl:text-[56px] xl:text-[40px] lg:text-[32px] font-semibold leading-[120%]">
               Учительский состав
             </h1>
-            <p className="2xl:max-w-[640px] max-w-[580px] font-normal text-[18px] text-[#666666] leading-[120%]">
+            <p className="2xl:max-w-[640px] xl:max-w-[580px] max-w-[480px] font-normal xl:text-[18px] text-[16px] text-[#666666] leading-[120%]">
               Научный совет и преподаватели курса — выдающиеся российские
               ученые, доктора и кандидаты наук известные во всем мире.
               Практикующие специалисты превентивной, интегральной и
@@ -54,12 +54,12 @@ const SectionThree = () => {
                   className="object-cover shrink-0 aspect-square w-[80px] rounded-full ml-[-25px] border-[5px] border-white"
                 />
               </div>
-              <span className="2xl:text-[36px] text-[32px] font-medium leading-[140%]">
+              <span className="2xl:text-[36px] xl:text-[32px] text-[28px] font-medium leading-[140%]">
                 25+
               </span>
             </div>
 
-            <p className="2xl:text-[32px] text-[26px] font-semibold leading-[135%] max-w-[565px]">
+            <p className="2xl:text-[32px] xl:text-[26px] text-[24px] font-semibold leading-[135%] max-w-[565px]">
               высококвалифицированных менторы в сфере IT
             </p>
           </div>

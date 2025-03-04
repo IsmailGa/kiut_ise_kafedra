@@ -8,3 +8,9 @@
     right: -64%;
     top: 0;
 }
+
+@media screen and (max-width: 1280px){
+    .bg-laptop::after{
+        right: -58%;
+    }
+}
