@@ -1,5 +1,4 @@
 "use client"
-import React, { useState } from "react";
 import japan_bg from "@/public/assets/section_six/japan_bg.jpg"
 import Image from 'next/image';
 import { ArrowRight, ArrowLeft, CalendarIcon, ClockIcon } from "@/public/icons"
