@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/footer";
-import "../i18n"
+
 
 const manrope = Manrope({ subsets: ["latin"] });
 
