@@ -53,18 +53,16 @@ const Navbar = () => {
             >
               <li>
                 <Menu as="div" className="relative inline-block text-left">
-                  <MenuButton>
-                    {({ open }) => (
-                      <div className="inline-flex w-full justify-center items-center">
-                        Кафедра
-                        <ChevronDownIcon
-                          aria-hidden="true"
-                          className={`-mr-1 size-5 ${
-                            isTeachersOrHome ? "text-white" : "text-black"
-                          }`}
-                        />
-                      </div>
-                    )}
+                  <MenuButton className="inline-flex w-full justify-center items-center">
+                    <span className={isTeachersOrHome ? "text-white" : "text-black"}>
+                      Кафедра
+                    </span>
+                    <ChevronDownIcon
+                      aria-hidden="true"
+                      className={`-mr-1 size-5 ${
+                        isTeachersOrHome ? "text-white" : "text-black"
+                      }`}
+                    />
                   </MenuButton>
                   <MenuItems
                     transition
@@ -93,18 +91,16 @@ const Navbar = () => {
               </li>
               <li>
                 <Menu as="div" className="relative inline-block text-left">
-                  <MenuButton>
-                    {({ open }) => (
-                      <div className="inline-flex w-full justify-center items-center">
-                        Направления
-                        <ChevronDownIcon
-                          aria-hidden="true"
-                          className={`-mr-1 size-5 ${
-                            isTeachersOrHome ? "text-white" : "text-black"
-                          }`}
-                        />
-                      </div>
-                    )}
+                  <MenuButton className="inline-flex w-full justify-center items-center">
+                    <span className={isTeachersOrHome ? "text-white" : "text-black"}>
+                      Направления
+                    </span>
+                    <ChevronDownIcon
+                      aria-hidden="true"
+                      className={`-mr-1 size-5 ${
+                        isTeachersOrHome ? "text-white" : "text-black"
+                      }`}
+                    />
                   </MenuButton>
                   <MenuItems
                     transition
@@ -113,7 +109,7 @@ const Navbar = () => {
                     <div className="py-1">
                       <MenuItem>
                         <Link
-                          href="courses/bachelors"
+                          href="/courses/bachelors"
                           className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 data-[focus]:outline-none"
                         >
                           ISE (Бакалавриат)
@@ -121,7 +117,7 @@ const Navbar = () => {
                       </MenuItem>
                       <MenuItem>
                         <Link
-                          href="courses/masters"
+                          href="/courses/masters"
                           className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 data-[focus]:outline-none"
                         >
                           AI (Магистратура)
@@ -132,7 +128,9 @@ const Navbar = () => {
                 </Menu>
               </li>
               <li>
-                <Link href="/news">Новости</Link>
+                <Link href="/news" className={isTeachersOrHome ? "text-white" : "text-black"}>
+                  Новости
+                </Link>
               </li>
             </ul>
             <button className="text-center bg-primary text-white xl:h-[50px] lg:h-[48px] h-[44px] xl:px-[25px] lg:px-[23px] px-[20px] border-0 outline-0 rounded-[15px]">

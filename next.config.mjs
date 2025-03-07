@@ -9,12 +9,6 @@ const nextConfig = {
   images: {
     domains: ["ai.kiut.uz"],
   },
-
-  i18n: {
-    locales: ["en", "ru", "uz"],
-    defaultLocale: "en",
-  },
-  localePath: path.resolve("./locales/"),
 };
 
 export default nextConfig;

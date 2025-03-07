@@ -15,11 +15,7 @@ import "swiper/css";
 
 const NewsInfo = ({ params }: { params: { newsId: string } }) => {
   const [news, setNews] = useState<NewsItem | null>(null);
-  const [image, setImage] = useState("");
   const [loading, setLoading] = useState(true);
-  const [count, setCount] = useState(1);
-  const maxCount = 5;
-  const minCount = 1;
 
   useEffect(() => {
     const fetchNews = async () => {
@@ -70,7 +66,7 @@ const NewsInfo = ({ params }: { params: { newsId: string } }) => {
               </Link>
               <div className="flex flex-col gap-[18px]">
                 <h1 className="text-[40px] font-semibold leading-[135%]">
-                  {news.title}
+                  {news.translations.uz.title}
                 </h1>
                 <div className="flex gap-[15px]">
                   <div className="flex gap-[5px] items-center">
@@ -94,7 +90,7 @@ const NewsInfo = ({ params }: { params: { newsId: string } }) => {
                 height={500}
               />
               <p className="text-[18px] font-normal leading-[145%]">
-                {news.description}
+                {news.translations.uz.description}
               </p>
             </div>
             {/* LINKS */}

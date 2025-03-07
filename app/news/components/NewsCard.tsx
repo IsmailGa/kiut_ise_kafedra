@@ -1,18 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CalendarIcon, ClockIcon } from "@/public/icons";
+import { NewsItem } from "@/types/new";
 
 interface NewsCardProps {
-  news: {
-    uuid: string;
-    title: string;
-    description: string;
-    images: string[];
-    created_at: string;
-  };
+  news: NewsItem;
 }
 
 export function NewsCard({ news }: NewsCardProps) {
+  const { title, description } = news.translations.uz;
   const formattedDate = new Date(news.created_at).toLocaleDateString("ru-RU", {
     day: "2-digit",
     month: "short",
@@ -36,10 +32,10 @@ export function NewsCard({ news }: NewsCardProps) {
       <div className="flex flex-col justify-between p-[25px] flex-1">
         <div className="flex flex-col gap-[16px] text-ellipsis ">
           <h2 className="text-[24px] leading-[135%] font-semibold line-clamp-1">
-            {news.title}
+            {title}
           </h2>
           <p className="font-normal text-[18px] leading-[145%] text-black line-clamp-6">
-            {news.description}
+            {description}
           </p>
         </div>
 
