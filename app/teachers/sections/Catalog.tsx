@@ -15,7 +15,7 @@ const Teachers = () => {
         setTeachers(res.data);
       })
       .catch((err) => {
-        console.log(err); // Handle error
+        console.log(err);
       });
   }, []);
   return (

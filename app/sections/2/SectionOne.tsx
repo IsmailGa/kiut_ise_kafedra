@@ -10,7 +10,7 @@ const SectionTwo = () => {
       <h1 className="2xl:text-[56px] xl:text-[40px] lg:text-[32px] font-semibold">О факультете</h1>
       <div className="flex flex-col w-full 2xl:gap-[60px] gap-[52px]">
         {/* SECTION 1 */}
-        <div className="flex justify-between items-start gap-[48px]">
+        <div className="flex justify-between md:flex-row flex-col items-start gap-[48px]">
           <p className="text-[#666666] xl:text-[18px] text-[16px] leading-[145%] 2xl:max-w-[640px] xl:max-w-[520px] lg:max-w-[420px] font-normal">
             Инженерия информационных систем - это междисциплинарная область,
             которая объединяет такие дисциплины, как математика, бизнес и
@@ -27,7 +27,7 @@ const SectionTwo = () => {
           </p>
         </div>
         {/* SECTION 2 */}
-        <div className="flex items-center justify-start gap-[64px]">
+        <div className="flex md:items-center md:flex-row flex-col justify-start gap-[64px]">
           {/* CARD 1*/}
           <div className="flex xl:items-center max-xl:flex-col gap-[30px] flex-1">
             <div className="shrink-0 h-[150px] w-[150px] flex flex-col justify-center items-center text-primary border-[#CEDAE0] border-[1px] rounded-[75px]">
