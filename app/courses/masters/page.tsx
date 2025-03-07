@@ -1,4 +1,4 @@
-import Navbar from "@/components/navbar2";
+import Navbar from "@/components/navbar";
 import React from "react";
 import MainSection from "./sections/1/Main";
 import Container from "@/components/container";

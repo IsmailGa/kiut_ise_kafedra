@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from "react";
-import Navbar from "@/components/navbar2";
+import Navbar from "@/components/navbar";
 import Container from "@/components/container";
 import Banner from "./components/NewsBanner";
 import NewsList from "./components/NewsList";

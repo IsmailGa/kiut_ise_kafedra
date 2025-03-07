@@ -29,8 +29,8 @@ const NewsList = ({ searchQuery }: NewsListProps) => {
 
   const filteredNews = news.filter(
     (item) =>
-      item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      item.description.toLowerCase().includes(searchQuery.toLowerCase())
+      item.translations.uz.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      item.translations.uz.description.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   return (

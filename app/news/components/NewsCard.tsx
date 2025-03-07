@@ -1,18 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CalendarIcon, ClockIcon } from "@/public/icons";
+import { NewsItem } from "@/types/new";
 
 interface NewsCardProps {
-  news: {
-    uuid: string;
-    title: string;
-    description: string;
-    images: string[];
-    created_at: string;
-  };
+  news: NewsItem;
 }
 
 export function NewsCard({ news }: NewsCardProps) {
+  const { title, description } = news.translations.uz;
   const formattedDate = new Date(news.created_at).toLocaleDateString("ru-RU", {
     day: "2-digit",
     month: "short",
@@ -22,7 +18,6 @@ export function NewsCard({ news }: NewsCardProps) {
     hour: "2-digit",
     minute: "2-digit",
   });
-  
 
   return (
     <div className="flex w-full items-stretch rounded-[25px] border-[#CEDAE0] border-[1px] overflow-hidden max-h-[341px]">
@@ -36,8 +31,12 @@ export function NewsCard({ news }: NewsCardProps) {
       {/* RIGHT SIDE */}
       <div className="flex flex-col justify-between p-[25px] flex-1">
         <div className="flex flex-col gap-[16px] text-ellipsis ">
-          <h2 className="text-[24px] leading-[135%] font-semibold line-clamp-1">{news.title}</h2>
-          <p className="font-normal text-[18px] leading-[145%] text-black line-clamp-6">{news.description}</p>
+          <h2 className="text-[24px] leading-[135%] font-semibold line-clamp-1">
+            {title}
+          </h2>
+          <p className="font-normal text-[18px] leading-[145%] text-black line-clamp-6">
+            {description}
+          </p>
         </div>
 
         <div className="flex justify-between items-end ">
