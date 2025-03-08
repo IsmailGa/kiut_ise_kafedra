@@ -37,7 +37,7 @@ const Navbar = () => {
             </Link>
             {isTeachersOrHome && (
               <Link
-                href="#"
+                href="/courses"
                 className="flex items-center bg-white/20 backdrop-blur-lg text-white xl:h-[50px] lg:h-[48px] h-[44px] xl:px-[25px] lg:px-[23px] px-[20px] border-0 outline-0 rounded-[15px]"
               >
                 Все направления
