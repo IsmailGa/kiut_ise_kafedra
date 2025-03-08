@@ -7,7 +7,7 @@ import { ArrowRotated } from "@/public/icons";
 
 const SectionFive = () => {
   return (
-    <section className="w-full flex flex-col 2xl:mt-[120px] mt-[95px]">
+    <section className="w-full flex flex-col 2xl:mt-[120px] mt-[95px]" id="courses">
       <div className="w-full flex flex-col gap-[25px] 2xl:mb-[65px] mb-[45px]">
         <h1 className="2xl:text-[56px] xl:text-[40px] lg:text-[32px] font-semibold leading-[100%]">
           Наши направления
