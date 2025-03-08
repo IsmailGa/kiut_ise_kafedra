@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import img from "@/public/assets/courses/structure_of_program.png";
+import Link from "next/link";
 
 const SeventhSection = () => {
   return (
@@ -8,7 +9,7 @@ const SeventhSection = () => {
       <h1 className="text-[56px] leading-[140%] font-semibold">
         Структура программы:
       </h1>
-      <div className="relative cursor-pointer ">
+      <Link href="bachelors/structure-program" className="relative cursor-pointer ">
         <div className="absolute top-[30px] right-[30px] bg-[#66666645] backdrop-blur-lg p-[15px] rounded-[18px] z-[1]">
           <svg
             width="36"
@@ -48,7 +49,7 @@ const SeventhSection = () => {
           </svg>
         </div>
         <Image src={img} alt="" className="rounded-[30px] blur-[2px]" />
-      </div>
+      </Link>
     </section>
   );
 };
