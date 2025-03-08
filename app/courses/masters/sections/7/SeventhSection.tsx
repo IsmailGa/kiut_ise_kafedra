@@ -9,7 +9,7 @@ const SeventhSection = () => {
       <h1 className="text-[56px] leading-[140%] font-semibold">
         Структура программы:
       </h1>
-      <Link href="/structure-program" className="relative cursor-pointer ">
+      <Link href="masters/structure-program" className="relative cursor-pointer ">
         <div className="absolute top-[30px] right-[30px] bg-[#66666645] backdrop-blur-lg p-[15px] rounded-[18px] z-[1]">
           <svg
             width="36"
