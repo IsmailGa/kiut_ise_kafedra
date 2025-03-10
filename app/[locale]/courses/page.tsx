@@ -2,7 +2,7 @@ import React from "react";
 import bg_two from "@/public/assets/section_five/bg_two.png";
 import bg_three from "@/public/assets/section_five/bg_three.png";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/navigation";
 import { ArrowRotated } from "@/public/icons";
 import Container from "@/components/container";
 

@@ -1,14 +1,15 @@
 /** @type {import('next').NextConfig} */
-import path from "path";
+import CreateNextPlugin from "next-intl/plugin";
+
+const withNextIntl = CreateNextPlugin();
 
 const nextConfig = {
   env: {
     NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
   },
-
   images: {
     domains: ["ai.kiut.uz"],
   },
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);

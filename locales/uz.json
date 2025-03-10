@@ -1,0 +1,18 @@
+{
+  "header": {
+    "all_directions": "Barcha yo'nalishlar",
+    "department": "Kafedra",
+    "about_us": "Biz haqimizda",
+    "teachers": "O'qituvchilar tarkibi",
+    "directions": "Yo'nalishlar",
+    "bachelors": "ISE (Bakalavriat)",
+    "masters": "AI (Magistratura)",
+    "news": "Yangiliklar",
+    "apply": "Ariza qoldiring",
+    "menu": "Menyu"
+  },
+  "LocaleSwitcher": {
+    "label": "Tilni o'zgartirish",
+    "locale": "{locale, select, uz {🇺🇿 uzbek} en {🇺🇸 english} ru {🇷🇺 russian} other {unknown}}"
+  }
+}

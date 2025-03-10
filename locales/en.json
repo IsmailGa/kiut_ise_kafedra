@@ -1,0 +1,19 @@
+{
+  "header": {
+    "all_directions": "All directions",
+    "department": "Department",
+    "about_us": "About us",
+    "teachers": "Teachers",
+    "directions": "Directions",
+    "bachelors": "ISE (Bachelor's)",
+    "masters": "AI (Master's)",
+    "news": "News",
+    "apply": "Apply",
+    "menu": "Menu"
+  },
+  
+  "LocaleSwitcher": {
+    "label": "Change Lanuage",
+    "locale": "{locale, select, uz {🇺🇿 uzbek} en {🇺🇸 english} ru {🇷🇺 russian} other {unknown}}"
+  }
+}
