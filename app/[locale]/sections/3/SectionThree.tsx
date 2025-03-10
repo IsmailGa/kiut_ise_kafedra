@@ -2,9 +2,12 @@
 import React from "react";
 import teacher_profile from "@/public/assets/teacher_profile.png";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/navigation";
+import { useTranslations } from "next-intl";
 
 const SectionThree = () => {
+  const t = useTranslations("main.sectionThree");
+
   return (
     <section className="flex flex-col w-full 2xl:mt-[120px] mt-[95px]" id="3">
       {/* WRAPPER */}
@@ -12,25 +15,22 @@ const SectionThree = () => {
         {/* FIRST COL */}
         <div className="w-full flex justify-between gap-[36px]">
           {/* FIRST ROW */}
-          <div className="flex flex-col gap-[25px]">
+          <div className="flex flex-col gap-[25px] flex-1">
             <h1 className="2xl:text-[56px] xl:text-[40px] lg:text-[32px] font-semibold leading-[120%]">
-              Учительский состав
+              {t("title")}
             </h1>
             <p className="2xl:max-w-[640px] xl:max-w-[580px] max-w-[480px] font-normal xl:text-[18px] text-[16px] text-[#666666] leading-[120%]">
-              Научный совет и преподаватели курса — выдающиеся российские
-              ученые, доктора и кандидаты наук известные во всем мире.
-              Практикующие специалисты превентивной, интегральной и
-              антивозрастной медицины.
+              {t("description")}
             </p>
             <Link
               href="/teachers"
               className="bg-primary text-center rounded-[15px] text-white py-[16px] px-[24px] self-start"
             >
-              Подробнее
+              {t("button")}
             </Link>
           </div>
           {/* SECOND ROW */}
-          <div className="flex flex-col gap-[25px] w-min">
+          <div className="flex flex-col gap-[25px] flex-1">
             <div className="relative flex items-center gap-[25px]">
               <div className="flex items-center">
                 <Image
@@ -59,8 +59,8 @@ const SectionThree = () => {
               </span>
             </div>
 
-            <p className="2xl:text-[32px] xl:text-[26px] text-[24px] font-semibold leading-[135%] max-w-[565px]">
-              высококвалифицированных менторы в сфере IT
+            <p className="2xl:text-[32px] xl:text-[26px] text-[24px] font-semibold leading-[135%] ">
+              {t("descriptionTwo")}
             </p>
           </div>
         </div>
