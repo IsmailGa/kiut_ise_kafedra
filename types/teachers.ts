@@ -40,12 +40,9 @@ export interface Translations {
 
 export interface Teacher {
   uuid: string;
-  full_name: string;
   email: string;
-  role: string;
   scopus_link: string;
   image: string;
-  biography: string;
   research_interests: ResearchInterest[];
   publications: Publication[];
   work_experiences: WorkExperience[];

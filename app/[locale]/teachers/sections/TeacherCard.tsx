@@ -1,22 +1,31 @@
 import { useState } from "react";
 import Image from "next/image";
 import teacher_img from "public/assets/teacher.png";
-import { Teacher } from "@/types/teachers";
+import { Teacher, Translations } from "@/types/teachers";
 import Link from "next/link";
+import { useLocale } from "next-intl";
 
 type Props = {
   teacher: Teacher;
 };
 
 const TeacherCard = ({ teacher }: Props) => {
+  const locale = useLocale();
+  const fullName =
+    teacher.translations[locale as keyof Translations]?.full_name;
+  const role = teacher.translations[locale as keyof Translations]?.role;
   const [imageError, setImageError] = useState(false);
 
   return (
     <div className="flex p-[25px] gap-[25px] rounded-[25px] bg-[#F4F4F4]/65 relative group">
       <div className="flex-1 aspect-square">
         <Image
-          src={imageError || !teacher.image ? teacher_img : `http://ai.kiut.uz/${teacher.image}`}
-          alt={teacher.full_name}
+          src={
+            imageError || !teacher.image
+              ? teacher_img
+              : `http://ai.kiut.uz/${teacher.image}`
+          }
+          alt={fullName}
           className="w-full h-full object-cover rounded-2xl"
           width={200}
           height={200}
@@ -28,10 +37,8 @@ const TeacherCard = ({ teacher }: Props) => {
         <div className="h-full flex flex-col justify-between gap-[16px]">
           <div className="flex flex-col gap-[16px]">
             <div className="flex-col gap-[8px] pb-[16px] border-b-[1px] border-[#CEDAE0]">
-              <h3 className="text-[24px] font-semibold">{teacher.full_name}</h3>
-              <h5 className="text-[16px] font-medium text-[#666666]">
-                {teacher.role}
-              </h5>
+              <h3 className="text-[24px] font-semibold">{fullName}</h3>
+              <h5 className="text-[16px] font-medium text-[#666666]">{role}</h5>
             </div>
             <div className="flex flex-col gap-[8px]">
               <div className="text-[18px] font-medium">{teacher.email}</div>
