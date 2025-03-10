@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
 import { CalendarIcon, ClockIcon } from "@/public/icons";
 import { NewsItem } from "@/types/new";
+import { Link } from "@/navigation";
 
 interface NewsCardProps {
   news: NewsItem;

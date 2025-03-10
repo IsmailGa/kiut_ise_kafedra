@@ -14,10 +14,12 @@ import {
   DisclosurePanel,
 } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
+import { Link, usePathname } from "@/navigation";
+import LocaleSwitcher from "./localeSwitcher";
 
 const Navbar = () => {
+  const t = useTranslations("header");
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -40,7 +42,7 @@ const Navbar = () => {
                 href="/courses"
                 className="flex items-center bg-white/20 backdrop-blur-lg text-white xl:h-[50px] lg:h-[48px] h-[44px] xl:px-[25px] lg:px-[23px] px-[20px] border-0 outline-0 rounded-[15px]"
               >
-                Все направления
+                {t("all_directions")}
               </Link>
             )}
           </div>
@@ -54,8 +56,10 @@ const Navbar = () => {
               <li>
                 <Menu as="div" className="relative inline-block text-left">
                   <MenuButton className="inline-flex w-full justify-center items-center">
-                    <span className={isTeachersOrHome ? "text-white" : "text-black"}>
-                      Кафедра
+                    <span
+                      className={isTeachersOrHome ? "text-white" : "text-black"}
+                    >
+                      {t("department")}
                     </span>
                     <ChevronDownIcon
                       aria-hidden="true"
@@ -74,7 +78,7 @@ const Navbar = () => {
                           href="#"
                           className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 data-[focus]:outline-none"
                         >
-                          О нас
+                          {t("about_us")}
                         </Link>
                       </MenuItem>
                       <MenuItem>
@@ -82,7 +86,7 @@ const Navbar = () => {
                           href="/teachers"
                           className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 data-[focus]:outline-none"
                         >
-                          Учительский состав
+                          {t("teachers")}
                         </Link>
                       </MenuItem>
                     </div>
@@ -92,8 +96,10 @@ const Navbar = () => {
               <li>
                 <Menu as="div" className="relative inline-block text-left">
                   <MenuButton className="inline-flex w-full justify-center items-center">
-                    <span className={isTeachersOrHome ? "text-white" : "text-black"}>
-                      Направления
+                    <span
+                      className={isTeachersOrHome ? "text-white" : "text-black"}
+                    >
+                      {t("directions")}
                     </span>
                     <ChevronDownIcon
                       aria-hidden="true"
@@ -112,7 +118,7 @@ const Navbar = () => {
                           href="/courses/bachelors"
                           className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 data-[focus]:outline-none"
                         >
-                          ISE (Бакалавриат)
+                          {t("bachelors")}
                         </Link>
                       </MenuItem>
                       <MenuItem>
@@ -120,7 +126,7 @@ const Navbar = () => {
                           href="/courses/masters"
                           className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 data-[focus]:outline-none"
                         >
-                          AI (Магистратура)
+                          {t("masters")}
                         </Link>
                       </MenuItem>
                     </div>
@@ -128,13 +134,17 @@ const Navbar = () => {
                 </Menu>
               </li>
               <li>
-                <Link href="/news" className={isTeachersOrHome ? "text-white" : "text-black"}>
-                  Новости
+                <Link
+                  href="/news"
+                  className={isTeachersOrHome ? "!text-white" : "!text-black"}
+                >
+                  {t("news")}
                 </Link>
               </li>
             </ul>
+            <LocaleSwitcher />
             <button className="text-center bg-primary text-white xl:h-[50px] lg:h-[48px] h-[44px] xl:px-[25px] lg:px-[23px] px-[20px] border-0 outline-0 rounded-[15px]">
-              Оставить заявку
+              {t("apply")}
             </button>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -158,7 +168,7 @@ const Navbar = () => {
               <div className="fixed top-0 right-0 px-[25px] max-w-[360px] w-full h-full bg-white">
                 <div className="flex justify-between items-center py-4 mb-[52px]">
                   <div className="text-[32px] text-primary font-medium">
-                    Меню
+                    {t("menu")}
                   </div>
                   <button
                     onClick={() => setIsMenuOpen(false)}
@@ -173,7 +183,9 @@ const Navbar = () => {
                     {({ open }) => (
                       <>
                         <DisclosureButton className="flex w-full justify-between items-center rounded-[15px] px-5 py-[10px] font-medium text-black">
-                          <div className="text-[24px] font-medium">Кафедра</div>
+                          <div className="text-[24px] font-medium">
+                            {t("department")}
+                          </div>
                           <ChevronDownIcon
                             className={`${
                               open ? "rotate-180 transform" : ""
@@ -185,13 +197,13 @@ const Navbar = () => {
                             href="/"
                             className="block px-4 py-2 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 data-[focus]:outline-none"
                           >
-                            О нас
+                            {t("about_us")}
                           </Link>
                           <Link
                             href="/teachers"
                             className="block px-4 py-2 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 data-[focus]:outline-none"
                           >
-                            Учительский состав
+                            {t("teachers")}
                           </Link>
                         </DisclosurePanel>
                       </>
@@ -202,7 +214,7 @@ const Navbar = () => {
                       <>
                         <DisclosureButton className="flex w-full justify-between items-center rounded-[15px] px-5 py-[10px] font-medium text-black">
                           <div className="text-[24px] font-medium">
-                            Направления
+                            {t("directions")}
                           </div>
                           <ChevronDownIcon
                             className={`${
@@ -215,13 +227,13 @@ const Navbar = () => {
                             href="/courses/bachelors"
                             className="block px-4 py-2 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 data-[focus]:outline-none"
                           >
-                            ISE (Бакалавриат)
+                            {t("bachelors")}
                           </Link>
                           <Link
                             href="/courses/masters"
                             className="block px-4 py-2 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 data-[focus]:outline-none"
                           >
-                            AI (Магистратура)
+                            {t("masters")}
                           </Link>
                         </DisclosurePanel>
                       </>
@@ -232,7 +244,7 @@ const Navbar = () => {
                       href="/news"
                       className="flex w-full justify-between items-center rounded-[15px] px-5 py-[10px] text-[24px] font-medium text-black"
                     >
-                      Новости
+                      {t("news")}
                     </Link>
                   </div>
                 </div>

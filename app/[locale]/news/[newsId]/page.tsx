@@ -3,7 +3,6 @@ import Container from "@/components/container";
 import Navbar from "@/components/navbar";
 import { BlueLArrowIcon, CalendarIcon, ClockIcon } from "@/public/icons";
 import Image from "next/image";
-import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { NewsItem } from "@/types/new";
 import japan_bg from "@/public/assets/section_six/japan_bg.jpg";
@@ -12,6 +11,7 @@ import api from "@/api/axios";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
+import { Link } from "@/navigation";
 
 const NewsInfo = ({ params }: { params: { newsId: string } }) => {
   const [news, setNews] = useState<NewsItem | null>(null);
