@@ -4,17 +4,20 @@ import icon_two from "@/public/assets/section_four/icon_two.png";
 import icon_three from "@/public/assets/section_four/icon_three.png";
 import icon_four from "@/public/assets/section_four/icon_four.png";
 import React from 'react';
+import { useTranslations } from 'next-intl';
 
 const SectionFour = () => {
+    const t  = useTranslations("main.sectionFour")
+
     return (
         <section className="w-full flex flex-col 2xl:gap-[65px] gap-[45px] 2xl:mt-[120px] mt-[95px]">
-            <h1 className="2xl:text-[56px] xl:text-[40px] lg:text-[32px] font-semibold">Мы предлагаем студентам</h1>
+            <h1 className="2xl:text-[56px] xl:text-[40px] lg:text-[32px] font-semibold">{t("title")}</h1>
             <div className="flex items-stretch gap-[30px] max-xl:flex-wrap">
                 {[
-                    { icon: icon_one, text: "Учебные программы обновляются с учётом результатов опроса студентов" },
-                    { icon: icon_two, text: "Куратор и наставник сопровождают студента на всех этапах обучения" },
-                    { icon: icon_three, text: "Мы предоставляем все условия для реализации собственного стартап-проекта" },
-                    { icon: icon_four, text: "Студенты могут стажироваться в различных IT-компаниях по всему миру" },
+                    { icon: icon_one, text: t("descriptionOne") },
+                    { icon: icon_two, text: t("descriptionTwo") },
+                    { icon: icon_three, text: t("descriptionThree") },
+                    { icon: icon_four, text: t("descriptionFour") },
                 ].map((item, index) => (
                     <div
                         key={index}

@@ -17,7 +17,7 @@
       "description": "We train IT specialists and help people master technology and digital skills."
     },
     "sectionTwo": {
-      "title" : "About the department",
+      "title": "About the department",
       "subSectionOne": {
         "descriptionOne": "Information Systems Engineering is an interdisciplinary field that combines disciplines such as mathematics, business, and computer science. Information systems engineers design, develop, test, and maintain systems used primarily for data. Information systems can take various forms, including geographic information systems, meteorological image processing, or communication networks.",
         "descriptionTwo": "Information systems engineers work in both the public and private sectors, including defense agencies, medical enterprises, or financial corporations."
@@ -36,10 +36,23 @@
         "title": "Creative approach to studying IT innovations",
         "description": "The modern program and methodology of teaching information technology focuses on the effective mastering of materials by students"
       }
+    },
+    "sectionThree": {
+      "title": "Teachers",
+      "description": "The scientific council and course teachers are outstanding Russian scientists, doctors, and candidates of sciences known worldwide. Practicing specialists in preventive, integrative, and anti-aging medicine.",
+      "descriptionTwo": "Highly qualified mentors in the field of IT",
+      "button": "More"
+    },
+    "sectionFour": {
+      "title": "We offer students",
+      "descriptionOne": "Curricula are updated based on student surveys",
+      "descriptionTwo": "A mentor accompanies the student at all stages of learning",
+      "descriptionThree": "We provide all conditions for implementing your own startup project",
+      "descriptionFour": "Students can intern at various IT companies around the world"
     }
   },
   "LocaleSwitcher": {
     "label": "Change Language",
-    "locale": "{locale, select, uz {🇺🇿 uzbek} en {🇺🇸 english} ru {🇷🇺 russian} other {unknown}}"
+    "locale": "{locale, select, uz {🇺🇿 Uzbek} en {🇺🇸 English} ru {🇷🇺 Russian} other {unknown}}"
   }
 }

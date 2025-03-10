@@ -3,43 +3,56 @@
     "all_directions": "Barcha yo'nalishlar",
     "department": "Kafedra",
     "about_us": "Biz haqimizda",
-    "teachers": "O'qituvchilar tarkibi",
+    "teachers": "O'qituvchilar",
     "directions": "Yo'nalishlar",
-    "bachelors": "ISE (Bakalavriat)",
-    "masters": "AI (Magistratura)",
+    "bachelors": "AXB (Bakalavr)",
+    "masters": "Sun'iy intellekt (Magistratura)",
     "news": "Yangiliklar",
-    "apply": "Ariza qoldiring",
+    "apply": "Ariza qoldirish",
     "menu": "Menyu"
   },
   "main": {
     "sectionOne": {
       "title": "Axborot tizimlari muhandisligi",
-      "description": "Biz IT mutaxassislarini tayyorlaymiz va odamlarga texnologiyalar va raqamli ko'nikmalarni egallashga yordam beramiz."
+      "description": "Biz IT mutaxassislarini tayyorlaymiz va odamlarga texnologiya va raqamli ko'nikmalarni o'zlashtirishga yordam beramiz."
     },
     "sectionTwo": {
       "title": "Kafedra haqida",
       "subSectionOne": {
-        "descriptionOne": "Axborot tizimlari muhandisligi - bu matematika, biznes va kompyuter fanlari kabi fanlarni birlashtiruvchi fanlararo soha. Axborot tizimlari muhandislari asosan ma'lumotlarni qayta ishlash uchun ishlatiladigan tizimlarni loyihalashtiradi, ishlab chiqadi, sinovdan o'tkazadi va qo'llab-quvvatlaydi. Axborot tizimlari turli shakllarda bo'lishi mumkin, jumladan, geografik axborot tizimlari, meteorologik tasvirlarni qayta ishlash yoki aloqa tarmoqlari.",
-        "descriptionTwo": "Axborot tizimlari muhandislari davlat va xususiy sektorlarda, jumladan, mudofaa agentliklari, tibbiyot korxonalari yoki moliyaviy korporatsiyalarda ishlaydi."
+        "descriptionOne": "Axborot tizimlari muhandisligi matematika, biznes va kompyuter fanlari kabi fanlarni birlashtiradigan interfaol soha hisoblanadi. Axborot tizimlari muhandislari asosan ma'lumotlar uchun ishlatiladigan tizimlarni loyihalash, ishlab chiqish, sinovdan o'tkazish va saqlash bilan shug'ullanadi. Axborot tizimlari turli shakllarda bo'lishi mumkin, masalan geografik axborot tizimlari, meteorologik tasvirlarni qayta ishlash yoki aloqa tarmoqlari.",
+        "descriptionTwo": "Axborot tizimlari muhandislari davlat va xususiy sektorlarda, jumladan mudofaa agentliklari, tibbiyot korxonalari yoki moliya korporatsiyalarida ishlaydi."
       },
       "subSectionTwo": {
         "cardOne": {
-          "title": "yo'nalishlar",
-          "description": "Axborot tizimlari muhandisligi fakulteti 6 ta axborot texnologiyalari yo'nalishini birlashtiradi"
+          "title": "sohalar",
+          "description": "AXB fakulteti axborot texnologiyalarining 6 ta sohasini birlashtiradi"
         },
         "cardTwo": {
           "title": "yillar",
-          "description": "Axborot tizimlari muhandisligi fakulteti 8 ta axborot texnologiyalari yo'nalishini birlashtiradi"
+          "description": "AXB fakulteti axborot texnologiyalarining 8 ta sohasini birlashtiradi"
         }
       },
       "subSectionThree": {
-        "title": "IT innovatsiyalarini o'rganishga ijodiy yondashuv",
-        "description": "Axborot texnologiyalarini o'qitishning zamonaviy dasturi va metodikasi talabalar tomonidan materiallarni samarali o'zlashtirishga qaratilgan"
+        "title": "IT innovatsiyalarni o'rganishning ijodiy yondashi",
+        "description": "Zamonaviy dastur va axborot texnologiyalarini o'qitish metodologiyasi talabalarning materiallarni samarali o'zlashtirishiga e'tibor qaratilgan"
       }
+    },
+    "sectionThree": {
+      "title": "O'qituvchilar",
+      "description": "Ilmiy kengash va kurs o'qituvchilari butun dunyo bo'ylab tan olingan ajoyib rus olimlari, doktorlar va fan nomzodlardir. Oldini olish, integrativ va qarishga qarshi tibbiyot sohasidagi amaliyotchi mutaxassislar.",
+      "descriptionTwo": "IT sohasida oliygina rivojlangan mentorlar",
+      "button": "Ko'proq"
+    },
+    "sectionFour": {
+      "title": "Biz talabalarga taklif qilamiz",
+      "descriptionOne": "O'quv dasturlari talabalardan olingan so'rovnomalar natijalariga ko'ra yangilanadi",
+      "descriptionTwo": "Kurator va mentor talabaning o'qish jarayonining barcha bosqichlarida hamkorlik qiladi",
+      "descriptionThree": "O'z startap loyihangizni amalga oshirish uchun barcha shart-sharoitlar yaratilgan",
+      "descriptionFour": "Talabalar dunyo bo'ylab turli IT kompaniyalarida amaliyot o'tish imkoniyatiga ega"
     }
   },
   "LocaleSwitcher": {
     "label": "Tilni o'zgartirish",
-    "locale": "{locale, select, uz {🇺🇿 uzbek} en {🇺🇸 english} ru {🇷🇺 russian} other {unknown}}"
+    "locale": "{locale, select, uz {🇺🇿 O'zbek} en {🇺🇸 Ingliz} ru {🇷🇺 Rus} other {noma'lum}}"
   }
 }
