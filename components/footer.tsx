@@ -2,112 +2,115 @@ import Image from "next/image";
 import logo from "@/public/assets/logo_blue_small.png";
 import React from "react";
 import Container from "./container";
-import Link from "next/link";
+import { Link } from "@/navigation";
 
 const Footer = () => {
-
   const firstRowLinks = [
     {
-      title: "Направления", links: [
+      title: "Направления",
+      links: [
         {
           label: "Кибербезопасность",
-          link: "/"
+          link: "/",
         },
         {
           label: "Веб Разработка",
-          link: "/"
+          link: "/",
         },
         {
           label: "ПО Разработка",
-          link: "/"
+          link: "/",
         },
         {
           label: "UI/UX Дизайн",
-          link: "/"
+          link: "/",
         },
-      ]
+      ],
     },
     {
-      title: "Кафедра", links: [
+      title: "Кафедра",
+      links: [
         {
           label: "О нас",
-          link: "/"
+          link: "/",
         },
         {
           label: "Учительский состав",
-          link: "/"
+          link: "/",
         },
         {
           label: "Что-то ещё",
-          link: "/"
+          link: "/",
         },
-      ]
+      ],
     },
     {
-      title: "Сообщество", links: [
+      title: "Сообщество",
+      links: [
         {
           label: "Новости",
-          link: "/"
+          link: "/",
         },
         {
           label: "Календарь ивентов",
-          link: "/"
+          link: "/",
         },
         {
           label: "Что-то ещё",
-          link: "/"
+          link: "/",
         },
-      ]
-    }
-  ]
+      ],
+    },
+  ];
 
   const secondRowLinks = [
     {
-      title: "Контакты", links: [
+      title: "Контакты",
+      links: [
         {
           label: "+998 78 129 40 40",
-          link: "/"
+          link: "/",
         },
         {
           label: "info@kiut.uz",
-          link: "/"
+          link: "/",
         },
         {
-          link: "/"
+          link: "/",
         },
-
-      ]
+      ],
     },
     {
-      title: "Адрес", links: [
+      title: "Адрес",
+      links: [
         {
           label: "Shota Rustaveli street, 156, 100121 Tashkent",
-          link: "/"
+          link: "/",
         },
         {
           label: "Посмотреть на карте",
-          link: "/"
+          link: "/",
         },
-      ]
+      ],
     },
     {
-      title: "Социальные сети", links: [
+      title: "Социальные сети",
+      links: [
         {
           label: "Facebook",
-          link: "/"
+          link: "/",
         },
         {
           label: "Telegram",
-          link: "/"
+          link: "/",
         },
         {
           label: "Instagram",
-          link: "/"
+          link: "/",
         },
-      ]
+      ],
     },
-
-  ]
+  ];
 
   return (
     <footer className="flex w-ful bg-[#F4F4F465] pt-[45px] mt-[120px]">
@@ -116,45 +119,72 @@ const Footer = () => {
           <div className="w-full flex justify-between border-b border-[#66666640] pb-[45px]">
             {/* LOGO */}
             <div className="flex flex-col gap-[32px]">
-              <Image src={logo} alt="logo" />
-              <h1 className="font-normal text-[18px] leading-[26px] max-w-[min-content]">Международный университет Кимё</h1>
+              <Link href="/">
+                <Image src={logo} alt="logo" />
+              </Link>
+              <h1 className="font-normal text-[18px] leading-[26px] max-w-[min-content]">
+                Международный университет Кимё
+              </h1>
             </div>
             {/* FIRST ROW */}
-            {
-              firstRowLinks.map((item, index) => (
-                <div className="flex flex-col gap-[32px]" key={"card " + index}>
-                  <h1 className="text-black text-[20px] leading-[32px] font-semibold">{item.title}</h1>
-                  <ul className="flex flex-col gap-[16px]">
-                    {item.links.map((link, index) => (
-                      <li className="text-[#666666] leading-[24px] font-normal text-[16px]" key={index}>
-                        <Link href={link.link}>{link.label}</Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))
-            }
+            {firstRowLinks.map((item, index) => (
+              <div className="flex flex-col gap-[32px]" key={"card " + index}>
+                <h1 className="text-black text-[20px] leading-[32px] font-semibold">
+                  {item.title}
+                </h1>
+                <ul className="flex flex-col gap-[16px]">
+                  {item.links.map((link, index) => (
+                    <li
+                      className="text-[#666666] leading-[24px] font-normal text-[16px]"
+                      key={index}
+                    >
+                      <Link href={link.link}>{link.label}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
           {/* SECOND ROW */}
           <div className="w-full justify-between flex border-b border-[#66666640] py-[45px]">
-            {
-              secondRowLinks.map((item, index) => (
-                <div className="flex flex-col gap-[32px]" key={"card " + index}>
-                  <h1 className="text-black text-[20px] leading-[32px] font-semibold">{item.title}</h1>
-                  <ul className="flex flex-col gap-[16px]">
-                    {item.links.map((link, index) => (
-                      <li className="text-[#666666] leading-[24px] font-normal text-[16px]" key={index}>
-                        <Link href={link.link}>{link.label}</Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))
-            }
+            {secondRowLinks.map((item, index) => (
+              <div className="flex flex-col gap-[32px]" key={"card " + index}>
+                <h1 className="text-black text-[20px] leading-[32px] font-semibold">
+                  {item.title}
+                </h1>
+                <ul className="flex flex-col gap-[16px]">
+                  {item.links.map((link, index) => (
+                    <li
+                      className="text-[#666666] leading-[24px] font-normal text-[16px]"
+                      key={index}
+                    >
+                      <Link href={link.link}>{link.label}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
           <div className="w-full flex justify-between py-[20px]">
-            <h1 className="text-[16px] font-normal leading-[135%]">© 2024 ise.kiut.uz, Все права защищены</h1>
-            <p className="text-[16px] font-medium leading-[135%]">Разработано <Link href="https://t.me/vortexstudio_official" className="text-blue-600">Vortex Agency</Link> и <Link href="https:\\t.me/farrukh_yuldoshev" className="text-blue-600">Farrukh Yuldoshev</Link> </p>
+            <h1 className="text-[16px] font-normal leading-[135%]">
+              © 2024 ise.kiut.uz, Все права защищены
+            </h1>
+            <p className="text-[16px] font-medium leading-[135%]">
+              Разработано{" "}
+              <Link
+                href="https://t.me/vortexstudio_official"
+                className="text-blue-600"
+              >
+                Vortex Agency
+              </Link>{" "}
+              и{" "}
+              <Link
+                href="https:\\t.me/farrukh_yuldoshev"
+                className="text-blue-600"
+              >
+                Farrukh Yuldoshev
+              </Link>{" "}
+            </p>
           </div>
         </div>
       </Container>

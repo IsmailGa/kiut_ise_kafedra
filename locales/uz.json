@@ -11,6 +11,33 @@
     "apply": "Ariza qoldiring",
     "menu": "Menyu"
   },
+  "main": {
+    "sectionOne": {
+      "title": "Axborot tizimlari muhandisligi",
+      "description": "Biz IT mutaxassislarini tayyorlaymiz va odamlarga texnologiyalar va raqamli ko'nikmalarni egallashga yordam beramiz."
+    },
+    "sectionTwo": {
+      "title": "Kafedra haqida",
+      "subSectionOne": {
+        "descriptionOne": "Axborot tizimlari muhandisligi - bu matematika, biznes va kompyuter fanlari kabi fanlarni birlashtiruvchi fanlararo soha. Axborot tizimlari muhandislari asosan ma'lumotlarni qayta ishlash uchun ishlatiladigan tizimlarni loyihalashtiradi, ishlab chiqadi, sinovdan o'tkazadi va qo'llab-quvvatlaydi. Axborot tizimlari turli shakllarda bo'lishi mumkin, jumladan, geografik axborot tizimlari, meteorologik tasvirlarni qayta ishlash yoki aloqa tarmoqlari.",
+        "descriptionTwo": "Axborot tizimlari muhandislari davlat va xususiy sektorlarda, jumladan, mudofaa agentliklari, tibbiyot korxonalari yoki moliyaviy korporatsiyalarda ishlaydi."
+      },
+      "subSectionTwo": {
+        "cardOne": {
+          "title": "yo'nalishlar",
+          "description": "Axborot tizimlari muhandisligi fakulteti 6 ta axborot texnologiyalari yo'nalishini birlashtiradi"
+        },
+        "cardTwo": {
+          "title": "yillar",
+          "description": "Axborot tizimlari muhandisligi fakulteti 8 ta axborot texnologiyalari yo'nalishini birlashtiradi"
+        }
+      },
+      "subSectionThree": {
+        "title": "IT innovatsiyalarini o'rganishga ijodiy yondashuv",
+        "description": "Axborot texnologiyalarini o'qitishning zamonaviy dasturi va metodikasi talabalar tomonidan materiallarni samarali o'zlashtirishga qaratilgan"
+      }
+    }
+  },
   "LocaleSwitcher": {
     "label": "Tilni o'zgartirish",
     "locale": "{locale, select, uz {🇺🇿 uzbek} en {🇺🇸 english} ru {🇷🇺 russian} other {unknown}}"

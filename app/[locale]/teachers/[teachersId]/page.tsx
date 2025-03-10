@@ -5,9 +5,10 @@ import React, { useEffect } from "react";
 import Container from "@/components/container";
 import Link from "next/link";
 import History from "./sections/history";
-import { Teacher } from "@/types/teachers";
+import { Teacher, Translations } from "@/types/teachers";
 import api from "@/api/axios";
 import Navbar from "@/components/navbar";
+import { useLocale } from "next-intl";
 
 const SkeletonLoader = () => (
   <div className="flex flex-col flex-1 animate-pulse">
@@ -22,8 +23,14 @@ const SkeletonLoader = () => (
 );
 
 const Teachers = ({ params }: { params: { teachersId: string } }) => {
+  const locale = useLocale();
+
   const [data, setData] = React.useState<Teacher | null>(null);
   const [error, setError] = React.useState(null);
+
+  const fullName = data?.translations[locale as keyof Translations]?.full_name;
+  const role = data?.translations[locale as keyof Translations]?.role;
+  const biography = data?.translations[locale as keyof Translations]?.biography;
 
   useEffect(() => {
     api
@@ -75,7 +82,7 @@ const Teachers = ({ params }: { params: { teachersId: string } }) => {
                   ? profileTeacher
                   : `http://ai.kiut.uz/${data?.image}`
               }
-              alt={data?.full_name || "Teacher profile"} // Added alt text
+              alt={fullName || "Teacher profile"} // Added alt text
               width={350}
               height={380}
               loading="lazy"
@@ -87,11 +94,11 @@ const Teachers = ({ params }: { params: { teachersId: string } }) => {
               <div className="flex flex-col flex-1">
                 {/* NAME */}
                 <h1 className="font-semibold leading-[55px] text-[40px]">
-                  {data?.full_name}
+                  {fullName}
                 </h1>
                 {/* Job Title */}
                 <h2 className="text-[#666666] text-[18px] leading-[25px] font-normal">
-                  {data?.role}
+                  {role}
                 </h2>
                 <span className="w-full h-[1px] bg-[#CEDAE0] mt-[16px] mb-[10px]"></span>
                 {/* Bio */}
@@ -100,7 +107,7 @@ const Teachers = ({ params }: { params: { teachersId: string } }) => {
                     Biography
                   </h1>
                   <p className="text-[#666666] text-[16px] font-normal leading-[165%]">
-                    {data.biography ? data?.biography : "Нет данных"}
+                    {biography ? biography : "Нет данных"}
                   </p>
                 </div>
               </div>
