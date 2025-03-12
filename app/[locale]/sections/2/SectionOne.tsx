@@ -12,13 +12,13 @@ const SectionTwo = () => {
 
   return (
     <section className="mt-[65px] flex flex-col w-full gap-[25px]">
-      <h1 className="2xl:text-[56px] xl:text-[40px] lg:text-[32px] font-semibold">
+      <h1 className="2xl:text-[56px] xl:text-[40px] lg:text-[32px] text-[40px] font-semibold">
         {t("title")}
       </h1>
       <div className="flex flex-col w-full 2xl:gap-[60px] gap-[52px]">
         {/* SECTION 1 */}
         <div className="flex justify-between md:flex-row flex-col items-start gap-[48px]">
-          <p className="text-[#666666] xl:text-[18px] text-[16px] leading-[145%] 2xl:max-w-[640px] xl:max-w-[520px] lg:max-w-[420px] font-normal">
+          <p className="text-[#666666] xl:text-[18px] md:text-[16px] text-[20px] leading-[145%] 2xl:max-w-[640px] xl:max-w-[520px] lg:max-w-[420px] font-normal">
             {subSecOne("descriptionOne")}
           </p>
           <p className="p-[25px] rounded-[25px] bg-[#F7F7F7] text-[16px] leading-[145%] 2xl:max-w-[500px] xl:max-w-[450px] lg:max-w-[360px] font-semibold">

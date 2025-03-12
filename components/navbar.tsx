@@ -40,7 +40,7 @@ const Navbar = () => {
             {isTeachersOrHome && (
               <Link
                 href="/courses"
-                className="flex items-center bg-white/20 backdrop-blur-lg text-white xl:h-[50px] lg:h-[48px] h-[44px] xl:px-[25px] lg:px-[23px] px-[20px] border-0 outline-0 rounded-[15px]"
+                className="md:flex items-center hidden bg-white/20 backdrop-blur-lg text-white xl:h-[50px] lg:h-[48px] h-[44px] xl:px-[25px] lg:px-[23px] px-[20px] border-0 outline-0 rounded-[15px]"
               >
                 {t("all_directions")}
               </Link>
@@ -252,7 +252,9 @@ const Navbar = () => {
                       {t("news")}
                     </Link>
                   </div>
-                  <LocaleSwitcher />
+                  <div className="px-5">
+                    <LocaleSwitcher />
+                  </div>
                 </div>
               </div>
             </div>
