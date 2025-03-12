@@ -5,13 +5,15 @@ import { ArrowRight, ArrowLeft, CalendarIcon, ClockIcon } from "@/public/icons";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
+import { useTranslations } from "next-intl";
 
 const SectionSix = () => {
+  const t = useTranslations("header");
   return (
     <section className="w-full flex flex-col 2xl:mt-[120px] mt-[95px] 2xl:gap-[65px] gap-[45px]">
       <div className="flex justify-between items-center w-full">
         <h1 className="2xl:text-[56px] xl:text-[40px] lg:text-[32px] font-semibold">
-          Новости
+          {t("news")}
         </h1>
         <div className="flex items-center gap-[10px]">
           <button className="flex w-[45px] h-[45px] items-center justify-center bg-[#F4F4F4] rounded-[10px] swiper-button-prev">

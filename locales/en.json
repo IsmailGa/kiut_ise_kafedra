@@ -49,6 +49,22 @@
       "descriptionTwo": "A mentor accompanies the student at all stages of learning",
       "descriptionThree": "We provide all conditions for implementing your own startup project",
       "descriptionFour": "Students can intern at various IT companies around the world"
+    },
+    "sectionFive": {
+      "title": "Our Directions",
+      "description": "The universal training program covers many areas of information technology, allowing students to choose their niche",
+      "cards": {
+        "one": {
+          "title": "ISE (Bachelor's)",
+          "descriptionOne": "Bachelor's",
+          "descriptionTwo": "4 years"
+        },
+        "two": {
+          "title": "AI (Master's)",
+          "descriptionOne": "Master's",
+          "descriptionTwo": "2 years"
+        }
+      }
     }
   },
   "LocaleSwitcher": {

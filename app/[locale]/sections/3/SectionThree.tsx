@@ -11,9 +11,9 @@ const SectionThree = () => {
   return (
     <section className="flex flex-col w-full 2xl:mt-[120px] mt-[95px]" id="3">
       {/* WRAPPER */}
-      <div className="flex justify-between">
+      <div className="flex">
         {/* FIRST COL */}
-        <div className="w-full flex justify-between gap-[36px]">
+        <div className="w-full flex flex-col md:flex-row justify-between gap-[36px]">
           {/* FIRST ROW */}
           <div className="flex flex-col gap-[25px] flex-1">
             <h1 className="2xl:text-[56px] xl:text-[40px] lg:text-[32px] font-semibold leading-[120%]">
