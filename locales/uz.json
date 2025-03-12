@@ -5,8 +5,8 @@
     "about_us": "Biz haqimizda",
     "teachers": "O'qituvchilar",
     "directions": "Yo'nalishlar",
-    "bachelors": "AXB (Bakalavr)",
-    "masters": "Sun'iy intellekt (Magistratura)",
+    "bachelors": "ISE (Bakalavr)",
+    "masters": "AI (Magistratura)",
     "news": "Yangiliklar",
     "apply": "Ariza qoldirish",
     "menu": "Menyu"
@@ -67,8 +67,40 @@
       }
     }
   },
+  "teachers": {
+    "banner": {
+      "title": "Bizning kafedra xodimlari",
+      "description": "Bizning mutaxassislarimiz o'z ishini yaxshi biladigan tajribali professionallar. Ularning bilim va ko'nikmalari har qanday murakkablikdagi vazifalarni hal qilishga yordam beradi va rivojlanishga intilishi jamoamizni eng yaxshilaridan biriga aylantiradi."
+    }
+  },
+  "news": {
+    "newsBanner": {
+      "title": "Yangiliklar",
+      "description": "Innovatsiyalar va texnologiyalar dunyosidagi eng so'nggi yangiliklar",
+      "search_placeholder": "Qidiruv"
+    }
+  },
   "LocaleSwitcher": {
     "label": "Tilni o'zgartirish",
     "locale": "{locale, select, uz {🇺🇿 Uzbek} en {🇺🇸 English} ru {🇷🇺 Russian} other {unknown}}"
+  },
+  "footer": {
+    "directions": "Yo'nalishlar",
+    "bachelors": "AXB (Bakalavr)",
+    "masters": "Sun'iy intellekt (Magistratura)",
+    "department": "Kafedra",
+    "about_us": "Biz haqimizda",
+    "teachers": "O'qituvchilar",
+    "community": "Hamjamiyat",
+    "news": "Yangiliklar",
+    "events_calendar": "Tadbirlar taqvimi",
+    "contacts": "Aloqalar",
+    "address": "Manzil",
+    "view_on_map": "Xaritada ko'rish",
+    "social_media": "Ijtimoiy tarmoqlar",
+    "university_name": "Kimyo Xalqaro Universiteti",
+    "all_rights_reserved": "Barcha huquqlar himoyalangan",
+    "developed_by": "Ishlab chiqilgan",
+    "and": "va"
   }
 }
