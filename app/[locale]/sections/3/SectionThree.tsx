@@ -59,7 +59,7 @@ const SectionThree = () => {
               </span>
             </div>
 
-            <p className="2xl:text-[32px] xl:text-[26px] text-[24px] font-semibold leading-[135%] ">
+            <p className="2xl:text-[32px] xl:text-[26px] text-[24px] font-semibold leading-[135%] max-w-[455px] w-full">
               {t("descriptionTwo")}
             </p>
           </div>

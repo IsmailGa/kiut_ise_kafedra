@@ -67,8 +67,40 @@
       }
     }
   },
+  "teachers": {
+    "banner": {
+      "title": "Our Department Staff",
+      "description": "Our specialists are experienced professionals who know their job well. Their knowledge and skills help solve tasks of any complexity, and their drive for development makes our team one of the best."
+    }
+  },
+  "news": {
+    "newsBanner": {
+      "title": "News",
+      "description": "The latest in the world of innovation and technology",
+      "search_placeholder": "Search"
+    }
+  },
   "LocaleSwitcher": {
     "label": "Change Language",
     "locale": "{locale, select, uz {🇺🇿 Uzbek} en {🇺🇸 English} ru {🇷🇺 Russian} other {unknown}}"
+  },
+  "footer": {
+    "directions": "Directions",
+    "bachelors": "ISE (Bachelor's)",
+    "masters": "AI (Master's)",
+    "department": "Department",
+    "about_us": "About us",
+    "teachers": "Teachers",
+    "community": "Community",
+    "news": "News",
+    "events_calendar": "Events Calendar",
+    "contacts": "Contacts",
+    "address": "Address",
+    "view_on_map": "View on map",
+    "social_media": "Social Media",
+    "university_name": "International University of Kimyo",
+    "all_rights_reserved": "All rights reserved",
+    "developed_by": "Developed by",
+    "and": "and"
   }
 }

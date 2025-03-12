@@ -3,13 +3,14 @@ import Image from "next/image";
 import teacher_img from "public/assets/teacher.png";
 import { Teacher, Translations } from "@/types/teachers";
 import Link from "next/link";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 type Props = {
   teacher: Teacher;
 };
 
 const TeacherCard = ({ teacher }: Props) => {
+  const t = useTranslations("main.sectionThree");
   const locale = useLocale();
   const fullName =
     teacher.translations[locale as keyof Translations]?.full_name;
@@ -51,7 +52,8 @@ const TeacherCard = ({ teacher }: Props) => {
             href={`teachers/${teacher.uuid}`}
             className="flex items-center justify-between transition-all duration-200 ease-in-out h-[48px] hover:bg-primary hover:border-none rounded-[15px] hover:text-white border-[1px] border-[#CEDAE0] hover:fill-black text-[18px] text-black px-[24px]"
           >
-            <span>Подробнее</span>
+            {/* Button is from locales/[lang].json in main.sectionThree*/}
+            <span>{t("button")}</span>
             <svg
               width="19"
               height="15"
