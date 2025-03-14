@@ -22,7 +22,6 @@ export default function LocaleSwitcherSelect({
       router.replace(
         {
           pathname,
-          
         },
         { locale: nextLocale }
       );
@@ -30,13 +29,13 @@ export default function LocaleSwitcherSelect({
   }
 
   return (
-    <label className={"text-gray-400 "}>
+    <label className={""}>
       <p className="sr-only">{label}</p>
       <select
         id="locale-switcher"
         defaultValue={defaultValue}
         onChange={onSelectChange}
-        className="border rounded p-2"
+        className="focus:border-primary border-[2px] outline-none rounded px-2 py-3 bg-transparent text-gray-400"
       >
         {children}
       </select>

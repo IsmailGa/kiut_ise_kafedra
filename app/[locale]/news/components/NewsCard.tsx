@@ -2,13 +2,15 @@ import Image from "next/image";
 import { CalendarIcon, ClockIcon } from "@/public/icons";
 import { NewsItem } from "@/types/new";
 import { Link } from "@/navigation";
+import { useLocale } from "next-intl";
 
 interface NewsCardProps {
   news: NewsItem;
 }
 
 export function NewsCard({ news }: NewsCardProps) {
-  const { title, description } = news.translations.uz;
+  const locale = useLocale();
+  const { title, description } = news.translations[locale];
   const formattedDate = new Date(news.created_at).toLocaleDateString("ru-RU", {
     day: "2-digit",
     month: "short",

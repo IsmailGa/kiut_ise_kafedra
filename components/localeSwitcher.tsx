@@ -10,7 +10,7 @@ const LocaleSwitcher = () => {
     <div>
       <LocaleSwitcherSelect defaultValue={locale} label={t("label")}>
         {locales.map((cur) => (
-          <option key={cur} value={cur}>
+          <option key={cur} value={cur} className="text-primary">
             {t("locale", { locale: cur })}
           </option>
         ))}

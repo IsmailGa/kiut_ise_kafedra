@@ -15,7 +15,7 @@ const SectionFive = () => {
       id="courses"
     >
       <div className="w-full flex flex-col gap-[25px] 2xl:mb-[65px] mb-[45px]">
-        <h1 className="2xl:text-[56px] xl:text-[40px] lg:text-[32px] font-semibold leading-[100%]">
+        <h1 className="2xl:text-[56px] xl:text-[40px] lg:text-[32px] text-[22px] font-semibold leading-[100%]">
           {t('title')}
         </h1>
         <p className="2xl:max-w-[667px] max-w-[580px] xl:text-[18px] text-[16px] text-[#666666] font-normal leading-[120%]">

@@ -113,13 +113,13 @@ const Footer = () => {
             {/* FIRST ROW */}
             {firstRowLinks.map((item, index) => (
               <div className="flex flex-col gap-[32px]" key={"card " + index}>
-                <h1 className="text-black md:text-[20px] text-[28px] leading-[32px] font-semibold">
+                <h1 className="text-black md:text-[20px] text-[24px] leading-[32px] font-semibold">
                   {item.title}
                 </h1>
                 <ul className="flex flex-col gap-[16px]">
                   {item.links.map((link, index) => (
                     <li
-                      className="text-[#666666] leading-[24px] font-normal md:text-[16px] text-[24px]"
+                      className="text-[#666666] leading-[24px] font-normal md:text-[16px] text-[18px]"
                       key={index}
                     >
                       <Link href={link.link}>{link.label}</Link>
@@ -133,13 +133,13 @@ const Footer = () => {
           <div className="w-full justify-between grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-[32px] border-b border-[#66666640] py-[45px]">
             {secondRowLinks.map((item, index) => (
               <div className="flex-col flex gap-[32px]" key={"card " + index}>
-                <h1 className="text-black md:text-[20px] text-[28px] leading-[32px] font-semibold">
+                <h1 className="text-black md:text-[20px] text-[24px] leading-[32px] font-semibold">
                   {item.title}
                 </h1>
                 <ul className="flex flex-col gap-[16px]">
                   {item.links.map((link, index) => (
                     <li
-                      className="text-[#666666] leading-[24px] font-normal md:text-[16px] text-[24px]"
+                      className="text-[#666666] leading-[24px] font-normal md:text-[16px] text-[18px]"
                       key={index}
                     >
                       <Link href={link.link}>{link.label}</Link>
@@ -150,10 +150,10 @@ const Footer = () => {
             ))}
           </div>
           <div className="w-full flex sm:flex-row flex-col sm:gap-0 gap-[20px] justify-between py-[20px]">
-            <h1 className="md:text-[16px] text-[24px] font-normal leading-[135%]">
+            <h1 className="md:text-[16px] text-[20px] font-normal leading-[135%]">
               © 2024 ise.kiut.uz, {t("all_rights_reserved")}
             </h1>
-            <p className="md:text-[16px] text-[24px] font-medium leading-[135%]">
+            <p className="md:text-[16px] text-[20px] font-medium leading-[135%]">
               {t("developed_by")}{" "}
               <Link
                 href="https://t.me/vortexstudio_official"
