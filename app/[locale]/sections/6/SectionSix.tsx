@@ -12,7 +12,7 @@ const SectionSix = () => {
   return (
     <section className="w-full flex flex-col 2xl:mt-[120px] mt-[95px] 2xl:gap-[65px] gap-[45px]">
       <div className="flex justify-between items-center w-full">
-        <h1 className="2xl:text-[56px] xl:text-[40px] lg:text-[32px] font-semibold">
+        <h1 className="2xl:text-[56px] xl:text-[40px] lg:text-[32px] text-[22px] font-semibold">
           {t("news")}
         </h1>
         <div className="flex items-center gap-[10px]">

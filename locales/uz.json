@@ -49,24 +49,25 @@
       "descriptionTwo": "Kurator va mentor talabaning o'qish jarayonining barcha bosqichlarida hamkorlik qiladi",
       "descriptionThree": "O'z startap loyihangizni amalga oshirish uchun barcha shart-sharoitlar yaratilgan",
       "descriptionFour": "Talabalar dunyo bo'ylab turli IT kompaniyalarida amaliyot o'tish imkoniyatiga ega"
-    }
-  },
-  "sectionFive": {
-    "title": "Bizning yo'nalishlarimiz",
-    "description": "Universial o'quv dasturi axborot texnologiyalarining ko'plab sohalarini qamrab oladi, bu esa talabalar uchun o'z yo'nalishini tanlash imkonini beradi",
-    "cards": {
-      "one": {
-        "title": "ISE (Bakalavr)",
-        "descriptionOne": "Bakalavr",
-        "descriptionTwo": "4 yil"
-      },
-      "two": {
-        "title": "AI (Magistratura)",
-        "descriptionOne": "Magistratura",
-        "descriptionTwo": "2 yil"
+    },
+    "sectionFive": {
+      "title": "Bizning yo'nalishlarimiz",
+      "description": "Universial o'quv dasturi axborot texnologiyalarining ko'plab sohalarini qamrab oladi, bu esa talabalar uchun o'z yo'nalishini tanlash imkonini beradi",
+      "cards": {
+        "one": {
+          "title": "ISE (Bakalavr)",
+          "descriptionOne": "Bakalavr",
+          "descriptionTwo": "4 yil"
+        },
+        "two": {
+          "title": "AI (Magistratura)",
+          "descriptionOne": "Magistratura",
+          "descriptionTwo": "2 yil"
+        }
       }
     }
   },
+
   "teachers": {
     "banner": {
       "title": "Bizning kafedra xodimlari",

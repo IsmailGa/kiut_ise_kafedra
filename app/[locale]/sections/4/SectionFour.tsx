@@ -11,7 +11,7 @@ const SectionFour = () => {
 
     return (
         <section className="w-full flex flex-col 2xl:gap-[65px] gap-[45px] 2xl:mt-[120px] mt-[95px]">
-            <h1 className="2xl:text-[56px] xl:text-[40px] lg:text-[32px] font-semibold">{t("title")}</h1>
+            <h1 className="2xl:text-[56px] xl:text-[40px] lg:text-[32px] text-[22px] font-semibold">{t("title")}</h1>
             <div className="flex items-stretch gap-[30px] max-xl:flex-wrap">
                 {[
                     { icon: icon_one, text: t("descriptionOne") },

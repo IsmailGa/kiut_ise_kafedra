@@ -12,13 +12,13 @@ const SectionTwo = () => {
 
   return (
     <section className="mt-[65px] flex flex-col w-full gap-[25px]">
-      <h1 className="2xl:text-[56px] xl:text-[40px] lg:text-[32px] text-[40px] font-semibold">
+      <h1 className="2xl:text-[56px] xl:text-[40px] lg:text-[32px] text-[32px] font-semibold">
         {t("title")}
       </h1>
       <div className="flex flex-col w-full 2xl:gap-[60px] gap-[52px]">
         {/* SECTION 1 */}
         <div className="flex justify-between md:flex-row flex-col items-start gap-[48px]">
-          <p className="text-[#666666] xl:text-[18px] md:text-[16px] text-[20px] leading-[145%] 2xl:max-w-[640px] xl:max-w-[520px] lg:max-w-[420px] font-normal">
+          <p className="text-[#666666] xl:text-[18px] md:text-[16px] text-[17px] leading-[145%] 2xl:max-w-[640px] xl:max-w-[520px] lg:max-w-[420px] font-normal">
             {subSecOne("descriptionOne")}
           </p>
           <p className="p-[25px] rounded-[25px] bg-[#F7F7F7] text-[16px] leading-[145%] 2xl:max-w-[500px] xl:max-w-[450px] lg:max-w-[360px] font-semibold">
@@ -67,11 +67,11 @@ const SectionTwo = () => {
       <div className="bg-laptop relative after:right-0 overflow-hidden bg-primary 2xl:rounded-[40px] xl:rounded-[32px] rounded-[30px] xl:p-[40px] p-[32px] w-full flex 2xl:mt-[100px] xl:mt-[80px] mt-[65px]">
         <div className="flex flex-col 2xl:gap-[40px] xl:gap-[36px] gap-[18px] 2xl:max-w-[750px] xl:max-w-[580px] max-w-[450px]">
           <h1
-            className={`2xl:text-[56px] xl:text-[42px] text-[32px] font-medium ${inter.className} text-white leading-[120%]`}
+            className={`2xl:text-[56px] xl:text-[42px] sm:text-[32px] text-[25px] font-medium ${inter.className} text-white sm:leading-[120%] leading-[100%]`}
           >
             {subSecThree("title")}
           </h1>
-          <p className="xl:text-[18px] text-[16px] font-normal ${inter.className} text-white leading-[120%]">
+          <p className="xl:text-[18px] sm:text-[16px] text-[17px] font-normal ${inter.className} text-white sm:leading-[120%] leading-[110%]">
             {subSecThree("description")}
           </p>
         </div>
