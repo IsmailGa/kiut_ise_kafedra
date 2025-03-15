@@ -83,7 +83,7 @@
   },
   "LocaleSwitcher": {
     "label": "Tilni o'zgartirish",
-    "locale": "{locale, select, uz {🇺🇿 Uzbek} en {🇺🇸 English} ru {🇷🇺 Russian} other {unknown}}"
+    "locale": "{locale, select, uz {🇺🇿 O'zb} en {🇺🇸 Eng} ru {🇷🇺 Рус} other {unknown}}"
   },
   "footer": {
     "directions": "Yo'nalishlar",

@@ -6,15 +6,18 @@ type Props = {
   children: ReactNode;
   defaultValue: string;
   label: string;
+  isOpen: boolean;
 };
 
 export default function LocaleSwitcherSelect({
   children,
   defaultValue,
   label,
+  isOpen,
 }: Props) {
   const router = useRouter();
   const pathname = usePathname();
+  const isTeachersOrHome = pathname === "/teachers" || pathname === "/";
 
   function onSelectChange(event: React.ChangeEvent<HTMLSelectElement>) {
     const nextLocale = event.target.value;
@@ -29,13 +32,19 @@ export default function LocaleSwitcherSelect({
   }
 
   return (
-    <label className={""}>
+    <label
+      className={`${
+        isTeachersOrHome
+          ? `${isOpen ? "text-black" : "text-white"}`
+          : `${isOpen ? "text-white" : "text-black"}`
+      }`}
+    >
       <p className="sr-only">{label}</p>
       <select
         id="locale-switcher"
         defaultValue={defaultValue}
         onChange={onSelectChange}
-        className="focus:border-primary border-[2px] outline-none rounded px-2 py-3 bg-transparent text-gray-400"
+        className="outline-none border-none bg-transparent rounded px-[5px]"
       >
         {children}
       </select>

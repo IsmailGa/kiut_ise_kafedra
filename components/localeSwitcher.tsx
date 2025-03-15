@@ -3,14 +3,14 @@ import React from "react";
 import LocaleSwitcherSelect from "./localeSwitcherSelect";
 import { locales } from "@/config";
 
-const LocaleSwitcher = () => {
+const LocaleSwitcher = ({isOpen} : {isOpen: boolean}) => {
   const t = useTranslations("LocaleSwitcher");
   const locale = useLocale();
   return (
     <div>
-      <LocaleSwitcherSelect defaultValue={locale} label={t("label")}>
+      <LocaleSwitcherSelect defaultValue={locale} label={t("label")} isOpen={isOpen}>
         {locales.map((cur) => (
-          <option key={cur} value={cur} className="text-primary">
+          <option key={cur} value={cur} className="text-black">
             {t("locale", { locale: cur })}
           </option>
         ))}

@@ -141,13 +141,15 @@ const Navbar = () => {
                   {t("news")}
                 </Link>
               </li>
+              <span className="block h w-[2px] bg-white"></span>
+              <li className="xl:flex hidden">
+                <LocaleSwitcher isOpen={isMenuOpen} />
+              </li>
             </ul>
-            <div className="xl:flex hidden">
-              <LocaleSwitcher />
-            </div>
+
             <Link
               href="https://admission.kiut.uz/"
-              className="text-center flex items-center justify-center bg-primary text-white xl:h-[50px] lg:h-[48px] h-[44px] xl:px-[25px] lg:px-[23px] px-[20px] border-0 outline-0 rounded-[15px]"
+              className="text-center flex items-center justify-center bg-primary text-white xl:h-[50px] lg:h-[48px] h-[44px] xl:px-[25px] lg:px-[23px] md:px-[20px] px-[10px] border-0 outline-0 rounded-[15px]"
             >
               {t("apply")}
             </Link>
@@ -253,7 +255,7 @@ const Navbar = () => {
                     </Link>
                   </div>
                   <div className="px-5">
-                    <LocaleSwitcher />
+                    <LocaleSwitcher isOpen={isMenuOpen} />
                   </div>
                 </div>
               </div>

@@ -81,8 +81,8 @@
     }
   },
   "LocaleSwitcher": {
-    "label": "Change Language",
-    "locale": "{locale, select, uz {🇺🇿 Uzbek} en {🇺🇸 English} ru {🇷🇺 Russian} other {unknown}}"
+    "label": "Change Language", 
+    "locale": "{locale, select, uz {🇺🇿 O'zb} en {🇺🇸 Eng} ru {🇷🇺 Рус} other {unknown}}"
   },
   "footer": {
     "directions": "Directions",
