@@ -24,7 +24,7 @@ const SectionThree = () => {
             </p>
             <Link
               href="/teachers"
-              className="bg-primary text-center rounded-[15px] text-white py-[16px] px-[24px] self-start"
+              className="bg-primary text-center rounded-[15px] text-white py-[16px] px-[24px] sm:self-start max-md:w-full"
             >
               {t("button")}
             </Link>

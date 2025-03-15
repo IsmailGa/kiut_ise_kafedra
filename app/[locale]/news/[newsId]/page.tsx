@@ -5,23 +5,34 @@ import { BlueLArrowIcon, CalendarIcon, ClockIcon } from "@/public/icons";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { NewsItem } from "@/types/new";
-import japan_bg from "@/public/assets/section_six/japan_bg.jpg";
 import { ArrowRight, ArrowLeft } from "@/public/icons";
 import api from "@/api/axios";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import { Link } from "@/navigation";
+import Loader from "@/components/loader";
+import { useLocale } from "next-intl";
 
 const NewsInfo = ({ params }: { params: { newsId: string } }) => {
   const [news, setNews] = useState<NewsItem | null>(null);
+  const [allNews, setAllNews] = useState<NewsItem[]>([]);
   const [loading, setLoading] = useState(true);
+  const locale = useLocale();
 
   useEffect(() => {
     const fetchNews = async () => {
       try {
         const response = await api.get(`/announcements/${params.newsId}`);
+        const secondRes = await api.get(`/announcements`);
+
+        // Фильтрация текущей новости
+        const filteredNews = secondRes.data.filter(
+          (item: NewsItem) => item.uuid !== params.newsId
+        );
+
         setNews(response.data);
+        setAllNews(filteredNews);
       } catch (error) {
         console.error("Failed to fetch news:", error);
       } finally {
@@ -66,7 +77,7 @@ const NewsInfo = ({ params }: { params: { newsId: string } }) => {
               </Link>
               <div className="flex flex-col gap-[18px]">
                 <h1 className="text-[40px] font-semibold leading-[135%]">
-                  {news.translations.uz.title}
+                  {news.translations[locale].title}
                 </h1>
                 <div className="flex gap-[15px]">
                   <div className="flex gap-[5px] items-center">
@@ -90,7 +101,7 @@ const NewsInfo = ({ params }: { params: { newsId: string } }) => {
                 height={500}
               />
               <p className="text-[18px] font-normal leading-[145%]">
-                {news.translations.uz.description}
+                {news.translations[locale].description}
               </p>
             </div>
             {/* LINKS */}
@@ -121,11 +132,11 @@ const NewsInfo = ({ params }: { params: { newsId: string } }) => {
                 </div>
               </div>
               {/* Swiper Slider */}
-              <div className="flex">
+              <div className="w-full">
                 <Swiper
                   modules={[Navigation, Pagination]}
                   spaceBetween={30}
-                  slidesPerView={"auto"}
+                  slidesPerView="auto"
                   navigation={{
                     nextEl: ".swiper-button-next",
                     prevEl: ".swiper-button-prev",
@@ -135,48 +146,78 @@ const NewsInfo = ({ params }: { params: { newsId: string } }) => {
                     type: "fraction",
                   }}
                   breakpoints={{
-                    320: { slidesPerView: 1 },
-                    1024: { slidesPerView: 2 },
-                    1280: { slidesPerView: 3 },
+                    320: { slidesPerView: 1, spaceBetween: 20 },
+                    768: { slidesPerView: 2, spaceBetween: 30 },
+                    1024: { slidesPerView: 3, spaceBetween: 40 },
                   }}
                 >
-                  {[...Array(5)].map((_, index) => (
-                    <SwiperSlide key={index}>
-                      <div className="rounded-[25px] overflow-hidden flex flex-col w-full max-w-[430px] h-[432px]">
-                        <div className="relative w-full h-[200px]">
-                          <Image
-                            src={japan_bg}
-                            alt="news img"
-                            fill
-                            className="object-cover rounded-t-[25px]"
-                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                          />
-                        </div>
-                        <div className="flex flex-col border-[1px] border-[#CEDAE0] p-[25px] rounded-b-[25px] gap-[20px]">
-                          <div className="flex flex-col gap-[15px]">
-                            <h1 className="font-semibold 2xl:text-[25px] text-[20px] max-w-[366px] leading-[135%] line-clamp-2">
-                              KIUT и Япония: новые горизонты сотрудничества{" "}
-                            </h1>
-                            <p className="font-normal text-[16px] leading-[135%] line-clamp-3">
-                              Укрепляется сотрудничество Ташкентского
-                              международного университета Кимё с японскими
-                              компаниями
-                            </p>
-                          </div>
-                          <div className="flex gap-[15px]">
-                            <div className="flex gap-[5px] items-center">
-                              <CalendarIcon />
-                              <span>12 окт 2024</span>
+                  {loading
+                    ? [...Array(3)].map((_, i) => (
+                        <SwiperSlide key={i}>
+                          <Loader />
+                        </SwiperSlide>
+                      ))
+                    : allNews.map((item) => {
+                        const date = new Date(item.created_at);
+
+                        return (
+                          <SwiperSlide key={item.uuid}>
+                            <div className="rounded-[25px] overflow-hidden flex flex-col w-full max-w-[430px] h-[432px]">
+                              <div className="relative w-full h-[200px]">
+                                <Link href={`/news/${item.uuid}`}>
+                                  <Image
+                                    src={
+                                      item.images[0]
+                                        ? `http://ai.kiut.uz/${item.images[0]}`
+                                        : "/placeholder.jpg"
+                                    }
+                                    alt={
+                                      item.translations[locale]?.title ||
+                                      "News image"
+                                    }
+                                    fill
+                                    className="object-cover rounded-t-[25px]"
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                  />
+                                </Link>
+                              </div>
+                              <div className="flex flex-col border-[1px] border-[#CEDAE0] p-[25px] rounded-b-[25px] gap-[20px]">
+                                <div className="flex flex-col gap-[15px]">
+                                  <h3 className="font-semibold 2xl:text-[25px] text-[20px] leading-[135%] line-clamp-2">
+                                    {item.translations[locale]?.title ||
+                                      "No title"}
+                                  </h3>
+                                  <p className="font-normal text-[16px] leading-[135%] line-clamp-3">
+                                    {item.translations[locale]?.description ||
+                                      "No description"}
+                                  </p>
+                                </div>
+                                <div className="flex gap-[15px]">
+                                  <div className="flex gap-[5px] items-center">
+                                    <CalendarIcon />
+                                    <span>
+                                      {date.toLocaleDateString("ru-RU", {
+                                        day: "2-digit",
+                                        month: "short",
+                                        year: "numeric",
+                                      })}
+                                    </span>
+                                  </div>
+                                  <div className="flex gap-[5px] items-center">
+                                    <ClockIcon />
+                                    <span>
+                                      {date.toLocaleTimeString("ru-RU", {
+                                        hour: "2-digit",
+                                        minute: "2-digit",
+                                      })}
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
-                            <div className="flex gap-[5px] items-center">
-                              <ClockIcon />
-                              <span>19:25</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </SwiperSlide>
-                  ))}
+                          </SwiperSlide>
+                        );
+                      })}
                 </Swiper>
               </div>
             </section>

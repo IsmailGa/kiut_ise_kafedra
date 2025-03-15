@@ -4,7 +4,7 @@ export type Translation = {
 };
 
 export type Translations = {
-  [key: string]: Translation; // To support other languages dynamically
+  [key: string]: Translation;
 };
 
 export type NewsItem = {

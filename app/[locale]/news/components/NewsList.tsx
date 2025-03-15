@@ -3,6 +3,7 @@ import api from "@/api/axios";
 import React, { useEffect, useState } from "react";
 import { NewsCard, NewsSkeletonLoader } from "./NewsCard";
 import { NewsItem } from "@/types/new";
+import { useLocale } from "next-intl";
 
 interface NewsListProps {
   searchQuery: string;
@@ -11,6 +12,7 @@ interface NewsListProps {
 const NewsList = ({ searchQuery }: NewsListProps) => {
   const [news, setNews] = useState<NewsItem[]>([]);
   const [loading, setLoading] = useState(true);
+  const locale = useLocale()
 
   useEffect(() => {
     const fetchNews = async () => {
@@ -29,8 +31,8 @@ const NewsList = ({ searchQuery }: NewsListProps) => {
 
   const filteredNews = news.filter(
     (item) =>
-      item.translations.uz.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      item.translations.uz.description.toLowerCase().includes(searchQuery.toLowerCase())
+      item.translations[locale].title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      item.translations[locale].description.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   return (
