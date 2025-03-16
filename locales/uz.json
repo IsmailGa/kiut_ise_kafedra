@@ -67,11 +67,97 @@
       }
     }
   },
-
+  "courses": {
+    "title": "Bizning yo'nalishlarimiz",
+    "description": "Universial o'quv dasturi axborot texnologiyalarining ko'plab sohalarini qamrab oladi, bu esa talabalar uchun o'z yo'nalishini tanlash imkonini beradi",
+    "cards": {
+      "one": {
+        "title": "ISE (Bakalavr)",
+        "descriptionOne": "Bakalavr",
+        "descriptionTwo": "4 yil"
+      },
+      "two": {
+        "title": "AI (Magistratura)",
+        "descriptionOne": "Magistratura",
+        "descriptionTwo": "2 yil"
+      }
+    },
+    "bachelors": {
+      "sectionOne": {
+        "programTitle": "Bakalavr dasturi",
+        "studyMode": "Kunduzgi | Sirtqi",
+        "duration": "4 yil",
+        "title": "Axborot tizimlarini loyihalash",
+        "description": "IT sohasining ko'plab yo'nalishlarini qamrab oluvchi universal dastur"
+      },
+      "sectionTwo": {
+        "title": "Yo'nalish haqida",
+        "description": "Axborot tizimlari muhandisligi - bu matematika, biznes va kompyuter fanlari kabi fanlarni birlashtiruvchi fanlararo soha. Axborot tizimlari muhandislari asosan ma'lumotlar uchun ishlatiladigan tizimlarni loyihalashtiradi, ishlab chiqadi, sinovdan o'tkazadi va qo'llab-quvvatlaydi. Axborot tizimlari turli shakllarda bo'lishi mumkin, jumladan, geografik axborot tizimlari, meteorologik tasvirlarni qayta ishlash yoki aloqa tarmoqlari. Axborot tizimlari muhandislari davlat va xususiy sektorlarda, jumladan, mudofaa agentliklari, tibbiyot korxonalari yoki moliyaviy korporatsiyalarda ishlaydi."
+      },
+      "sectionThree": {
+        "title": "Kimlar uchun mos?",
+        "cards": {
+          "one": {
+            "title": "Murakkab IT tizimlar qanday ishlashini tushunishni istaganlar uchun",
+            "description": "Siz arxitekturani loyihalash, tahlil qilish va optimallashtirish tamoyillarini o'rganasiz. Bu ishonchli tizimlarni ishlab chiqishga, ularning tuzilishini tushunishga va turli komponentlarning o'zaro ta'sirini anglashga yordam beradi."
+          },
+          "two": {
+            "title": "Ishonchli yechimlar yaratishni istaganlar uchun",
+            "description": "Siz katta hajmdagi ma'lumotlarni qayta ishlaydigan, yuklamalarga bardosh beradigan va o'zgarishlarga moslashadigan tizimlarni ishlab chiqishni o'rganasiz. Bu murakkab va barqaror IT infratuzilmasini yaratishda foydali bo'ladi."
+          },
+          "three": {
+            "title": "Raqobatbardoshlikni oshirishni istaganlar uchun",
+            "description": "Axborot tizimlarini loyihalash bo'yicha bilimlar turli sohalarda talabga ega. Bu ko'proq martaba imkoniyatlarini ochadi, yuqori lavozimlarga da'vo qilishga imkon beradi va rivojlanish yo'nalishlarini kengaytiradi."
+          }
+        }
+      },
+      "sectionFour": {
+        "title": "Nimani o'rganasiz?",
+        "cards": {
+          "one": {
+            "title": "Dasturlash va matematikaning asoslari",
+            "description": "Boshlanishida siz asosiy dasturlash tillarini, algoritmlar asoslarini, hisoblash matematikasi va fizikani o'rganasiz. Bu keyingi o'qish uchun mustahkam asos yaratadi."
+          },
+          "two": {
+            "title": "Tizimlarni ishlab chiqish va boshqarish",
+            "description": "Ma'lumotlar bazalari, kompyuter tarmoqlari, obyektga yo'naltirilgan dasturlash va veb-texnologiyalar bilan ishlashni o'rganasiz. Axborot tizimlarini loyihalash va qo'llab-quvvatlashni o'zlashtirasiz."
+          },
+          "three": {
+            "title": "Ma'lumotlarni tahlil qilish va mashinani o'rganish",
+            "description": "Data Science, tizimlarni modellashtirish, kiberxavfsizlik va sun'iy intellekt bilan ishlashni o'rganasiz. Bu aqlli va xavfsiz yechimlarni yaratishga yordam beradi."
+          },
+          "four": {
+            "title": "Loyihalarni boshqarish va amaliy rivojlanish",
+            "description": "IT loyihalarini boshqarish, dasturiy ta'minotni sinovdan o'tkazish va IT sohasidagi huquqiy tartibga solish bo'yicha ko'nikmalarni olasiz. Amaliyotlar va yakuniy loyiha davomida bilimlaringizni mustahkamlaysiz."
+          }
+        }
+      },
+      "sectionSix": {
+        "title": "Dastur",
+        "semester": "{semester}-semestr",
+        "section": "Bo'lim {chunkIndex} ({count} fanlar)"
+      },
+      "sectionSeven": {
+        "title": "Dastur tuzilishi"
+      }
+    }
+  },
   "teachers": {
     "banner": {
       "title": "Bizning kafedra xodimlari",
-      "description": "Bizning mutaxassislarimiz o'z ishini yaxshi biladigan tajribali professionallar. Ularning bilim va ko'nikmalari har qanday murakkablikdagi vazifalarni hal qilishga yordam beradi va rivojlanishga intilishi jamoamizni eng yaxshilaridan biriga aylantiradi."
+      "description": "Bizning mutaxassislarimiz o'z ishini yaxshi biladigan tajribali professionallar. Ularning bilim va ko'nikmalari har qanday murakkablikdagi vazifalarni hal qilishga yordam beradi va rivojlanishga intilishi jamoamizni eng yaxshilaridan biriga aylantiradi.",
+      "button": "Batafsil"
+    },
+    "biography": "Biografiya",
+    "history": {
+      "title": "Tarix",
+      "links": {
+        "education": "Ta'lim",
+        "work_experience": "Ish tajribasi",
+        "research_interests": "Ilmiy qiziqishlar",
+        "publications": "Nashrlar"
+      },
+      "no_data": "Ma'lumot mavjud emas"
     }
   },
   "news": {

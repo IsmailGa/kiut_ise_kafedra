@@ -67,10 +67,97 @@
       }
     }
   },
+  "courses": {
+    "title": "Our Directions",
+    "description": "The universal training program covers many areas of information technology, allowing students to choose their niche",
+    "cards": {
+      "one": {
+        "title": "ISE (Bachelor's)",
+        "descriptionOne": "Bachelor's",
+        "descriptionTwo": "4 years"
+      },
+      "two": {
+        "title": "AI (Master's)",
+        "descriptionOne": "Master's",
+        "descriptionTwo": "2 years"
+      }
+    },
+    "bachelors": {
+      "sectionOne": {
+        "programTitle": "Bachelor's Program",
+        "studyMode": "Full-time | Part-time",
+        "duration": "4 years",
+        "title": "Information Systems Design",
+        "description": "A universal program covering many areas of IT"
+      },
+      "sectionTwo": {
+        "title": "About the Direction",
+        "description": "Information Systems Engineering is an interdisciplinary field that combines disciplines such as mathematics, business, and computer science. Information systems engineers design, develop, test, and maintain systems used primarily for data. Information systems can take various forms, including geographic information systems, meteorological image processing, or communication networks. Information systems engineers work in both the public and private sectors, including defense agencies, medical enterprises, or financial corporations."
+      },
+      "sectionThree": {
+        "title": "Who is it for?",
+        "cards": {
+          "one": {
+            "title": "For those who want to understand how complex IT systems work",
+            "description": "You will learn the principles of designing, analyzing, and optimizing architecture. This will help you develop reliable systems, understand their structure, and comprehend the interaction of various components."
+          },
+          "two": {
+            "title": "For those who want to create reliable solutions",
+            "description": "You will learn to develop systems that process large amounts of data, withstand loads, and adapt to changes. This will be useful for creating complex and resilient IT infrastructures."
+          },
+          "three": {
+            "title": "For those who want to enhance competitiveness",
+            "description": "Knowledge in designing information systems is in demand across various fields. It will open up more career opportunities, allow you to apply for high-level positions, and broaden your development options."
+          }
+        }
+      },
+      "sectionFour": {
+        "title": "What will you learn?",
+        "cards": {
+          "one": {
+            "title": "Basics of programming and mathematics",
+            "description": "At the start, you will master key programming languages, the basics of algorithms, computational mathematics, and physics. This will create a solid foundation for further learning."
+          },
+          "two": {
+            "title": "System development and administration",
+            "description": "You will study databases, computer networks, object-oriented programming, and working with web technologies. You will master the design and support of information systems."
+          },
+          "three": {
+            "title": "Data analysis and machine learning",
+            "description": "You will learn to work with Data Science, system modeling, cybersecurity, and artificial intelligence. This will help create intelligent and secure solutions."
+          },
+          "four": {
+            "title": "Project management and practical development",
+            "description": "You will gain skills in IT project management, software testing, and legal regulation in IT. During internships and the final project, you will consolidate your knowledge in practice."
+          }
+        }
+      },
+      "sectionSix": {
+        "title": "Program",
+        "semester": "{semester} semester",
+        "section": "Section {chunkIndex} ({count} subjects)"
+      },
+      "sectionSeven": {
+        "title": "Structure of program:"
+      }
+    }
+  },
   "teachers": {
     "banner": {
       "title": "Our Department Staff",
-      "description": "Our specialists are experienced professionals who know their job well. Their knowledge and skills help solve tasks of any complexity, and their drive for development makes our team one of the best."
+      "description": "Our specialists are experienced professionals who know their job well. Their knowledge and skills help solve tasks of any complexity, and their drive for development makes our team one of the best.",
+      "button": "More"
+    },
+    "biography": "Biography",
+    "history": {
+      "title": "History",
+      "links": {
+        "education": "Education",
+        "work_experience": "Work Experience",
+        "research_interests": "Research Interests",
+        "publications": "Publications"
+      },
+      "no_data": "No data available"
     }
   },
   "news": {
@@ -81,7 +168,7 @@
     }
   },
   "LocaleSwitcher": {
-    "label": "Change Language", 
+    "label": "Change Language",
     "locale": "{locale, select, uz {🇺🇿 O'zb} en {🇺🇸 Eng} ru {🇷🇺 Рус} other {unknown}}"
   },
   "footer": {

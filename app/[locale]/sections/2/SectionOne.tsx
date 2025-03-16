@@ -1,6 +1,8 @@
 import React from "react";
 import { Inter } from "next/font/google";
 import { useTranslations } from "next-intl";
+import laptopImage from "@/public/assets/ellipse_laptop.png";
+import Image from "next/image";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,7 +13,7 @@ const SectionTwo = () => {
   const subSecThree = useTranslations("main.sectionTwo.subSectionThree");
 
   return (
-    <section className="mt-[65px] flex flex-col w-full gap-[25px]">
+    <section className="mt-[65px] flex flex-col w-full gap-[25px]" id="2">
       <h1 className="2xl:text-[56px] xl:text-[40px] lg:text-[32px] text-[32px] font-semibold">
         {t("title")}
       </h1>
@@ -65,13 +67,15 @@ const SectionTwo = () => {
       </div>
       {/* SECTION 3 */}
       <div className="bg-laptop relative after:right-0 overflow-hidden bg-primary 2xl:rounded-[40px] xl:rounded-[32px] rounded-[30px] xl:p-[40px] p-[32px] w-full flex 2xl:mt-[100px] xl:mt-[80px] mt-[65px]">
-        <div className="flex flex-col 2xl:gap-[40px] xl:gap-[36px] gap-[18px] 2xl:max-w-[750px] xl:max-w-[580px] max-w-[450px]">
+        <div className="flex flex-col 2xl:gap-[40px] xl:gap-[36px] gap-[18px] 2xl:max-w-[750px] xl:max-w-[580px] max-w-[450px] flex-1">
           <h1
             className={`2xl:text-[56px] xl:text-[42px] sm:text-[32px] text-[25px] font-medium ${inter.className} text-white sm:leading-[120%] leading-[100%]`}
           >
             {subSecThree("title")}
           </h1>
-          <p className="xl:text-[18px] sm:text-[16px] text-[17px] font-normal ${inter.className} text-white sm:leading-[120%] leading-[110%]">
+          <p
+            className={`xl:text-[18px] sm:text-[16px] text-[17px] font-normal ${inter.className} text-white sm:leading-[120%] leading-[110%]`}
+          >
             {subSecThree("description")}
           </p>
         </div>

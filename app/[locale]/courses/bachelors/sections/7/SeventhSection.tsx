@@ -2,14 +2,17 @@ import React from "react";
 import Image from "next/image";
 import img from "@/public/assets/courses/structure_of_program.png";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 const SeventhSection = () => {
+  const t = useTranslations("courses.bachelors.sectionSeven");
   return (
     <section className="flex flex-col w-full mt-[120px] gap-[32px]">
-      <h1 className="text-[56px] leading-[140%] font-semibold">
-        Структура программы:
-      </h1>
-      <Link href="bachelors/structure-program" className="relative cursor-pointer ">
+      <h1 className="text-[56px] leading-[140%] font-semibold">{t("title")}</h1>
+      <Link
+        href="bachelors/structure-program"
+        className="relative cursor-pointer "
+      >
         <div className="absolute top-[30px] right-[30px] bg-[#66666645] backdrop-blur-lg p-[15px] rounded-[18px] z-[1]">
           <svg
             width="36"
