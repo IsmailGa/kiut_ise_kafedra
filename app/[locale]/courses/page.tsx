@@ -9,7 +9,7 @@ import Navbar from "@/components/navbar";
 import { useTranslations } from "next-intl";
 
 const Courses = () => {
-  const t = useTranslations("main.sectionFive");
+  const t = useTranslations("courses");
 
   return (
     <>

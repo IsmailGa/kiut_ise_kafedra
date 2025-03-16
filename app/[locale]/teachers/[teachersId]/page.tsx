@@ -8,7 +8,7 @@ import History from "./sections/history";
 import { Teacher, Translations } from "@/types/teachers";
 import api from "@/api/axios";
 import Navbar from "@/components/navbar";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 const SkeletonLoader = () => (
   <div className="flex flex-col flex-1 animate-pulse">
@@ -24,6 +24,7 @@ const SkeletonLoader = () => (
 
 const Teachers = ({ params }: { params: { teachersId: string } }) => {
   const locale = useLocale();
+  const t = useTranslations("teachers");
 
   const [data, setData] = React.useState<Teacher | null>(null);
   const [error, setError] = React.useState(null);
@@ -104,7 +105,7 @@ const Teachers = ({ params }: { params: { teachersId: string } }) => {
                 {/* Bio */}
                 <div className="flex flex-col gap-[8px]">
                   <h1 className="text-black text-[20px] leading-[27px] font-medium">
-                    Biography
+                  {t("biography")}
                   </h1>
                   <p className="text-[#666666] text-[16px] font-normal leading-[165%]">
                     {biography ? biography : "Нет данных"}

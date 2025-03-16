@@ -143,7 +143,7 @@ const Navbar = () => {
               </li>
               <span className="block h w-[2px] bg-white"></span>
               <li className="xl:flex hidden">
-                <LocaleSwitcher isOpen={isMenuOpen} />
+                <LocaleSwitcher />
               </li>
             </ul>
 
@@ -255,7 +255,7 @@ const Navbar = () => {
                     </Link>
                   </div>
                   <div className="px-5">
-                    <LocaleSwitcher isOpen={isMenuOpen} />
+                    <LocaleSwitcher />
                   </div>
                 </div>
               </div>
