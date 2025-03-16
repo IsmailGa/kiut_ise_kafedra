@@ -9,7 +9,7 @@ const StructurePage = () => {
   const router = useRouter();
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className=" bg-gray-50">
       {/* Responsive Header */}
       <div className="p-4 sticky top-0 bg-white shadow-sm z-[9999]">
         <button
@@ -54,7 +54,7 @@ const StructurePage = () => {
                   ↻
                 </button>
               </div>
-              <div className="overflow-hidden w-full">
+              <div className="overflow-hidden">
                 <TransformComponent
                   wrapperStyle={{
                     width: "100%",
@@ -66,7 +66,7 @@ const StructurePage = () => {
                     src={img}
                     alt="Program Structure"
                     placeholder="blur"
-                    className="w-full h-auto rounded-lg shadow-lg "
+                    className="w-full  rounded-lg shadow-lg "
                     style={{ touchAction: "pan-x pan-y" }}
                   />
                 </TransformComponent>

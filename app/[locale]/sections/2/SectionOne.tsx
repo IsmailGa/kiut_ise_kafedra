@@ -1,8 +1,6 @@
 import React from "react";
 import { Inter } from "next/font/google";
 import { useTranslations } from "next-intl";
-import laptopImage from "@/public/assets/ellipse_laptop.png";
-import Image from "next/image";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -66,8 +64,8 @@ const SectionTwo = () => {
         </div>
       </div>
       {/* SECTION 3 */}
-      <div className="bg-laptop relative after:right-0 overflow-hidden bg-primary 2xl:rounded-[40px] xl:rounded-[32px] rounded-[30px] xl:p-[40px] p-[32px] w-full flex 2xl:mt-[100px] xl:mt-[80px] mt-[65px]">
-        <div className="flex flex-col 2xl:gap-[40px] xl:gap-[36px] gap-[18px] 2xl:max-w-[750px] xl:max-w-[580px] max-w-[450px] flex-1">
+      <div className="bg-laptop relative after:right-0 overflow-hidden bg-primary rounded-[40px] p-[40px] w-full flex flex-col 2xl:gap-[40px] gap-[36px] 2xl:mt-[100px] mt-[80px]">
+        <div className="flex flex-col 2xl:gap-[40px] xl:gap-[36px] gap-[18px] 2xl:max-w-[750px] xl:max-w-[580px] max-w-[450px]">
           <h1
             className={`2xl:text-[56px] xl:text-[42px] sm:text-[32px] text-[25px] font-medium ${inter.className} text-white sm:leading-[120%] leading-[100%]`}
           >

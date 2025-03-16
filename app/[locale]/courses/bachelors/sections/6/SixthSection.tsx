@@ -47,7 +47,7 @@ const SixthSection = () => {
           {t("title")}
         </h1>
         <div className="flex items-center gap-[18px]">
-          <div className="flex items-center gap-[18px]">
+          <div className="flex sm:items-center max-sm:flex-col gap-[18px]">
             {/* INFO ONE */}
             <div className="flex gap-[6px] bg-white rounded-[12px] py-[11px] px-[16px] font-semibold text-[16px] leading-[140%] text-[#292D32]">
               <svg

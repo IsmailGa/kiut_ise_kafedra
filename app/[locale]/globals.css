@@ -2,11 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
+.bg-laptop > * {
+    z-index: 10;
+}
+
 .bg-laptop::after {
-  background: url("/public/assets/ellipse_laptop.png");
-  background-repeat: no-repeat;
-  right: 0;
-  top: 0;
+  content: "";
   position: absolute;
-  z-index: 40;
+  /* Create perfect ellipse shape */
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 10%;
+  /* Maintain aspect ratio */
+  aspect-ratio: 1/1;
+  /* Size control */
+  width: 30vw; /* Adjust based on your layout needs */
+  max-width: 500px;
+  /* Image handling */
+  background: url("../../public/assets/ellipse_laptop.png") center/cover
+    no-repeat;
+  /* Positioning */
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  /* Overflow prevention */
+  overflow: hidden;
+}
+
+@media (max-width: 1024px) {
+  .bg-laptop::after {
+    content: "";
+    position: absolute;
+    /* Create perfect ellipse shape */
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 10%;
+    /* Maintain aspect ratio */
+    aspect-ratio: 1/1;
+    /* Size control */
+    width: 50vw; /* Adjust based on your layout needs */
+    max-width: 500px;
+    height: 100%;
+    /* Image handling */
+    background: url("../../public/assets/ellipse_laptop.png") center/cover
+      no-repeat;
+    /* Positioning */
+    right: 5%;
+    top: 50%;
+    z-index: 1;
+    transform: translateY(-50%);
+    /* Overflow prevention */
+    overflow: hidden;
+  }
 }
