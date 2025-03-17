@@ -5,7 +5,6 @@ import { locales, defaultLocale } from "./config";
 export default getRequestConfig(async ({ requestLocale }) => {
   const locale = await requestLocale;
 
-  // Если локаль отсутствует или не поддерживается, перенаправляем на главную страницу
   if (!locale || !locales.includes(locale as any)) {
     redirect(`/${defaultLocale}`);
   }
