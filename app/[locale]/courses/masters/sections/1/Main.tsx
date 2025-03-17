@@ -33,7 +33,7 @@ const MainSection = () => {
           </p>
         </div>
       </div>
-      <div className="md:max-w-[500px] sm:max-w-[400px] max-w-[350px] flex-1 z-[1]">
+      <div className="md:max-w-[500px] sm:max-w-[400px] max-w-[350px] aspect-square object-contain flex-1 z-[1]">
         <Image src={main} alt="main" />
       </div>
     </section>

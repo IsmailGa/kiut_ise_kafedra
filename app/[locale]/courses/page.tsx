@@ -15,7 +15,7 @@ const Courses = () => {
     <>
       <Navbar />
       <section
-        className="w-full flex flex-col 2xl:mt-[120px] mt-[95px]"
+        className="w-full flex flex-col 2xl:mt-[120px] mt-[95px] bg-black/10 py-[10px]"
         id="courses"
       >
         <Container>
