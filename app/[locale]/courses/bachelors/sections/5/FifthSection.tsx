@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/navigation";
 import React from "react";
 import teacher_icon from "@/public/assets/teacher_icon.jpeg";
 import { useTranslations } from "next-intl";

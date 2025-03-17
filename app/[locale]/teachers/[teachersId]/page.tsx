@@ -93,7 +93,7 @@ const Teachers = ({ params }: { params: { teachersId: string } }) => {
               width={350}
               height={370}
               loading="lazy"
-              className="max-w-[350px] shrink-0 aspect-[350/370] h-[100%] object-cover rounded-[20px] border border-solid"
+              className="max-w-[100%] max-h-[370px] shrink-0 aspect-[1/1] object-contain rounded-[20px] border border-solid"
               onError={() => setError(null)}
             />
             {/* RIGHT SIDE */}

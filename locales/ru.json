@@ -199,6 +199,9 @@
         "theoryHours": "123 часа теории",
         "practiceHours": "360 часов практики",
         "projects": "56 проектов"
+      },
+      "sectionSeven": {
+        "title": "Структура программы:"
       }
     }
   },

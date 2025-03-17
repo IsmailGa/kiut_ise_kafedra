@@ -194,6 +194,14 @@
           }
         }
       },
+      "sectionSix": {
+        "title": "Program",
+        "theoryHours": "123 hours of theory",
+        "practiceHours": "360 hours of practice",
+        "projects": "56 projects",
+        "semester": "{semester} semester",
+        "section": "Section {chunkIndex} ({count} subjects)"
+      },
       "sectionSeven": {
         "title": "Structure of program:",
         "imageAlt": "Structure of the program"
