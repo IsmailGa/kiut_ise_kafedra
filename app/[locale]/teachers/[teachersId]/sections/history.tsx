@@ -1,9 +1,25 @@
 import React, { useState, useEffect } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import { Education, Publication, ResearchInterest, Teacher, WorkExperience } from "@/types/teachers";
+import {
+  Education,
+  Publication,
+  ResearchInterest,
+  Teacher,
+  WorkExperience,
+} from "@/types/teachers";
 
-const links = ["education", "work_experience", "research_interests", "publications"];
-const dataKeys: (keyof Teacher)[] = ["educations", "work_experiences", "research_interests", "publications"];
+const links = [
+  "education",
+  "work_experience",
+  "research_interests",
+  "publications",
+];
+const dataKeys: (keyof Teacher)[] = [
+  "educations",
+  "work_experiences",
+  "research_interests",
+  "publications",
+];
 
 type Props = {
   data: Teacher | null;
@@ -22,7 +38,7 @@ const formatDate = (dateString: string | undefined, locale: string): string => {
 
   const options: Intl.DateTimeFormatOptions = {
     year: "numeric",
-    month: "long"
+    month: "long",
   };
 
   return date.toLocaleDateString(locale, options);
@@ -44,33 +60,85 @@ const SkeletonLoader = () => (
 
 const History = ({ data }: Props) => {
   const [isActive, setIsActive] = useState(0);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const locale = useLocale();
   const t = useTranslations("teachers.history");
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  const handleItemClick = (index: number) => {
+    setIsActive(index);
+    setIsDropdownOpen(false);
+  };
 
   useEffect(() => {
     if (data) setLoading(false);
   }, [data]);
 
-  const content: ContentItem[] = (data?.[dataKeys[isActive]] as ContentItem[]) || [];
+  const content: ContentItem[] =
+    (data?.[dataKeys[isActive]] as ContentItem[]) || [];
 
   return (
     <div className="flex flex-col mt-14">
       <h1 className="text-black font-semibold text-5xl leading-[76px]">
         {t("title")}
       </h1>
-      <div className="flex gap-4 mt-10">
-        {links.map((link, index) => (
-          <button
-            key={index}
-            className={`text-center text-black h-12 px-6 outline-0 rounded-xl border border-gray-300 ${
-              isActive === index ? "bg-primary text-white" : ""
-            }`}
-            onClick={() => setIsActive(index)}
-          >
-            {t(`links.${link}`)}
-          </button>
-        ))}
+      <div className="mt-10 relative">
+        {isMobile ? (
+          <>
+            <button
+              className="flex justify-between items-center w-full bg-white border border-gray-300 rounded-xl px-6 py-3"
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+            >
+              <span>{t(`links.${links[isActive]}`)}</span>
+              <svg
+                className={`w-4 h-4 transition-transform ${
+                  isDropdownOpen ? "rotate-180" : ""
+                }`}
+                viewBox="0 0 24 24"
+              >
+                <path fill="currentColor" d="M7 10l5 5 5-5z" />
+              </svg>
+            </button>
+
+            {isDropdownOpen && (
+              <div className="absolute w-full mt-2 bg-white border border-gray-300 rounded-xl shadow-lg z-10">
+                {links.map((link, index) => (
+                  <button
+                    key={index}
+                    className={`w-full text-left px-6 py-3 hover:bg-gray-100 ${
+                      isActive === index ? "bg-primary text-white" : ""
+                    }`}
+                    onClick={() => handleItemClick(index)}
+                  >
+                    {t(`links.${link}`)}
+                  </button>
+                ))}
+              </div>
+            )}
+          </>
+        ) : (
+          <div className="flex gap-4">
+            {links.map((link, index) => (
+              <button
+                key={index}
+                className={`text-center text-black h-12 px-6 outline-0 rounded-xl border border-gray-300 ${
+                  isActive === index ? "bg-primary text-white" : ""
+                }`}
+                onClick={() => setIsActive(index)}
+              >
+                {t(`links.${link}`)}
+              </button>
+            ))}
+          </div>
+        )}
       </div>
       <div className="mt-10">
         {loading ? (
@@ -91,7 +159,10 @@ const History = ({ data }: Props) => {
 
                 const eduFromDate = formatDate(education.from_date, locale);
                 const eduToDate = formatDate(education.to_date, locale);
-                dateRange = eduFromDate && eduToDate ? `${eduFromDate} - ${eduToDate}` : "";
+                dateRange =
+                  eduFromDate && eduToDate
+                    ? `${eduFromDate} - ${eduToDate}`
+                    : "";
                 break;
               }
               case "work_experiences": {
@@ -103,7 +174,10 @@ const History = ({ data }: Props) => {
 
                 const workFromDate = formatDate(workExp.from_date, locale);
                 const workToDate = formatDate(workExp.to_date, locale);
-                dateRange = workFromDate && workToDate ? `${workFromDate} - ${workToDate}` : "";
+                dateRange =
+                  workFromDate && workToDate
+                    ? `${workFromDate} - ${workToDate}`
+                    : "";
                 break;
               }
               case "research_interests": {
@@ -124,19 +198,17 @@ const History = ({ data }: Props) => {
                 key={index}
                 className="flex flex-col sm:flex-row items-center justify-between py-7 border-b border-gray-300"
               >
-                <h1 className="text-3xl font-semibold text-black max-w-[434px] mb-2 sm:mb-0">
+                <h1 className="text-3xl font-semibold text-black max-w-[434px] mb-2 sm:mb-0 max-md:self-start">
                   {title}
                 </h1>
-                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                <div className="flex flex-col sm:flex-row items-start max-md:self-start md:items-center gap-4 ">
                   {subtitle && (
                     <p className="text-lg text-black max-w-[520px]">
                       {subtitle}
                     </p>
                   )}
                   {dateRange && (
-                    <span className="text-lg text-gray-500">
-                      ({dateRange})
-                    </span>
+                    <span className="text-lg text-gray-500">({dateRange})</span>
                   )}
                 </div>
               </div>

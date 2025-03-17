@@ -8,15 +8,16 @@ const SeventhSection = () => {
   const t = useTranslations("courses.bachelors.sectionSeven");
   return (
     <section className="flex flex-col w-full mt-[120px] gap-[32px]">
-      <h1 className="text-[56px] leading-[140%] font-semibold">{t("title")}</h1>
+      <h1 className="lg:text-[56px] md:text-[40px] sm:text-[30px] text-[26px] leading-[140%] font-semibold">
+        {t("title")}
+      </h1>
       <Link
         href="bachelors/structure-program"
-        className="relative cursor-pointer "
+        className="relative cursor-pointer w-full flex flex-col gap-[10px]"
       >
-        <div className="absolute top-[30px] right-[30px] bg-[#66666645] backdrop-blur-lg p-[15px] rounded-[18px] z-[1]">
+        <div className="absolute top-[30px] right-[30px]  bg-[#66666645] backdrop-blur-lg p-[15px] rounded-[18px] z-[1]">
           <svg
-            width="36"
-            height="36"
+            className="md:w-[36px] md:h-[36px] w-[20px] h-[20px]"
             viewBox="0 0 36 36"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -51,7 +52,11 @@ const SeventhSection = () => {
             />
           </svg>
         </div>
-        <Image src={img} alt="" className="rounded-[30px] blur-[2px]" />
+        <Image
+          src={img}
+          alt=""
+          className="md:rounded-[30px] rounded-[10px] blur-[2px] w-full max-sm:h-[50vh]"
+        />
       </Link>
     </section>
   );

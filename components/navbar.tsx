@@ -185,7 +185,7 @@ const Navbar = () => {
                     <span className="absolute w-[46%] h-[2px] bg-black left-[50%] top-[50%] rotate-[-45deg] translate-x-[-50%] translate-y-[-50%] rounded"></span>
                   </button>
                 </div>
-                <div className="flex flex-col gap-[6px]">
+                <div className="flex flex-col gap-[10px]">
                   <Disclosure as="div">
                     {({ open }) => (
                       <>

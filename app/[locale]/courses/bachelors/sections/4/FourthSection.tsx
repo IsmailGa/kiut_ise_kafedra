@@ -26,8 +26,8 @@ const FourthSection = () => {
   ];
 
   return (
-    <section className="w-full flex flex-col gap-[65px] mt-[120px]">
-      <h1 className="text-[56px] font-semibold leading-[76px]">
+    <section className="w-full flex flex-col md:gap-[65px] gap-[30px] mt-[120px]">
+      <h1 className="lg:text-[56px] md:text-[40px] sm:text-[30px] text-[26px] font-semibold md:leading-[76px]">
         {t("title")}
       </h1>
       {/* CARDS */}
@@ -36,15 +36,14 @@ const FourthSection = () => {
         {cards.map((card, index) => (
           <div
             key={index}
-            className="flex flex-col gap-[24px] p-[30px] border-[#CEDAE0] border-[1px] rounded-[25px]"
+            className="flex flex-col gap-[24px] lg:p-[30px] md:p-[20px] p-[15px] border-[#CEDAE0] border-[1px] rounded-[25px]"
           >
-            <span className="bg-primary text-white py-[2px] px-[10px] self-start rounded-[15px]">
+            <span className="bg-primary text-white md:py-[2px] py-[2px] md:px-[10px] px-[5px] self-start rounded-[15px]">
               <svg
-                width="24"
-                height="24"
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                className="md:w-[24px] w-[20px] md:h-[24px] h-[20px]"
               >
                 <path
                   fillRule="evenodd"
@@ -55,10 +54,10 @@ const FourthSection = () => {
               </svg>
             </span>
             <div className="flex flex-col gap-[12px]">
-              <h3 className="text-[24px] leading-[125%] font-semibold">
+              <h3 className="md:text-[24px] text-[20px] leading-[125%] font-semibold">
                 {card.title}
               </h3>
-              <p className="text-[18px] leading-[125%] font-normal text-[#666666]">
+              <p className="md:text-[18px] text-[16px] leading-[125%] font-normal text-[#666666]">
                 {card.descr}
               </p>
             </div>

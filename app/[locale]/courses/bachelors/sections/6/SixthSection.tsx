@@ -43,7 +43,7 @@ const SixthSection = () => {
     <section className="flex flex-col mt-[120px] w-full bg-[#F7F7F7] rounded-[30px] gap-[45px] py-[35px] px-[40px]">
       {/* Header and info list */}
       <div className="flex flex-col gap-[16px]">
-        <h1 className="text-[56px] leading-[140%] font-semibold">
+        <h1 className="lg:text-[56px] md:text-[40px] sm:text-[30px] text-[26px] leading-[140%] font-semibold">
           {t("title")}
         </h1>
         <div className="flex items-center gap-[18px]">

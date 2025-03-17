@@ -10,10 +10,10 @@ const FifthSection = () => {
   const t = useTranslations("teachers.banner");
 
   return (
-    <section className="w-full flex md:items-center max-md:flex-col max-md:gap-[30px] justify-between mt-[120px] bg-primary rounded-[30px] py-[35px] px-[40px] overflow-hidden">
+    <section className="w-full flex md:items-center max-md:flex-col max-md:gap-[30px] justify-between mt-[120px] bg-primary rounded-[30px] md:py-[35px] py-[25px] md:px-[40px] px-[30px] overflow-hidden">
       {/* LEFT SIDE */}
       <div className="flex flex-col gap-[32px] max-w-[674px]">
-        <h1 className="text-white lg:text-[56px] text-[30px] leading-[125%] font-semibold ">
+        <h1 className="text-white lg:text-[56px] md:text-[40px] sm:text-[30px] text-[26px] leading-[125%] font-semibold">
           {t("title")}
         </h1>
         <Link
