@@ -22,8 +22,8 @@ const ThirdSection = () => {
   ];
 
   return (
-    <section className="w-full mt-[120px] flex flex-col gap-[65px]">
-      <h1 className="text-[56px] font-semibold leading-[76px]">
+    <section className="w-full mt-[120px] flex flex-col md:gap-[65px] gap-[30px]">
+      <h1 className="lg:text-[56px] md:text-[40px] sm:text-[30px] text-[26px] font-semibold md:leading-[76px]">
         {t("title")}
       </h1>
       {/* CARDS */}
@@ -34,10 +34,10 @@ const ThirdSection = () => {
             <span className="bg-primary text-white py-[2px] px-[20px] self-start rounded-[15px] font-semibold text-[18px] leading-[125%]">
               {index + 1}
             </span>
-            <h3 className="text-[24px] leading-[125%] font-semibold">
+            <h3 className="md:text-[24px] text-[20px] leading-[125%] font-semibold">
               {card.title}
             </h3>
-            <p className="text-[18px] font-normal leading-[125%] text-[#666666]">
+            <p className="md:text-[18px] text-[16px] font-normal leading-[125%] text-[#666666]">
               {card.descr}
             </p>
           </div>

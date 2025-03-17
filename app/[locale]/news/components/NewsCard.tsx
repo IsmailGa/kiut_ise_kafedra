@@ -22,7 +22,7 @@ export function NewsCard({ news }: NewsCardProps) {
   });
 
   return (
-    <div className="flex w-full items-stretch rounded-[25px] border-[#CEDAE0] border-[1px] overflow-hidden max-h-[341px]">
+    <div className="flex w-full items-stretch rounded-[25px] border-[#CEDAE0] border-[1px] overflow-hidden lg:max-h-[341px] h-full max-lg:flex-col">
       <Image
         src={`http://ai.kiut.uz/${news.images[0]}`}
         alt="news"
@@ -31,7 +31,7 @@ export function NewsCard({ news }: NewsCardProps) {
         height={200}
       />
       {/* RIGHT SIDE */}
-      <div className="flex flex-col justify-between p-[25px] flex-1">
+      <div className="flex flex-col justify-between max-lg:gap-[20px] p-[25px] flex-1">
         <div className="flex flex-col gap-[16px] text-ellipsis ">
           <h2 className="text-[24px] leading-[135%] font-semibold line-clamp-1">
             {title}
@@ -41,8 +41,8 @@ export function NewsCard({ news }: NewsCardProps) {
           </p>
         </div>
 
-        <div className="flex justify-between items-end ">
-          <div className="flex gap-[15px]">
+        <div className="flex justify-between sm:items-end max-sm:flex-col max-sm:gap-[20px]">
+          <div className="flex gap-[15px] max-[350px]:flex-col">
             <div className="flex gap-[5px] items-center">
               <CalendarIcon />
               <span>{formattedDate}</span>
@@ -54,7 +54,7 @@ export function NewsCard({ news }: NewsCardProps) {
           </div>
           <Link
             href={`/news/${news.uuid}`}
-            className="text-[16px] font-semibold leading-[140%] px-[24px] py-[16px] bg-primary rounded-[15px] text-white"
+            className="text-[16px] font-semibold leading-[140%] px-[24px] py-[16px] bg-primary rounded-[15px] text-white text-center"
           >
             Подробнее
           </Link>

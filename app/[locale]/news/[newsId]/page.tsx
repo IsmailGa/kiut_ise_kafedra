@@ -76,7 +76,7 @@ const NewsInfo = ({ params }: { params: { newsId: string } }) => {
                 <BlueLArrowIcon /> Все новости
               </Link>
               <div className="flex flex-col gap-[18px]">
-                <h1 className="text-[40px] font-semibold leading-[135%]">
+                <h1 className="text-[40px] font-semibold leading-[135%] max-sm:hyphens-manual">
                   {news.translations[locale].title}
                 </h1>
                 <div className="flex gap-[15px]">

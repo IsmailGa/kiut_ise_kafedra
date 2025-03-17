@@ -134,11 +134,69 @@
       },
       "sectionSix": {
         "title": "Program",
+        "theoryHours": "123 hours of theory",
+        "practiceHours": "360 hours of practice",
+        "projects": "56 projects",
         "semester": "{semester} semester",
         "section": "Section {chunkIndex} ({count} subjects)"
       },
       "sectionSeven": {
         "title": "Structure of program:"
+      }
+    },
+    "masters": {
+      "sectionOne": {
+        "programTitle": "Master's Program",
+        "studyMode": "Full-time | Part-time",
+        "duration": "2 years",
+        "title": "Artificial Intelligence",
+        "description": "A program that opens the world of artificial intelligence"
+      },
+      "sectionTwo": {
+        "title": "About the Direction",
+        "description": "Artificial Intelligence Engineering is an interdisciplinary field that combines mathematics, computer science, data analysis, and software development. Specialists in this field design, develop, optimize, and implement intelligent systems. The program covers advanced technologies such as machine learning, natural language processing, computer vision, robotics, and reinforcement learning. AI engineers work in various industries in both the public and private sectors, including healthcare, finance, industrial automation, and cybersecurity."
+      },
+      "sectionThree": {
+        "title": "Who is it for?",
+        "cards": {
+          "one": {
+            "title": "For those who want to understand how complex IT systems work",
+            "description": "You will learn the principles of designing, analyzing, and optimizing architecture. This will help you develop reliable systems, understand their structure, and comprehend the interaction of various components."
+          },
+          "two": {
+            "title": "For those who want to create reliable solutions",
+            "description": "You will learn to develop systems that process large amounts of data, withstand loads, and adapt to changes. This will be useful for creating complex and resilient IT infrastructures."
+          },
+          "three": {
+            "title": "For those who want to enhance competitiveness",
+            "description": "Knowledge in designing information systems is in demand across various fields. It will open up more career opportunities, allow you to apply for high-level positions, and broaden your development options."
+          }
+        }
+      },
+      "sectionFour": {
+        "title": "What will you learn?",
+        "cards": {
+          "one": {
+            "title": "Basics of programming and mathematics",
+            "description": "At the start, you will master key programming languages, the basics of algorithms, computational mathematics, and physics. This will create a solid foundation for further learning."
+          },
+          "two": {
+            "title": "System development and administration",
+            "description": "You will study databases, computer networks, object-oriented programming, and working with web technologies. You will master the design and support of information systems."
+          },
+          "three": {
+            "title": "Data analysis and machine learning",
+            "description": "You will learn to work with Data Science, system modeling, cybersecurity, and artificial intelligence. This will help create intelligent and secure solutions."
+          },
+          "four": {
+            "title": "Project management and practical development",
+            "description": "You will gain skills in IT project management, software testing, and legal regulation in IT. During internships and the final project, you will consolidate your knowledge in practice."
+          }
+        }
+      },
+      "sectionSeven": {
+        "title": "Structure of program:",
+        "imageAlt": "Structure of the program"
       }
     }
   },

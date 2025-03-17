@@ -138,7 +138,71 @@
         "section": "Bo'lim {chunkIndex} ({count} fanlar)"
       },
       "sectionSeven": {
-        "title": "Dastur tuzilishi"
+        "title": "Dastur",
+        "theoryHours": "123 soat nazariya",
+        "practiceHours": "360 soat amaliyot",
+        "projects": "56 ta loyiha"
+      }
+    },
+    "masters": {
+      "sectionOne": {
+        "programTitle": "Magistratura dasturi",
+        "studyMode": "Kunduzgi | Sirtqi",
+        "duration": "2 yil",
+        "title": "Sun'iy intellekt",
+        "description": "Sun'iy intellekt dunyosini ochadigan dastur"
+      },
+      "sectionTwo": {
+        "title": "Yo'nalish haqida",
+        "description": "Sun'iy intellekt muhandisligi - bu matematika, kompyuter fanlari, ma'lumotlarni tahlil qilish va dasturiy ta'minotni ishlab chiqishni birlashtiruvchi fanlararo soha. Ushbu sohadagi mutaxassislar intellektual tizimlarni loyihalash, ishlab chiqish, optimallashtirish va joriy etish bilan shug'ullanadilar. Dastur mashinani o'rganish, tabiiy tilni qayta ishlash, kompyuter ko'rish, robototexnika va mustahkamlash orqali o'qitish kabi ilg'or texnologiyalarni o'z ichiga oladi. Sun'iy intellekt muhandislari davlat va xususiy sektorning turli sohalarida, jumladan, sog'liqni saqlash, moliya, sanoat avtomatlashtirish va kiberxavfsizlikda ishlaydi."
+      },
+      "sectionThree": {
+        "title": "Kimlar uchun mos?",
+        "cards": {
+          "one": {
+            "title": "Murakkab IT tizimlar qanday ishlashini tushunishni istaganlar uchun",
+            "description": "Siz arxitekturani loyihalash, tahlil qilish va optimallashtirish tamoyillarini o'rganasiz. Bu ishonchli tizimlarni ishlab chiqishga, ularning tuzilishini tushunishga va turli komponentlarning o'zaro ta'sirini anglashga yordam beradi."
+          },
+          "two": {
+            "title": "Ishonchli yechimlar yaratishni istaganlar uchun",
+            "description": "Siz katta hajmdagi ma'lumotlarni qayta ishlaydigan, yuklamalarga bardosh beradigan va o'zgarishlarga moslashadigan tizimlarni ishlab chiqishni o'rganasiz. Bu murakkab va barqaror IT infratuzilmasini yaratishda foydali bo'ladi."
+          },
+          "three": {
+            "title": "Raqobatbardoshlikni oshirishni istaganlar uchun",
+            "description": "Axborot tizimlarini loyihalash bo'yicha bilimlar turli sohalarda talabga ega. Bu ko'proq martaba imkoniyatlarini ochadi, yuqori lavozimlarga da'vo qilishga imkon beradi va rivojlanish yo'nalishlarini kengaytiradi."
+          }
+        }
+      },
+      "sectionFour": {
+        "title": "Nimani o'rganasiz?",
+        "cards": {
+          "one": {
+            "title": "Dasturlash va matematikaning asoslari",
+            "description": "Boshlanishida siz asosiy dasturlash tillarini, algoritmlar asoslarini, hisoblash matematikasi va fizikani o'rganasiz. Bu keyingi o'qish uchun mustahkam asos yaratadi."
+          },
+          "two": {
+            "title": "Tizimlarni ishlab chiqish va boshqarish",
+            "description": "Ma'lumotlar bazalari, kompyuter tarmoqlari, obyektga yo'naltirilgan dasturlash va veb-texnologiyalar bilan ishlashni o'rganasiz. Axborot tizimlarini loyihalash va qo'llab-quvvatlashni o'zlashtirasiz."
+          },
+          "three": {
+            "title": "Ma'lumotlarni tahlil qilish va mashinani o'rganish",
+            "description": "Data Science, tizimlarni modellashtirish, kiberxavfsizlik va sun'iy intellekt bilan ishlashni o'rganasiz. Bu aqlli va xavfsiz yechimlarni yaratishga yordam beradi."
+          },
+          "four": {
+            "title": "Loyihalarni boshqarish va amaliy rivojlanish",
+            "description": "IT loyihalarini boshqarish, dasturiy ta'minotni sinovdan o'tkazish va IT sohasidagi huquqiy tartibga solish bo'yicha ko'nikmalarni olasiz. Amaliyotlar va yakuniy loyiha davomida bilimlaringizni mustahkamlaysiz."
+          }
+        }
+      },
+      "sectionSix": {
+        "title": "Dastur",
+        "theoryHours": "123 soat nazariya",
+        "practiceHours": "360 soat amaliyot",
+        "projects": "56 ta loyiha"
+      },
+      "sectionSeven": {
+        "title": "Dastur tuzilishi:",
+        "imageAlt": "Dastur tuzilishi"
       }
     }
   },

@@ -25,13 +25,19 @@ const SkeletonLoader = () => (
 const Teachers = ({ params }: { params: { teachersId: string } }) => {
   const locale = useLocale();
   const t = useTranslations("teachers");
-
+  const [isExpanded, setIsExpanded] = React.useState(false);
   const [data, setData] = React.useState<Teacher | null>(null);
   const [error, setError] = React.useState(null);
 
   const fullName = data?.translations[locale as keyof Translations]?.full_name;
   const role = data?.translations[locale as keyof Translations]?.role;
   const biography = data?.translations[locale as keyof Translations]?.biography;
+
+  const truncateText = (text: string, limit: number) => {
+    if (text.length <= limit) return text;
+    const truncated = text.substr(0, text.lastIndexOf(" ", limit));
+    return truncated + "...";
+  };
 
   useEffect(() => {
     api
@@ -75,7 +81,7 @@ const Teachers = ({ params }: { params: { teachersId: string } }) => {
       <div className="w-full mt-[70px]">
         <Container>
           {/* INFO ABOUT TEACHER */}
-          <div className="flex items-stretch gap-[30px] mt-[25px]">
+          <div className="flex max-lg:flex-col items-stretch gap-[30px] mt-[25px]">
             {/* LEFT SIDE */}
             <Image
               src={
@@ -85,7 +91,7 @@ const Teachers = ({ params }: { params: { teachersId: string } }) => {
               }
               alt={fullName || "Teacher profile"} // Added alt text
               width={350}
-              height={380}
+              height={370}
               loading="lazy"
               className="max-w-[350px] shrink-0 aspect-[350/370] h-[100%] object-cover rounded-[20px] border border-solid"
               onError={() => setError(null)}
@@ -105,11 +111,23 @@ const Teachers = ({ params }: { params: { teachersId: string } }) => {
                 {/* Bio */}
                 <div className="flex flex-col gap-[8px]">
                   <h1 className="text-black text-[20px] leading-[27px] font-medium">
-                  {t("biography")}
+                    {t("biography")}
                   </h1>
-                  <p className="text-[#666666] text-[16px] font-normal leading-[165%]">
-                    {biography ? biography : "Нет данных"}
-                  </p>
+                  {biography ? (
+                    <div className="text-[#666666] text-[16px] font-normal leading-[165%]">
+                      {isExpanded ? biography : truncateText(biography, 200)}
+                      {!isExpanded && biography.length > 200 && (
+                        <button
+                          onClick={() => setIsExpanded(true)}
+                          className="text-primary ml-1 underline hover:text-primary-dark transition-colors"
+                        >
+                          more
+                        </button>
+                      )}
+                    </div>
+                  ) : (
+                    <p>Нет данных</p>
+                  )}
                 </div>
               </div>
             ) : (
