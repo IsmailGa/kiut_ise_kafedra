@@ -20,7 +20,11 @@ const SecondSection = () => {
         </p>
       </div>
       {/* RIGHT SIDE */}
-      <Image src={code} alt="code" className="flex-1"/>
+      <Image
+        src={code}
+        alt="code"
+        className="flex-1 max-h-[400px] aspect-square object-contain"
+      />
     </section>
   );
 };
