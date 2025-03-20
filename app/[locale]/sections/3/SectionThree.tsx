@@ -53,19 +53,38 @@ const SectionThree = () => {
           <div className="flex flex-col gap-[25px] lg:items-center items-start flex-1 w-full">
             <div className="relative flex items-center gap-[25px]">
               <div className="flex items-center">
-                {image?.teachers.map((item, index) => (
-                  <Image
-                    key={index}
-                    src={
-                      item ? `http://ai.kiut.uz/${item.image}` : teacher_profile
-                    }
-                    width="200"
-                    height="200"
-                    priority
-                    alt="teacher"
-                    className={`shrink-0 aspect-square w-[80px] md:w-[100px] lg:w-[120px] rounded-full ${"ml-[0]"} border-[5px] border-white`}
-                  />
-                ))}
+                {image
+                  ? image?.teachers.map((item, index) => (
+                      <Image
+                        key={index}
+                        src={
+                          item
+                            ? `http://ai.kiut.uz/${item.image}`
+                            : teacher_profile
+                        }
+                        width={200}
+                        height={200}
+                        priority
+                        alt="teacher"
+                        className={`shrink-0 aspect-square w-[80px] md:w-[100px] lg:w-[120px] rounded-full ml-[${
+                          index > 0 ? "ml-[0]" : "sm:ml-[-25px] ml-[-40px]"
+                        }] border-[5px] border-white`}
+                      />
+                    ))
+                  : Array(4)
+                      .fill(null)
+                      .map((_, index) => (
+                        <Image
+                          key={index}
+                          src={teacher_profile}
+                          width={200}
+                          height={200}
+                          alt="teacher"
+                          className={`shrink-0 aspect-square w-[80px] md:w-[100px] lg:w-[120px] rounded-full border-[5px] border-white ${
+                            index > 0 ? "sm:ml-[-25px] ml-[-40px]" : "ml-0"
+                          }`}
+                        />
+                      ))}
 
                 {/* <Image
                   src={teacher_profile}
