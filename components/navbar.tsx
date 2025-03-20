@@ -260,7 +260,7 @@ const Navbar = () => {
                   </div>
                   <Link
                     href="https://admission.kiut.uz/"
-                    className="text-center flex items-center justify-center bg-primary text-white xl:h-[50px] lg:h-[48px] h-[44px] xl:px-[25px] lg:px-[23px] md:px-[20px] px-[10px] border-0 outline-0 rounded-[15px]"
+                    className="mt-[15px] ml-5 text-center flex items-center justify-center bg-primary text-white xl:h-[50px] lg:h-[48px] h-[44px] xl:px-[25px] lg:px-[23px] md:px-[20px] px-[10px] border-0 outline-0 rounded-[15px]"
                   >
                     {t("apply")}
                   </Link>

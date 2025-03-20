@@ -8,7 +8,6 @@ export interface Publication {
   title: string;
   link: string;
   pre_print_link: string;
- 
 }
 
 export interface TranslationBase {

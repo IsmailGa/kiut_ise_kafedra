@@ -216,7 +216,6 @@
     },
     "biography": "Biography",
     "history": {
-      "title": "History",
       "links": {
         "education": "Education",
         "work_experience": "Work Experience",
@@ -235,7 +234,7 @@
   },
   "LocaleSwitcher": {
     "label": "Change Language",
-    "locale": "{locale, select, uz {🇺🇿 O'zb} en {🇺🇸 Eng} ru {🇷🇺 Рус} other {unknown}}"
+    "locale": "{locale, select, uz {O'zbekcha} en {English} ru {Русский} other {unknown}}"
   },
   "footer": {
     "directions": "Directions",

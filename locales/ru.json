@@ -6,7 +6,7 @@
     "teachers": "Преподаватели",
     "directions": "Направления",
     "bachelors": "ISE (Бакалавриат)",
-    "masters": "ИИ (Магистратура)",
+    "masters": "AI (Магистратура)",
     "news": "Новости",
     "apply": "Подать заявку",
     "menu": "Меню"
@@ -213,7 +213,6 @@
     },
     "biography": "Биография",
     "history": {
-      "title": "История",
       "links": {
         "education": "Образование",
         "work_experience": "Опыт работы",
@@ -232,7 +231,7 @@
   },
   "LocaleSwitcher": {
     "label": "Изменить язык",
-    "locale": "{locale, select, uz {🇺🇿 O'zb} en {🇺🇸 Eng} ru {🇷🇺 Рус} other {unknown}}"
+    "locale": "{locale, select, uz {O'zbekcha} en {English} ru {Русский} other {unknown}}"
   },
   "footer": {
     "directions": "Направления",
