@@ -30,8 +30,8 @@ const MainSection = () => {
           </h3>
           <div className="flex gap-[16px] max-sm:flex-col">
             <div className="flex flex-col gap-[10px]">
-              {data?.translations[locale].study_format.map((format) => (
-                <p className="text-[14px] font-semibold md:py-[10px] py-[5px] md:px-[15px] px-[10px] bg-white rounded-[10px] self-start">
+              {data?.translations[locale].study_format.map((format, index) => (
+                <p key={index} className="text-[14px] font-semibold md:py-[10px] py-[5px] md:px-[15px] px-[10px] bg-white rounded-[10px] self-start">
                   {format}
                 </p>
               ))}

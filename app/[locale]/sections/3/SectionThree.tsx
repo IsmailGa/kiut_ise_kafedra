@@ -55,7 +55,10 @@ const SectionThree = () => {
               <div className="flex items-center">
                 {image?.teachers.map((item, index) => (
                   <Image
-                    src={item ? `http://ai.kiut.uz/${item.image}` : teacher_profile}
+                    key={index}
+                    src={
+                      item ? `http://ai.kiut.uz/${item.image}` : teacher_profile
+                    }
                     width="200"
                     height="200"
                     priority
