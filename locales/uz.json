@@ -214,7 +214,6 @@
     },
     "biography": "Biografiya",
     "history": {
-      "title": "Tarix",
       "links": {
         "education": "Ta'lim",
         "work_experience": "Ish tajribasi",
@@ -233,7 +232,7 @@
   },
   "LocaleSwitcher": {
     "label": "Tilni o'zgartirish",
-    "locale": "{locale, select, uz {🇺🇿 O'zb} en {🇺🇸 Eng} ru {🇷🇺 Рус} other {unknown}}"
+    "locale": "{locale, select, uz {O'zbekcha} en {English} ru {Русский} other {unknown}}"
   },
   "footer": {
     "directions": "Yo'nalishlar",

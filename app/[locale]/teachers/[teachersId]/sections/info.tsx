@@ -7,6 +7,7 @@ import {
   Teacher,
   WorkExperience,
 } from "@/types/teachers";
+import { Link } from "@/navigation";
 
 const links = [
   "education",
@@ -58,7 +59,7 @@ const SkeletonLoader = () => (
   </div>
 );
 
-const History = ({ data }: Props) => {
+const TeacherInfo = ({ data }: Props) => {
   const [isActive, setIsActive] = useState(0);
   const [loading, setLoading] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -87,10 +88,8 @@ const History = ({ data }: Props) => {
 
   return (
     <div className="flex flex-col mt-14">
-      <h1 className="text-black font-semibold text-5xl leading-[76px]">
-        {t("title")}
-      </h1>
       <div className="mt-10 relative">
+        {/* для мобильной версии */}
         {isMobile ? (
           <>
             <button
@@ -148,6 +147,8 @@ const History = ({ data }: Props) => {
             let title = "";
             let subtitle = "";
             let dateRange = "";
+            let linkTo = "";
+            let prePrint = "";
 
             switch (dataKeys[isActive]) {
               case "educations": {
@@ -188,7 +189,11 @@ const History = ({ data }: Props) => {
               }
               case "publications": {
                 const publication = item as Publication;
+                const prePrintLink = item as Publication;
+                const link = item as Publication;
                 title = publication.title || "";
+                prePrint = prePrintLink.pre_print_link;
+                linkTo = link.link;
                 break;
               }
             }
@@ -196,19 +201,25 @@ const History = ({ data }: Props) => {
             return (
               <div
                 key={index}
-                className="flex flex-col sm:flex-row items-center justify-between py-7 border-b border-gray-300"
+                className="flex flex-col md:flex-row items-center justify-between py-7 border-b border-gray-300 gap-[15px]"
               >
-                <h1 className="text-3xl font-semibold text-black max-w-[434px] mb-2 sm:mb-0 max-md:self-start">
+                <h1 className="text-3xl font-semibold text-black flex-1 mb-2 sm:mb-0 max-md:self-start">
                   {title}
                 </h1>
-                <div className="flex flex-col sm:flex-row items-start max-md:self-start md:items-center gap-4 ">
-                  {subtitle && (
-                    <p className="text-lg text-black max-w-[520px]">
-                      {subtitle}
-                    </p>
-                  )}
+                <div className="flex flex-col sm:flex-row items-start max-md:self-start md:items-center gap-4">
+                  {subtitle && <p className="text-lg text-black">{subtitle}</p>}
                   {dateRange && (
                     <span className="text-lg text-gray-500">({dateRange})</span>
+                  )}
+                  {prePrint && (
+                    <Link href={prePrint} className="text-xl text-blue-500">
+                      Print
+                    </Link>
+                  )}
+                  {linkTo && (
+                    <Link href={linkTo} className="text-xl text-blue-500">
+                      Link
+                    </Link>
                   )}
                 </div>
               </div>
@@ -222,4 +233,4 @@ const History = ({ data }: Props) => {
   );
 };
 
-export default History;
+export default TeacherInfo;
