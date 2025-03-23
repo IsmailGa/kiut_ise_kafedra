@@ -36,7 +36,7 @@ const SectionThree = () => {
         <div className="w-full flex flex-col md:flex-row justify-between gap-[36px]">
           {/* FIRST ROW */}
           <div className="flex flex-col gap-[25px] flex-1">
-            <h1 className="2xl:text-[56px] xl:text-[40px] lg:text-[32px] sm:text-[22px] text-[20px] font-semibold leading-[120%]">
+            <h1 className="2xl:text-[56px] xl:text-[40px] lg:text-[32px] text-[32px] font-semibold leading-[120%]">
               {t("title")}
             </h1>
             <p className="2xl:max-w-[640px] xl:max-w-[580px] max-w-[480px] font-normal xl:text-[18px] text-[16px] text-[#666666] leading-[120%]">
