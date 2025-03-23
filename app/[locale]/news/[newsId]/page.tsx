@@ -105,7 +105,7 @@ const NewsInfo = ({ params }: { params: { newsId: string } }) => {
               </p>
             </div>
             {/* LINKS */}
-            <div className="w-full flex justify-center items-center mt-[36px] text-[20px] font-semibold leading-[145%] gap-[16px]">
+            <div className="w-full max-sm:flex-col flex justify-center items-center mt-[36px] text-[20px] font-semibold leading-[145%] gap-[16px]">
               <p>Поделиться новостью:</p>
               <div className="flex gap-[16px]">
                 <p className="cursor-pointer">Telegram</p>
