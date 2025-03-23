@@ -2,21 +2,54 @@ import Image from "next/image";
 import { CalendarIcon, ClockIcon } from "@/public/icons";
 import { NewsItem } from "@/types/new";
 import { Link } from "@/navigation";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 interface NewsCardProps {
   news: NewsItem;
 }
 
-export function NewsCard({ news }: NewsCardProps) {
-  const locale = useLocale();
-  const { title, description } = news.translations[locale];
-  const formattedDate = new Date(news.created_at).toLocaleDateString("ru-RU", {
+const uzbekMonths = [
+  "yanvar",
+  "fevral",
+  "mart",
+  "aprel",
+  "may",
+  "iyun",
+  "iyul",
+  "avgust",
+  "sentabr",
+  "oktabr",
+  "noyabr",
+  "dekabr",
+];
+
+const formatDate = (dateString: string | undefined, locale: string): string => {
+  if (!dateString) return "";
+  const date = new Date(dateString);
+  if (isNaN(date.getTime())) return "";
+
+  if (locale === "uz") {
+    const day = date.getDay();
+    const month = uzbekMonths[date.getMonth()]; // Get the Uzbek month name
+    const year = date.getFullYear();
+    return `${day} ${month} ${year}`;
+  }
+
+  const options: Intl.DateTimeFormatOptions = {
     day: "2-digit",
     month: "short",
     year: "numeric",
-  });
-  const formattedTime = new Date(news.created_at).toLocaleTimeString("ru-RU", {
+  };
+
+  return date.toLocaleDateString(locale, options);
+};
+
+export function NewsCard({ news }: NewsCardProps) {
+  const t = useTranslations("");
+  const locale = useLocale();
+  const { title, description } = news.translations[locale];
+
+  const formattedTime = new Date(news.created_at).toLocaleTimeString(locale, {
     hour: "2-digit",
     minute: "2-digit",
   });
@@ -26,7 +59,7 @@ export function NewsCard({ news }: NewsCardProps) {
       <Image
         src={`http://ai.kiut.uz/${news.images[0]}`}
         alt="news"
-        className="w-full object-cover flex-1"
+        className="w-full object-cover flex-1 aspect-video"
         width={350}
         height={200}
       />
@@ -45,7 +78,7 @@ export function NewsCard({ news }: NewsCardProps) {
           <div className="flex gap-[15px] max-[350px]:flex-col">
             <div className="flex gap-[5px] items-center">
               <CalendarIcon />
-              <span>{formattedDate}</span>
+              <span>{formatDate(news.created_at, locale)}</span>
             </div>
             <div className="flex gap-[5px] items-center">
               <ClockIcon />
@@ -56,7 +89,7 @@ export function NewsCard({ news }: NewsCardProps) {
             href={`/news/${news.uuid}`}
             className="text-[16px] font-semibold leading-[140%] px-[24px] py-[16px] bg-primary rounded-[15px] text-white text-center"
           >
-            Подробнее
+            {t("button")}
           </Link>
         </div>
       </div>

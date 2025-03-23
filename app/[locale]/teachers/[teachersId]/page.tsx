@@ -21,7 +21,7 @@ const Teachers = ({ params }: { params: { teachersId: string } }) => {
         setError(err.message);
         console.error("Error fetching teachers:", error);
       });
-  }, [params.teachersId]);
+  }, [params.teachersId, error]);
 
   return (
     <Container>

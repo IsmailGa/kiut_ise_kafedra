@@ -33,18 +33,18 @@ type ContentItem =
   | ResearchInterest;
 
 const uzbekMonths = [
-  "Yanvar",
-  "Fevral",
-  "Mart",
-  "Aprel",
-  "May",
-  "Iyun",
-  "Iyul",
-  "Avgust",
-  "Sentabr",
-  "Oktabr",
-  "Noyabr",
-  "Dekabr",
+  "yanvar",
+  "fevral",
+  "mart",
+  "aprel",
+  "may",
+  "iyun",
+  "iyul",
+  "avgust",
+  "sentabr",
+  "oktabr",
+  "noyabr",
+  "dekabr",
 ];
 
 const formatDate = (dateString: string | undefined, locale: string): string => {
@@ -224,7 +224,7 @@ const TeacherInfo = ({ data }: Props) => {
                 key={index}
                 className="flex flex-col md:flex-row items-center justify-between py-[28px] border-b border-gray-300 gap-[15px]"
               >
-                <h1 className="w-full md:text-[20px] text-[18px] md:leading-[34px] lg:max-w-[430px] md:max-w-[400px] sm:max-w-[334px] font-semibold text-black max-md:self-start">
+                <h1 className="w-full md:text-[20px] text-[18px] md:leading-[34px] xl:max-w-[100%] lg:max-w-[430px] md:max-w-[400px] sm:max-w-[334px] font-semibold text-black max-md:self-start">
                   {title}
                 </h1>
                 <div className="w-full md:max-w-[60vw] max-sm:max-w-[335px] flex flex-col md:justify-between sm:flex-row items-start max-md:self-start md:items-center">
@@ -238,7 +238,7 @@ const TeacherInfo = ({ data }: Props) => {
                   )}
                 </div>
                 {prePrint && linkTo && (
-                  <div className="flex flex-col md:justify-between sm:flex-row items-start max-md:self-start md:items-center gap-[15px]">
+                  <div className="flex flex-col md:justify-between sm:flex-row max-md:self-start md:items-center gap-[15px]">
                     {prePrint && (
                       <Link href={prePrint} className="text-xl text-blue-500">
                         Print

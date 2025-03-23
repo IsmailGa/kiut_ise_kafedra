@@ -27,12 +27,12 @@ const FifthSection = () => {
       .then((res) => setData(res.data))
       .catch((err) => setError(err.message));
     console.log(error);
-  }, []);
+  }, [error]);
 
   return (
     <section className="w-full flex md:items-center max-lg:flex-col max-lg:gap-[30px] justify-between mt-[120px] bg-primary rounded-[30px] md:py-[35px] sm:py-[25px] py-[15px] md:px-[40px] sm:px-[30px] px-[20px] overflow-hidden">
       {/* LEFT SIDE */}
-      <div className="flex flex-col gap-[32px] max-w-[674px]">
+      <div className="flex flex-col gap-[32px] w-full">
         <h1 className="text-white lg:text-[56px] md:text-[40px] sm:text-[30px] text-[26px] leading-[125%] font-semibold">
           {t("title")}
         </h1>
@@ -53,9 +53,15 @@ const FifthSection = () => {
                 height={200}
                 priority
                 alt="teacher"
-                className={`shrink-0 aspect-square w-[80px] md:w-[100px] lg:w-[120px] rounded-full border-[5px] border-white ${
-                  index > 0 ? "sm:ml-[-25px] ml-[-40px]" : "ml-0"
-                }`}
+                className={`
+              shrink-0 
+              aspect-square
+              w-[80px] md:w-[100px] lg:w-[120px] 
+              rounded-full 
+              border-[5px] border-white
+              object-cover
+              ${index > 0 ? "sm:-ml-6 -ml-10" : ""}
+            `}
               />
             ))
           : Array(4)
