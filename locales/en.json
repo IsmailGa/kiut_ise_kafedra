@@ -9,7 +9,8 @@
     "masters": "AI (Master's)",
     "news": "News",
     "apply": "Apply",
-    "menu": "Menu"
+    "menu": "Menu",
+    "back": "Back"
   },
   "main": {
     "sectionOne": {
@@ -70,6 +71,7 @@
   "courses": {
     "title": "Our Directions",
     "description": "The universal training program covers many areas of information technology, allowing students to choose their niche",
+    "credits" : "credits",
     "cards": {
       "one": {
         "title": "ISE (Bachelor's)",
@@ -138,7 +140,7 @@
         "practiceHours": "360 hours of practice",
         "projects": "56 projects",
         "semester": "{semester} semester",
-        "section": "Section {chunkIndex} ({count} subjects)"
+        "section": "{count} subjects"
       },
       "sectionSeven": {
         "title": "Structure of program:"

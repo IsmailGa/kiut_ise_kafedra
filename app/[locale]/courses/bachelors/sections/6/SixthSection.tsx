@@ -13,6 +13,7 @@ const SixthSection = () => {
   });
   const locale = useLocale();
   const t = useTranslations("courses.bachelors.sectionSix");
+  const credits = useTranslations("courses");
 
   useEffect(() => {
     api
@@ -40,7 +41,7 @@ const SixthSection = () => {
   }, {} as Record<number, SubjectsItem[]>);
 
   return (
-    <section className="flex flex-col mt-[120px] w-full bg-[#F7F7F7] rounded-[30px] gap-[45px] py-[35px] px-[40px]">
+    <section className="flex flex-col mt-[120px] w-full bg-[#F7F7F7] rounded-[30px] gap-[45px] md:py-[35px] sm:py-[25px] py-[15px] md:px-[40px] sm:px-[20px] px-[10px]">
       {/* Header and info list */}
       <div className="flex flex-col gap-[16px]">
         <h1 className="lg:text-[56px] md:text-[40px] sm:text-[30px] text-[26px] leading-[140%] font-semibold">
@@ -107,10 +108,9 @@ const SixthSection = () => {
       {/* Semester content */}
       <div className="w-full flex flex-col gap-[32px]">
         {Object.entries(groupedSubjects).map(([semester, subjects]) => {
-          // Split into chunks of 3
           const chunked = [];
-          for (let i = 0; i < subjects.length; i += 3) {
-            chunked.push(subjects.slice(i, i + 3));
+          for (let i = 0; i < subjects.length; i += subjects.length) {
+            chunked.push(subjects.slice(i, i + subjects.length));
           }
 
           return (
@@ -126,17 +126,16 @@ const SixthSection = () => {
                   <div key={sectionKey} className="flex flex-col gap-[12px]">
                     {/* Section header */}
                     <div
-                      className="flex justify-between items-center cursor-pointer px-4 py-2 bg-gray-50 rounded-lg"
+                      className="flex justify-between items-center cursor-pointer px-[20px] py-[15px] bg-gray-50 rounded-lg"
                       onClick={() => toggleExpand("section", sectionKey)}
                     >
-                      <h4 className="text-lg font-medium">
+                      <h4 className="md:text-[24px] text-[20px] font-medium">
                         {t("section", {
-                          chunkIndex: chunkIndex + 1,
                           count: chunk.length,
                         })}
                       </h4>
                       <svg
-                        className={`w-6 h-6 transition-transform ${
+                        className={`md:w-[30px] w-[22px] md:h-[30px] h-[16px] bg-black/10 rounded-full my-[]  transition-transform ${
                           expandedStates.sections[sectionKey]
                             ? "rotate-180"
                             : ""
@@ -157,39 +156,42 @@ const SixthSection = () => {
 
                     {/* Subject list */}
                     {expandedStates.sections[sectionKey] && (
-                      <ul className="flex flex-col gap-[16px] pl-4">
+                      <ul className="flex flex-col gap-[16px] pl-2">
                         {chunk.map((subject) => (
                           <li
                             key={subject.uuid}
-                            className="flex flex-col gap-[8px] py-[24px] px-[30px] bg-white rounded-[25px] transition-colors group cursor-pointer hover:bg-[#CEDAE0]"
+                            className="flex flex-col gap-[8px] md:py-[24px] py-[8px] md:px-[30px] px-[15px]  bg-white md:rounded-[25px] rounded-[10px] transition-colors group cursor-pointer hover:bg-[#CEDAE0]"
                             onClick={(e) => {
                               e.stopPropagation();
                               toggleExpand("subject", subject.uuid);
                             }}
                           >
-                            <div className="flex justify-between items-center">
+                            <div className="w-full flex justify-between max-sm:gap-[5px] items-center">
                               <div className="flex flex-col">
-                                <div className="flex items-center gap-3">
-                                  <h4 className="text-[24px] font-semibold">
+                                <div className="flex items-center">
+                                  <h4 className="md:text-[24px] text-[16px] font-semibold ">
                                     {subject.translations[locale].name}
                                   </h4>
                                 </div>
                                 {expandedStates.subjects[subject.uuid] && (
-                                  <p className="text-[18px] text-[#666666] mt-2">
-                                    {subject.translations[locale].description}
-                                  </p>
+                                  <div className="flex flex-col gap-[15px]">
+                                    <p className="md:text-[18px] text-[14px] text-[#666666]">
+                                      {subject.translations[locale].description}
+                                    </p>
+                                    <p className="md:text-[18px] text-[14px] text-primary">
+                                      {subject.credits} {credits("credits")}
+                                    </p>
+                                  </div>
                                 )}
                               </div>
 
-                              <div className="rounded-full w-[50px] h-[50px] bg-[#F4F4F4] group-hover:bg-primary transition-colors flex items-center justify-center">
+                              <div className="rounded-full md:w-[50px] w-[20px] md:h-[50px] h-[20px] bg-[#F4F4F4] group-hover:bg-primary transition-colors flex items-center justify-center">
                                 <svg
-                                  className={`transition-transform ${
+                                  className={`md:w-[28px] w-[20px] md:h-[28px] h-[14px] transition-transform ${
                                     expandedStates.subjects[subject.uuid]
                                       ? "rotate-180"
                                       : ""
                                   }`}
-                                  width="28"
-                                  height="28"
                                   viewBox="0 0 28 28"
                                   fill="none"
                                 >

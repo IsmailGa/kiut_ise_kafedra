@@ -9,7 +9,8 @@
     "masters": "AI (Magistratura)",
     "news": "Yangiliklar",
     "apply": "Ariza qoldirish",
-    "menu": "Menyu"
+    "menu": "Menyu",
+    "back": "Orqaga"
   },
   "main": {
     "sectionOne": {
@@ -70,6 +71,7 @@
   "courses": {
     "title": "Bizning yo'nalishlarimiz",
     "description": "Universial o'quv dasturi axborot texnologiyalarining ko'plab sohalarini qamrab oladi, bu esa talabalar uchun o'z yo'nalishini tanlash imkonini beradi",
+    "credits": "kreditlar",
     "cards": {
       "one": {
         "title": "ISE (Bakalavr)",
@@ -135,7 +137,7 @@
       "sectionSix": {
         "title": "Dastur",
         "semester": "{semester}-semestr",
-        "section": "Bo'lim {chunkIndex} ({count} fanlar)"
+        "section": "{count} fanlar"
       },
       "sectionSeven": {
         "title": "Dastur",

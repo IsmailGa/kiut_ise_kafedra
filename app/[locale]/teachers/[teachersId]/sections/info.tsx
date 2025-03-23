@@ -32,10 +32,31 @@ type ContentItem =
   | Publication
   | ResearchInterest;
 
+const uzbekMonths = [
+  "Yanvar",
+  "Fevral",
+  "Mart",
+  "Aprel",
+  "May",
+  "Iyun",
+  "Iyul",
+  "Avgust",
+  "Sentabr",
+  "Oktabr",
+  "Noyabr",
+  "Dekabr",
+];
+
 const formatDate = (dateString: string | undefined, locale: string): string => {
   if (!dateString) return "";
   const date = new Date(dateString);
   if (isNaN(date.getTime())) return "";
+
+  if (locale === "uz") {
+    const month = uzbekMonths[date.getMonth()]; // Get the Uzbek month name
+    const year = date.getFullYear();
+    return `${month} ${year}`;
+  }
 
   const options: Intl.DateTimeFormatOptions = {
     year: "numeric",
@@ -201,27 +222,35 @@ const TeacherInfo = ({ data }: Props) => {
             return (
               <div
                 key={index}
-                className="flex flex-col md:flex-row items-center justify-between py-7 border-b border-gray-300 gap-[15px]"
+                className="flex flex-col md:flex-row items-center justify-between py-[28px] border-b border-gray-300 gap-[15px]"
               >
-                <h1 className="text-3xl font-semibold text-black flex-1 mb-2 sm:mb-0 max-md:self-start">
+                <h1 className="w-full md:text-[20px] text-[18px] md:leading-[34px] lg:max-w-[430px] md:max-w-[400px] sm:max-w-[334px] font-semibold text-black max-md:self-start">
                   {title}
                 </h1>
-                <div className="flex flex-col sm:flex-row items-start max-md:self-start md:items-center gap-4">
-                  {subtitle && <p className="text-lg text-black">{subtitle}</p>}
+                <div className="w-full md:max-w-[60vw] max-sm:max-w-[335px] flex flex-col md:justify-between sm:flex-row items-start max-md:self-start md:items-center">
+                  {subtitle && (
+                    <p className="text-[18px] leading-[165%] text-black">
+                      {subtitle}
+                    </p>
+                  )}
                   {dateRange && (
                     <span className="text-lg text-gray-500">({dateRange})</span>
                   )}
-                  {prePrint && (
-                    <Link href={prePrint} className="text-xl text-blue-500">
-                      Print
-                    </Link>
-                  )}
-                  {linkTo && (
-                    <Link href={linkTo} className="text-xl text-blue-500">
-                      Link
-                    </Link>
-                  )}
                 </div>
+                {prePrint && linkTo && (
+                  <div className="flex flex-col md:justify-between sm:flex-row items-start max-md:self-start md:items-center gap-[15px]">
+                    {prePrint && (
+                      <Link href={prePrint} className="text-xl text-blue-500">
+                        Print
+                      </Link>
+                    )}
+                    {linkTo && (
+                      <Link href={linkTo} className="text-xl text-blue-500">
+                        Link
+                      </Link>
+                    )}
+                  </div>
+                )}
               </div>
             );
           })

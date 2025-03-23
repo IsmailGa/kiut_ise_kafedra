@@ -1,23 +1,27 @@
 "use client";
 import Image from "next/image";
-import profileTeacher from "@/public/assets/teacher_profile.png";
 import React, { useEffect } from "react";
 import Container from "@/components/container";
-import Link from "next/link";
+import { Link } from "@/navigation";
 import { Teacher, Translations } from "@/types/teachers";
 import api from "@/api/axios";
 import Navbar from "@/components/navbar";
 import { useLocale, useTranslations } from "next-intl";
+import Loader from "@/components/loader";
 
-const SkeletonLoader = () => (
-  <div className="flex flex-col flex-1 animate-pulse">
-    <div className="h-10 w-2/3 bg-gray-300 rounded-md"></div>
-    <div className="h-6 w-1/2 bg-gray-300 rounded-md mt-2"></div>
-    <div className="w-full h-[1px] bg-gray-300 mt-[16px] mb-[10px]"></div>
-    <h1 className="text-black text-[20px] leading-[27px] font-medium mb-[16px]">
-      Biography
-    </h1>
-    <div className="h-28 bg-gray-300 rounded-md"></div>
+const Error = () => (
+  <div className="h-screen w-screen fixed top-0 left-0 bg-white z-[9999] flex items-center justify-center">
+    <Container>
+      <div className="w-full flex flex-col items-center">
+        <h1 className="text-center text-[56px] font-bold">Teacher not found</h1>
+        <Link
+          href="/teachers"
+          className="text-center text-primary flex gap-[12px] text-[30px] font-semibold leading-[135%]"
+        >
+          Back
+        </Link>
+      </div>
+    </Container>
   </div>
 );
 
@@ -33,6 +37,7 @@ const Teachers = ({
   const [isExpanded, setIsExpanded] = React.useState(false);
   const [data, setData] = React.useState<Teacher | null>(null);
   const [error, setError] = React.useState(null);
+  const [isLoading, setLoading] = React.useState(true);
 
   const fullName = data?.translations[locale as keyof Translations]?.full_name;
   const role = data?.translations[locale as keyof Translations]?.role;
@@ -45,6 +50,7 @@ const Teachers = ({
   };
 
   useEffect(() => {
+    setLoading(true);
     api
       .get("/teachers/" + params.teachersId)
       .then((response) => {
@@ -53,31 +59,18 @@ const Teachers = ({
       .catch((err) => {
         setError(err.message);
         console.error("Error fetching teachers:", err);
+      })
+      .finally(() => {
+        setLoading(false);
       });
   }, [params.teachersId]);
 
-  useEffect(() => {
-    console.log("Teachers Data:", data);
-  }, [data]);
+  if (isLoading) {
+    return <Loader />;
+  }
 
-  if (params.teachersId !== data?.uuid) {
-    return (
-      <div className="h-screen flex items-center justify-center w-full">
-        <Container>
-          <div className="w-full flex flex-col items-center">
-            <h1 className="text-center text-[56px] font-bold">
-              Teacher not found
-            </h1>
-            <Link
-              href="/teachers"
-              className="text-center text-primary flex gap-[12px] text-[30px] font-semibold leading-[135%]"
-            >
-              Back
-            </Link>
-          </div>
-        </Container>
-      </div>
-    );
+  if (data && data.uuid !== params.teachersId) {
+    return <Error />;
   }
 
   return (
@@ -91,7 +84,7 @@ const Teachers = ({
             <Image
               src={
                 error || !data?.image
-                  ? profileTeacher
+                  ? ""
                   : `http://ai.kiut.uz/${data?.image}`
               }
               alt={fullName || "Teacher profile"} // Added alt text
@@ -136,7 +129,7 @@ const Teachers = ({
                 </div>
               </div>
             ) : (
-              <SkeletonLoader />
+              <Error />
             )}
           </div>
         </Container>
