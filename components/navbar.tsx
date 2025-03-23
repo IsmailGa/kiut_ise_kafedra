@@ -26,6 +26,10 @@ const Navbar = () => {
 
   const isTeachersOrHome = pathname === "/teachers" || pathname === "/";
 
+  const handleBack = () => {
+    router.back();
+  };
+
   return (
     <header className="absolute w-full top-0 lg:py-[25px] py-[18px]">
       <Container>
@@ -48,8 +52,8 @@ const Navbar = () => {
             )}
 
             <div
-              onClick={() => router.back()}
-              className="flex items-center bg-primary text-white xl:h-[50px] lg:h-[48px] h-[44px] xl:px-[25px] lg:px-[23px] px-[20px] border-0 outline-0 rounded-[15px]"
+              onClick={handleBack}
+              className="cursor-pointer flex items-center bg-primary text-white xl:h-[50px] lg:h-[48px] h-[44px] xl:px-[25px] lg:px-[23px] px-[20px] border-0 outline-0 rounded-[15px]"
             >
               {t("back")}
             </div>

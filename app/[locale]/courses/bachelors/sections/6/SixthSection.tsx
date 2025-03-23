@@ -119,97 +119,60 @@ const SixthSection = () => {
                 {t("semester", { semester })}
               </h3>
 
-              {chunked.map((chunk, chunkIndex) => {
-                const sectionKey = `s${semester}-c${chunkIndex}`;
-
+              {chunked.map((chunk, idx) => {
                 return (
-                  <div key={sectionKey} className="flex flex-col gap-[12px]">
-                    {/* Section header */}
-                    <div
-                      className="flex justify-between items-center cursor-pointer px-[20px] py-[15px] bg-gray-50 rounded-lg"
-                      onClick={() => toggleExpand("section", sectionKey)}
-                    >
-                      <h4 className="md:text-[24px] text-[20px] font-medium">
-                        {t("section", {
-                          count: chunk.length,
-                        })}
-                      </h4>
-                      <svg
-                        className={`md:w-[30px] w-[22px] md:h-[30px] h-[16px] bg-black/10 rounded-full my-[]  transition-transform ${
-                          expandedStates.sections[sectionKey]
-                            ? "rotate-180"
-                            : ""
-                        }`}
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
+                  <ul className="flex flex-col gap-[16px]" key={idx}>
+                    {chunk.map((subject) => (
+                      <li
+                        key={subject.uuid}
+                        className="flex flex-col gap-[8px] md:py-[24px] py-[8px] md:px-[30px] px-[15px]  bg-white md:rounded-[25px] rounded-[10px] transition-colors group cursor-pointer hover:bg-[#CEDAE0]"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          toggleExpand("subject", subject.uuid);
+                        }}
                       >
-                        <path
-                          d="M19 9l-7 7-7-7"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </div>
-
-                    {/* Subject list */}
-                    {expandedStates.sections[sectionKey] && (
-                      <ul className="flex flex-col gap-[16px] pl-2">
-                        {chunk.map((subject) => (
-                          <li
-                            key={subject.uuid}
-                            className="flex flex-col gap-[8px] md:py-[24px] py-[8px] md:px-[30px] px-[15px]  bg-white md:rounded-[25px] rounded-[10px] transition-colors group cursor-pointer hover:bg-[#CEDAE0]"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              toggleExpand("subject", subject.uuid);
-                            }}
-                          >
-                            <div className="w-full flex justify-between max-sm:gap-[5px] items-center">
-                              <div className="flex flex-col">
-                                <div className="flex items-center">
-                                  <h4 className="md:text-[24px] text-[16px] font-semibold ">
-                                    {subject.translations[locale].name}
-                                  </h4>
-                                </div>
-                                {expandedStates.subjects[subject.uuid] && (
-                                  <div className="flex flex-col gap-[15px]">
-                                    <p className="md:text-[18px] text-[14px] text-[#666666]">
-                                      {subject.translations[locale].description}
-                                    </p>
-                                    <p className="md:text-[18px] text-[14px] text-primary">
-                                      {subject.credits} {credits("credits")}
-                                    </p>
-                                  </div>
-                                )}
-                              </div>
-
-                              <div className="rounded-full md:w-[50px] w-[20px] md:h-[50px] h-[20px] bg-[#F4F4F4] group-hover:bg-primary transition-colors flex items-center justify-center">
-                                <svg
-                                  className={`md:w-[28px] w-[20px] md:h-[28px] h-[14px] transition-transform ${
-                                    expandedStates.subjects[subject.uuid]
-                                      ? "rotate-180"
-                                      : ""
-                                  }`}
-                                  viewBox="0 0 28 28"
-                                  fill="none"
-                                >
-                                  <path
-                                    d="M5.25 10L14 18.75L22.75 10"
-                                    stroke="white"
-                                    strokeWidth="3"
-                                    strokeLinecap="round"
-                                    className="stroke-[#292D32] group-hover:stroke-white"
-                                  />
-                                </svg>
-                              </div>
+                        <div className="w-full flex justify-between max-sm:gap-[5px] items-center">
+                          <div className="flex flex-col">
+                            <div className="flex items-center">
+                              <h4 className="md:text-[24px] text-[16px] font-semibold ">
+                                {subject.translations[locale].name}
+                              </h4>
                             </div>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
+                            {expandedStates.subjects[subject.uuid] && (
+                              <div className="flex flex-col gap-[15px]">
+                                <p className="md:text-[18px] text-[14px] text-[#666666]">
+                                  {subject.translations[locale].description}
+                                </p>
+                                <p className="md:text-[18px] text-[14px] text-primary">
+                                  {subject.credits} {credits("credits")}
+                                </p>
+                              </div>
+                            )}
+                          </div>
+
+                          <div className="rounded-full md:w-[50px] w-[20px] md:h-[50px] h-[20px] bg-[#F4F4F4] group-hover:bg-primary transition-colors flex items-center justify-center">
+                            <svg
+                              className={`md:w-[28px] w-[20px] md:h-[28px] h-[14px] transition-transform ${
+                                expandedStates.subjects[subject.uuid]
+                                  ? "rotate-180"
+                                  : ""
+                              }`}
+                              viewBox="0 0 28 28"
+                              fill="none"
+                            >
+                              <path
+                                d="M5.25 10L14 18.75L22.75 10"
+                                stroke="white"
+                                strokeWidth="3"
+                                strokeLinecap="round"
+                                className="stroke-[#292D32] group-hover:stroke-white"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
                 );
               })}
             </div>

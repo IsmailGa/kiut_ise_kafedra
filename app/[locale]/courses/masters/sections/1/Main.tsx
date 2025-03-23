@@ -19,7 +19,7 @@ const MainSection = () => {
       .then((info) => setData(info.data[1]))
       .catch((err) => setError(err.message));
     console.log(error);
-  }, []);
+  }, [error]);
   return (
     <section className="w-full flex items-center max-md:flex-col justify-between max-md:gap-[20px]">
       {/* LEFT SIDE */}

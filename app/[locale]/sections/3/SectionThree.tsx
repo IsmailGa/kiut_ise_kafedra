@@ -26,7 +26,7 @@ const SectionThree = () => {
       .then((res) => setData(res.data))
       .catch((err) => setError(err.message));
     console.log(error);
-  }, []);
+  }, [error]);
 
   return (
     <section className="flex flex-col w-full 2xl:mt-[120px] mt-[95px]" id="3">
@@ -85,24 +85,8 @@ const SectionThree = () => {
                           }`}
                         />
                       ))}
-
-                {/* <Image
-                  src={teacher_profile}
-                  alt="teacher"
-                  className="object-cover shrink-0 aspect-square w-[80px] md:w-[100px] lg:w-[120px] rounded-full sm:ml-[-25px] ml-[-40px] border-[5px] border-white"
-                />
-                <Image
-                  src={teacher_profile}
-                  alt="teacher"
-                  className="object-cover shrink-0 aspect-square w-[80px] md:w-[100px] lg:w-[120px] rounded-full sm:ml-[-25px] ml-[-40px] border-[5px] border-white"
-                />
-                <Image
-                  src={teacher_profile}
-                  alt="teacher"
-                  className="object-cover shrink-0 aspect-square w-[80px] md:w-[100px] lg:w-[120px] rounded-full sm:ml-[-25px] ml-[-40px] border-[5px] border-white"
-                /> */}
               </div>
-              <span className="2xl:text-[36px] xl:text-[32px] max-sm:bg-gray-400 max-sm:border-white  max-sm:border-[5px] max-sm:rounded-full max-sm:shrink-0 max-sm:aspect-square max-sm:w-[80px] flex items-center justify-center text-[28px] font-medium leading-[140%]">
+              <span className="2xl:text-[36px] sm:ml-[-25px] ml-[-40px] xl:text-[32px] text-[28px] font-medium leading-[140%]">
                 {data?.count}+
               </span>
             </div>

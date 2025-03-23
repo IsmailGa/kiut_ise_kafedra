@@ -1,4 +1,6 @@
 {
+  "button": "More",
+  "all_news": "All news",
   "header": {
     "all_directions": "All directions",
     "department": "Department",
@@ -71,7 +73,7 @@
   "courses": {
     "title": "Our Directions",
     "description": "The universal training program covers many areas of information technology, allowing students to choose their niche",
-    "credits" : "credits",
+    "credits": "credits",
     "cards": {
       "one": {
         "title": "ISE (Bachelor's)",

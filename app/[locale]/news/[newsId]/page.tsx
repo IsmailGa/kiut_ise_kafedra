@@ -12,13 +12,51 @@ import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import { Link } from "@/navigation";
 import Loader from "@/components/loader";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+
+
+const uzbekMonths = [
+  "yanvar",
+  "fevral",
+  "mart",
+  "aprel",
+  "may",
+  "iyun",
+  "iyul",
+  "avgust",
+  "sentabr",
+  "oktabr",
+  "noyabr",
+  "dekabr",
+];
+
+const formatDate = (dateString: string | undefined, locale: string): string => {
+  if (!dateString) return "";
+  const date = new Date(dateString);
+  if (isNaN(date.getTime())) return "";
+
+  if (locale === "uz") {
+    const day = date.getDay();
+    const month = uzbekMonths[date.getMonth()]; // Get the Uzbek month name
+    const year = date.getFullYear();
+    return `${day} ${month} ${year}`;
+  }
+
+  const options: Intl.DateTimeFormatOptions = {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+  };
+
+  return date.toLocaleDateString(locale, options);
+};
 
 const NewsInfo = ({ params }: { params: { newsId: string } }) => {
   const [news, setNews] = useState<NewsItem | null>(null);
   const [allNews, setAllNews] = useState<NewsItem[]>([]);
   const [loading, setLoading] = useState(true);
   const locale = useLocale();
+  const t = useTranslations("");
 
   useEffect(() => {
     const fetchNews = async () => {
@@ -51,12 +89,7 @@ const NewsInfo = ({ params }: { params: { newsId: string } }) => {
     return <div>News not found</div>;
   }
 
-  const formattedDate = new Date(news.created_at).toLocaleDateString("ru-RU", {
-    day: "2-digit",
-    month: "short",
-    year: "numeric",
-  });
-  const formattedTime = new Date(news.created_at).toLocaleTimeString("ru-RU", {
+  const formattedTime = new Date(news.created_at).toLocaleTimeString(locale, {
     hour: "2-digit",
     minute: "2-digit",
   });
@@ -73,16 +106,16 @@ const NewsInfo = ({ params }: { params: { newsId: string } }) => {
                 href="/news"
                 className="text-primary flex gap-[12px] items-center text-[18px] font-semibold leading-[135%] self-start"
               >
-                <BlueLArrowIcon /> Все новости
+                <BlueLArrowIcon /> {t("all_news")}
               </Link>
               <div className="flex flex-col gap-[18px]">
-                <h1 className="text-[40px] font-semibold leading-[135%] max-sm:hyphens-manual">
+                <h1 className="md:text-[40px] sm:text-[30px] text-[25px] font-semibold leading-[135%] max-sm:hyphens-manual">
                   {news.translations[locale].title}
                 </h1>
                 <div className="flex gap-[15px]">
                   <div className="flex gap-[5px] items-center">
                     <CalendarIcon />
-                    <span>{formattedDate}</span>
+                    <span>{formatDate(news.created_at, locale)}</span>
                   </div>
                   <div className="flex gap-[5px] items-center">
                     <ClockIcon />
