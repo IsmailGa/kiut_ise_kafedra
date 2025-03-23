@@ -96,7 +96,7 @@ const NewsInfo = ({ params }: { params: { newsId: string } }) => {
               <Image
                 src={`http://ai.kiut.uz/${news.images[0]}`}
                 alt="example"
-                className="object-cover"
+                className="object-cover w-full h-full aspect-video"
                 width={2000}
                 height={500}
               />

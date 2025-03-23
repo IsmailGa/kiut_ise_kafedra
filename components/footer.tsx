@@ -97,7 +97,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="flex w-ful bg-[#F4F4F465] pt-[45px] mt-[120px]">
+    <footer className="flex w-full bg-[#F4F4F465] pt-[45px] mt-[120px]">
       <Container>
         <div className="flex flex-col items-center">
           <div className="w-full grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 md:gap-[32px] gap-[40px] justify-between border-b border-[#66666640] pb-[45px]">

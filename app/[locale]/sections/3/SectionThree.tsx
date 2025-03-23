@@ -17,13 +17,13 @@ type ImageTeachers = {
 
 const SectionThree = () => {
   const [error, setError] = useState("");
-  const [image, setImage] = useState<ImageTeachers | null>(null);
+  const [data, setData] = useState<ImageTeachers | null>(null);
   const t = useTranslations("main.sectionThree");
 
   useEffect(() => {
     api
       .get("/?teachers_image_limit=4")
-      .then((res) => setImage(res.data))
+      .then((res) => setData(res.data))
       .catch((err) => setError(err.message));
     console.log(error);
   }, []);
@@ -53,8 +53,8 @@ const SectionThree = () => {
           <div className="flex flex-col gap-[25px] lg:items-center items-start flex-1 w-full">
             <div className="relative flex items-center gap-[25px]">
               <div className="flex items-center">
-                {image
-                  ? image?.teachers.map((item, index) => (
+                {data
+                  ? data?.teachers.map((item, index) => (
                       <Image
                         key={index}
                         src={
@@ -66,9 +66,9 @@ const SectionThree = () => {
                         height={200}
                         priority
                         alt="teacher"
-                        className={`shrink-0 aspect-square w-[80px] md:w-[100px] lg:w-[120px] rounded-full ml-[${
-                          index > 0 ? "ml-[0]" : "sm:ml-[-25px] ml-[-40px]"
-                        }] border-[5px] border-white`}
+                        className={`shrink-0 aspect-square w-[80px] md:w-[100px] lg:w-[120px] rounded-full border-[5px] border-white ${
+                          index > 0 ? "sm:ml-[-25px] ml-[-40px]" : "ml-0"
+                        }`}
                       />
                     ))
                   : Array(4)
@@ -103,7 +103,7 @@ const SectionThree = () => {
                 /> */}
               </div>
               <span className="2xl:text-[36px] xl:text-[32px] max-sm:bg-gray-400 max-sm:border-white  max-sm:border-[5px] max-sm:rounded-full max-sm:shrink-0 max-sm:aspect-square max-sm:w-[80px] flex items-center justify-center text-[28px] font-medium leading-[140%]">
-                25+
+                {data?.count}+
               </span>
             </div>
 

@@ -2,15 +2,35 @@
 
 import Image from "next/image";
 import { Link } from "@/navigation";
-import React from "react";
-import teacher_icon from "@/public/assets/teacher_icon.jpeg";
+import React, { useEffect, useState } from "react";
+import teacher_profile from "@/public/assets/teacher_profile.png";
 import { useTranslations } from "next-intl";
+import api from "@/api/axios";
+
+type Teacher = {
+  image: string;
+};
+
+type ImageTeachers = {
+  teachers: Teacher[];
+  count: number;
+};
 
 const FifthSection = () => {
+  const [error, setError] = useState("");
+  const [data, setData] = useState<ImageTeachers | null>(null);
   const t = useTranslations("teachers.banner");
 
+  useEffect(() => {
+    api
+      .get("/?teachers_image_limit=4")
+      .then((res) => setData(res.data))
+      .catch((err) => setError(err.message));
+    console.log(error);
+  }, []);
+
   return (
-    <section className="w-full flex md:items-center max-md:flex-col max-md:gap-[30px] justify-between mt-[120px] bg-primary rounded-[30px] md:py-[35px] py-[25px] md:px-[40px] px-[30px] overflow-hidden">
+    <section className="w-full flex md:items-center max-lg:flex-col max-lg:gap-[30px] justify-between mt-[120px] bg-primary rounded-[30px] md:py-[35px] sm:py-[25px] py-[15px] md:px-[40px] sm:px-[30px] px-[20px] overflow-hidden">
       {/* LEFT SIDE */}
       <div className="flex flex-col gap-[32px] max-w-[674px]">
         <h1 className="text-white lg:text-[56px] md:text-[40px] sm:text-[30px] text-[26px] leading-[125%] font-semibold">
@@ -23,29 +43,37 @@ const FifthSection = () => {
           {t("button")}
         </Link>
       </div>
-      <div className="max-w-[500px] w-full flex">
-        <Image
-          src={teacher_icon}
-          alt="teacher"
-          className="flex items-center justify-center shrink-0 aspect-square lg:w-[134px] w-[80px] lg:h-[134px] h-[80px] rounded-full border-[5px] border-white"
-        />
-        <Image
-          src={teacher_icon}
-          alt="teacher"
-          className="-translate-x-[30%] flex items-center justify-center shrink-0 aspect-square lg:w-[134px] w-[80px] lg:h-[134px] h-[80px] rounded-full  border-[5px] border-white"
-        />
-        <Image
-          src={teacher_icon}
-          alt="teacher"
-          className="-translate-x-[60%] flex items-center justify-center shrink-0 aspect-square lg:w-[134px] w-[80px] lg:h-[134px] h-[80px] rounded-full  border-[5px] border-white"
-        />
-        <Image
-          src={teacher_icon}
-          alt="teacher"
-          className="-translate-x-[90%] flex items-center justify-center shrink-0 aspect-square lg:w-[134px] w-[80px] lg:h-[134px] h-[80px] rounded-full  border-[5px] border-white"
-        />
-        <span className="-translate-x-[120%] text-[40px] text-primary font-medium leading-[140%] rounded-full lg:py-[38px] lg:px-[30px] py-[18px] px-[10px] bg-[#F7F7F7] border-white">
-          25+
+      <div className="w-full flex">
+        {data
+          ? data?.teachers.map((item, index) => (
+              <Image
+                key={index}
+                src={item ? `http://ai.kiut.uz/${item.image}` : teacher_profile}
+                width={200}
+                height={200}
+                priority
+                alt="teacher"
+                className={`shrink-0 aspect-square w-[80px] md:w-[100px] lg:w-[120px] rounded-full border-[5px] border-white ${
+                  index > 0 ? "sm:ml-[-25px] ml-[-40px]" : "ml-0"
+                }`}
+              />
+            ))
+          : Array(4)
+              .fill(null)
+              .map((_, index) => (
+                <Image
+                  key={index}
+                  src={teacher_profile}
+                  width={200}
+                  height={200}
+                  alt="teacher"
+                  className={`shrink-0 aspect-square w-[80px] md:w-[100px] lg:w-[120px] rounded-full border-[5px] border-white ${
+                    index > 0 ? "sm:ml-[-35px] ml-[-40px]" : "ml-0"
+                  }`}
+                />
+              ))}
+        <span className="text-[32px] border-white border-[5px] rounded-full sm:ml-[-35px] ml-[-40px] shrink-0 aspect-square lg:w-[134px] w-[80px] flex items-center justify-center font-medium leading-[140%] text-primary bg-white">
+          {data?.count}+
         </span>
       </div>
     </section>

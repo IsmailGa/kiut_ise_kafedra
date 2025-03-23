@@ -9,7 +9,8 @@
     "masters": "AI (Магистратура)",
     "news": "Новости",
     "apply": "Подать заявку",
-    "menu": "Меню"
+    "menu": "Меню",
+    "back": "Назад"
   },
   "main": {
     "sectionOne": {
@@ -70,6 +71,7 @@
   "courses": {
     "title": "Наши направления",
     "description": "Универсальная программа обучения охватывает множество отраслей информационных технологий, что позволяет студентам выбрать свою нишу",
+    "credits": "кредитов",
     "cards": {
       "one": {
         "title": "ISE (Бакалавр)",
@@ -138,7 +140,7 @@
         "practiceHours": "360 hours of practice",
         "projects": "56 projects",
         "semester": "{semester} семестр",
-        "section": "Раздел {chunkIndex} ({count} предмета)"
+        "section": "{count} предмета"
       },
       "sectionSeven": {
         "title": "Структура программы:"

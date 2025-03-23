@@ -15,13 +15,14 @@ import {
 } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { useTranslations } from "next-intl";
-import { Link, usePathname } from "@/navigation";
+import { Link, usePathname, useRouter } from "@/navigation";
 import LocaleSwitcher from "./localeSwitcher";
 
 const Navbar = () => {
   const t = useTranslations("header");
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const router = useRouter();
 
   const isTeachersOrHome = pathname === "/teachers" || pathname === "/";
 
@@ -45,6 +46,13 @@ const Navbar = () => {
                 {t("all_directions")}
               </Link>
             )}
+
+            <div
+              onClick={() => router.back()}
+              className="flex items-center bg-primary text-white xl:h-[50px] lg:h-[48px] h-[44px] xl:px-[25px] lg:px-[23px] px-[20px] border-0 outline-0 rounded-[15px]"
+            >
+              {t("back")}
+            </div>
           </div>
           {/* RIGHT SIDE */}
           <div className="flex items-center xl:gap-[45px] lg:gap-[25px] gap-[14px]">
@@ -150,7 +158,7 @@ const Navbar = () => {
 
             <Link
               href="https://admission.kiut.uz/"
-              className="text-center flex items-center justify-center bg-primary text-white xl:h-[50px] lg:h-[48px] h-[44px] xl:px-[25px] lg:px-[23px] md:px-[20px] px-[10px] border-0 outline-0 rounded-[15px]"
+              className="text-center sm:flex hidden items-center justify-center bg-primary text-white xl:h-[50px] lg:h-[48px] h-[44px] xl:px-[25px] lg:px-[23px] md:px-[20px] px-[10px] border-0 outline-0 rounded-[15px]"
             >
               {t("apply")}
             </Link>
