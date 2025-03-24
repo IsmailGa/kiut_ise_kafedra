@@ -14,7 +14,6 @@ import { Link } from "@/navigation";
 import Loader from "@/components/loader";
 import { useLocale, useTranslations } from "next-intl";
 
-
 const uzbekMonths = [
   "yanvar",
   "fevral",
@@ -129,7 +128,7 @@ const NewsInfo = ({ params }: { params: { newsId: string } }) => {
               <Image
                 src={`http://ai.kiut.uz/${news.images[0]}`}
                 alt="example"
-                className="object-cover w-full h-full aspect-video"
+                className="object-contain w-full h-full aspect-square"
                 width={2000}
                 height={500}
               />
@@ -197,7 +196,10 @@ const NewsInfo = ({ params }: { params: { newsId: string } }) => {
                           <SwiperSlide key={item.uuid}>
                             <div className="rounded-[25px] overflow-hidden flex flex-col w-full max-w-[430px] h-[432px]">
                               <div className="relative w-full h-[200px]">
-                                <Link href={`/news/${item.uuid}`}>
+                                <Link
+                                  scroll={false}
+                                  href={`/news/${item.uuid}`}
+                                >
                                   <Image
                                     src={
                                       item.images[0]

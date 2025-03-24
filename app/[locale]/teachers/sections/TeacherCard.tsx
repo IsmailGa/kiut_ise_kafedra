@@ -50,6 +50,7 @@ const TeacherCard = ({ teacher }: Props) => {
           </div>
           <Link
             href={`teachers/${teacher.uuid}`}
+            scroll={false}
             className="flex items-center justify-between transition-all duration-200 ease-in-out h-[48px] hover:bg-primary hover:border-none rounded-[15px] hover:text-white border-[1px] border-[#CEDAE0] hover:fill-black text-[18px] text-black px-[24px]"
           >
             {/* Button is from locales/[lang].json in main.sectionThree*/}

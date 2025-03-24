@@ -222,21 +222,20 @@ const TeacherInfo = ({ data }: Props) => {
             return (
               <div
                 key={index}
-                className="flex flex-col md:flex-row items-center justify-between py-[28px] border-b border-gray-300 gap-[15px]"
+                className="grid items-center justify-between py-[28px] border-b border-gray-300 gap-[15px]"
               >
-                <h1 className="w-full md:text-[20px] text-[18px] md:leading-[34px] xl:max-w-[100%] lg:max-w-[430px] md:max-w-[400px] sm:max-w-[334px] font-semibold text-black max-md:self-start">
+                {dateRange && (
+                  <span className="text-lg text-gray-500 col-span-1">({dateRange})</span>
+                )}
+                <h1 className="w-full col-span-2 md:text-[20px] text-[18px] md:leading-[34px] xl:max-w-[100%] lg:max-w-[430px]  font-semibold text-black max-md:self-start">
                   {title}
                 </h1>
-                <div className="w-full md:max-w-[60vw] max-sm:max-w-[335px] flex flex-col md:justify-between sm:flex-row items-start max-md:self-start md:items-center">
-                  {subtitle && (
-                    <p className="text-[18px] leading-[165%] text-black">
-                      {subtitle}
-                    </p>
-                  )}
-                  {dateRange && (
-                    <span className="text-lg text-gray-500">({dateRange})</span>
-                  )}
-                </div>
+                {subtitle && (
+                  <p className="text-[18px] col-span-1 leading-[165%] text-black">
+                    {subtitle}
+                  </p>
+                )}
+
                 {prePrint && linkTo && (
                   <div className="flex flex-col md:justify-between sm:flex-row max-md:self-start md:items-center gap-[15px]">
                     {prePrint && (

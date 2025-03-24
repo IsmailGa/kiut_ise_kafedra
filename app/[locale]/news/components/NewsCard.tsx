@@ -59,7 +59,7 @@ export function NewsCard({ news }: NewsCardProps) {
       <Image
         src={`http://ai.kiut.uz/${news.images[0]}`}
         alt="news"
-        className="w-full object-cover flex-1 aspect-video"
+        className="w-full h-auto object-cover flex-1 aspect-video"
         width={350}
         height={200}
       />
@@ -86,6 +86,7 @@ export function NewsCard({ news }: NewsCardProps) {
             </div>
           </div>
           <Link
+            scroll={false}
             href={`/news/${news.uuid}`}
             className="text-[16px] font-semibold leading-[140%] px-[24px] py-[16px] bg-primary rounded-[15px] text-white text-center"
           >
