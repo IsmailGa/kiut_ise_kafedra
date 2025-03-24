@@ -4,6 +4,7 @@ import { NextIntlClientProvider } from "next-intl";
 import "./globals.css";
 import Footer from "@/components/footer";
 import { getMessages } from "next-intl/server";
+import ScrollToTop from "@/components/toTop";
 
 const manrope = Manrope({ subsets: ["latin"] });
 
@@ -25,6 +26,7 @@ export default async function RootLayout({
     <html lang={locale}>
       <NextIntlClientProvider locale={locale} messages={messages}>
         <body className={`${manrope.className} antialiased`}>
+          <ScrollToTop />
           <main>{children}</main>
           <Footer />
         </body>
