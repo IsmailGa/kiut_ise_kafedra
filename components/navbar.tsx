@@ -28,6 +28,9 @@ const Navbar = () => {
 
   const handleBack = () => {
     router.back();
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 50);
   };
 
   return (
@@ -66,44 +69,14 @@ const Navbar = () => {
               } max-xl:hidden`}
             >
               <li>
-                <Menu as="div" className="relative inline-block text-left">
-                  <MenuButton className="inline-flex w-full justify-center items-center">
-                    <span
-                      className={isTeachersOrHome ? "text-white" : "text-black"}
-                    >
-                      {t("department")}
-                    </span>
-                    <ChevronDownIcon
-                      aria-hidden="true"
-                      className={`-mr-1 size-5 ${
-                        isTeachersOrHome ? "text-white" : "text-black"
-                      }`}
-                    />
-                  </MenuButton>
-                  <MenuItems
-                    transition
-                    className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black/5 transition focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in"
-                  >
-                    <div className="py-1">
-                      <MenuItem>
-                        <Link
-                          href="#"
-                          className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 data-[focus]:outline-none"
-                        >
-                          {t("about_us")}
-                        </Link>
-                      </MenuItem>
-                      <MenuItem>
-                        <Link
-                          href="/teachers"
-                          className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 data-[focus]:outline-none"
-                        >
-                          {t("teachers")}
-                        </Link>
-                      </MenuItem>
-                    </div>
-                  </MenuItems>
-                </Menu>
+                <Link
+                  href="/teachers"
+                  className={`block data-[focus]:bg-gray-100 data-[focus]:text-gray-900 data-[focus]:outline-none ${
+                    isTeachersOrHome ? "text-white" : "text-black"
+                  }`}
+                >
+                  {t("teachers")}
+                </Link>
               </li>
               <li>
                 <Menu as="div" className="relative inline-block text-left">
@@ -199,36 +172,12 @@ const Navbar = () => {
                   </button>
                 </div>
                 <div className="flex flex-col gap-[10px]">
-                  <Disclosure as="div">
-                    {({ open }) => (
-                      <>
-                        <DisclosureButton className="flex w-full justify-between items-center rounded-[15px] px-5 py-[10px] font-medium text-black">
-                          <div className="text-[24px] font-medium">
-                            {t("department")}
-                          </div>
-                          <ChevronDownIcon
-                            className={`${
-                              open ? "rotate-180 transform" : ""
-                            } h-7 w-7 text-black`}
-                          />
-                        </DisclosureButton>
-                        <DisclosurePanel className="px-4 pb-2 pt-4 text-[20px] text-gray-700">
-                          <Link
-                            href="/"
-                            className="block px-4 py-2 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 data-[focus]:outline-none"
-                          >
-                            {t("about_us")}
-                          </Link>
-                          <Link
-                            href="/teachers"
-                            className="block px-4 py-2 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 data-[focus]:outline-none"
-                          >
-                            {t("teachers")}
-                          </Link>
-                        </DisclosurePanel>
-                      </>
-                    )}
-                  </Disclosure>
+                  <Link
+                    href="/teachers"
+                    className="px-5 py-[10px] w-full text-[24px] font-medium text-black"
+                  >
+                    {t("teachers")}
+                  </Link>
                   <Disclosure as="div">
                     {({ open }) => (
                       <>

@@ -30,7 +30,7 @@ export default function LocaleSwitcherSelect({
 
   return (
     <label
-      className={"text-white bg-primary rounded-[10px] p-[10px]"}
+      className={"text-white bg-primary rounded-[10px] p-[10px] max-sm:w-full"}
       htmlFor="locale-switcher"
     >
       <p className="sr-only">{label}</p>

@@ -7,7 +7,7 @@ const LocaleSwitcher = () => {
   const t = useTranslations("LocaleSwitcher");
   const locale = useLocale();
   return (
-    <div>
+    <div className="max-sm:w-full">
       <LocaleSwitcherSelect defaultValue={locale} label={t("label")}>
         {locales.map((cur) => (
           <option key={cur} value={cur} className="text-black">

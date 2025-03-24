@@ -5,6 +5,9 @@
 .bg-laptop > * {
   z-index: 10;
 }
+body {
+  scroll-behavior: auto !important;
+}
 
 .bg-laptop::after {
   content: "";
@@ -47,7 +50,7 @@
     content: "";
     position: absolute;
     right: -250%;
-    
+
     border-top-left-radius: 100%;
     border-bottom-left-radius: 10%;
   }
