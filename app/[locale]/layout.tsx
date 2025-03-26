@@ -5,6 +5,7 @@ import "./globals.css";
 import Footer from "@/components/footer";
 import { getMessages } from "next-intl/server";
 import ScrollToTop from "@/components/toTop";
+import "react-slideshow-image/dist/styles.css";
 
 const manrope = Manrope({ subsets: ["latin"] });
 

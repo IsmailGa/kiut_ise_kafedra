@@ -21,10 +21,22 @@ import LocaleSwitcher from "./localeSwitcher";
 const Navbar = () => {
   const t = useTranslations("header");
   const pathname = usePathname();
+  const [navColour, updateNavbar] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const router = useRouter();
 
   const isTeachersOrHome = pathname === "/teachers" || pathname === "/";
+  const exceptionalUrls = ["/news", "/teachers", "/teachers/*"];
+
+  function scrollHandler() {
+    if (window.scrollY >= 20) {
+      updateNavbar(true);
+    } else {
+      updateNavbar(false);
+    }
+  }
+
+  window.addEventListener("scroll", scrollHandler);
 
   const handleBack = () => {
     router.back();
@@ -34,7 +46,15 @@ const Navbar = () => {
   };
 
   return (
-    <header className="absolute w-full top-0 lg:py-[25px] py-[18px]">
+    <header
+      className={`${
+        isMenuOpen
+          ? "fixed bg-white"
+          : navColour
+          ? "fixed bg-white/70 backdrop-blur-md border-b border-[1px]"
+          : "absolute"
+      } w-full top-0 lg:py-[25px] py-[18px] z-[99999]`}
+    >
       <Container>
         <div className="flex justify-between items-center">
           {/* LEFT SIDE */}
@@ -43,12 +63,21 @@ const Navbar = () => {
               href="/"
               className="flex aspect-square xl:w-[55px] lg:w-[48px] w-[44px]"
             >
-              <Image src={isTeachersOrHome ? logo : logoBlue} alt="logo" />
+              <Image
+                src={
+                  isTeachersOrHome ? (navColour ? logoBlue : logo) : logoBlue
+                }
+                alt="logo"
+              />
             </Link>
             {isTeachersOrHome && (
               <Link
                 href="/courses"
-                className="md:flex items-center hidden bg-white/20 backdrop-blur-lg text-white xl:h-[50px] lg:h-[48px] h-[44px] xl:px-[25px] lg:px-[23px] px-[20px] border-0 outline-0 rounded-[15px]"
+                className={`md:flex items-center hidden ${
+                  navColour
+                    ? "bg-black/20 backdrop-blur-lg"
+                    : "bg-white/20 backdrop-blur-lg text-white"
+                } xl:h-[50px] lg:h-[48px] h-[44px] xl:px-[25px] lg:px-[23px] px-[20px] border-0 outline-0 rounded-[15px]`}
               >
                 {t("all_directions")}
               </Link>
@@ -65,14 +94,22 @@ const Navbar = () => {
           <div className="flex items-center xl:gap-[45px] lg:gap-[25px] gap-[14px]">
             <ul
               className={`flex gap-[30px] ${
-                isTeachersOrHome ? "text-white" : "text-black"
+                isTeachersOrHome
+                  ? navColour
+                    ? "text-black"
+                    : "text-white"
+                  : "text-black"
               } max-xl:hidden`}
             >
               <li>
                 <Link
                   href="/teachers"
                   className={`block data-[focus]:bg-gray-100 data-[focus]:text-gray-900 data-[focus]:outline-none ${
-                    isTeachersOrHome ? "text-white" : "text-black"
+                    isTeachersOrHome
+                      ? navColour
+                        ? "text-black"
+                        : "text-white"
+                      : "text-black"
                   }`}
                 >
                   {t("teachers")}
@@ -82,14 +119,24 @@ const Navbar = () => {
                 <Menu as="div" className="relative inline-block text-left">
                   <MenuButton className="inline-flex w-full justify-center items-center">
                     <span
-                      className={isTeachersOrHome ? "text-white" : "text-black"}
+                      className={
+                        isTeachersOrHome
+                          ? navColour
+                            ? "text-black"
+                            : "text-white"
+                          : "text-black"
+                      }
                     >
                       {t("directions")}
                     </span>
                     <ChevronDownIcon
                       aria-hidden="true"
                       className={`-mr-1 size-5 ${
-                        isTeachersOrHome ? "text-white" : "text-black"
+                        isTeachersOrHome
+                          ? navColour
+                            ? "text-black"
+                            : "text-white"
+                          : "text-black"
                       }`}
                     />
                   </MenuButton>
@@ -121,7 +168,13 @@ const Navbar = () => {
               <li>
                 <Link
                   href="/news"
-                  className={isTeachersOrHome ? "!text-white" : "!text-black"}
+                  className={
+                    isTeachersOrHome
+                      ? navColour
+                        ? "text-black"
+                        : "text-white"
+                      : "text-black"
+                  }
                 >
                   {t("news")}
                 </Link>
@@ -130,15 +183,22 @@ const Navbar = () => {
               <li className="xl:flex hidden">
                 <LocaleSwitcher />
               </li>
-              <span className="block h w-[2px] bg-white"></span>
+              {exceptionalUrls.filter((url) => pathname.includes(url))
+                .length === 0 && (
+                <span className="block h w-[2px] bg-white"></span>
+              )}
             </ul>
-
-            <Link
-              href="https://admission.kiut.uz/"
-              className="text-center sm:flex hidden items-center justify-center bg-primary text-white xl:h-[50px] lg:h-[48px] h-[44px] xl:px-[25px] lg:px-[23px] md:px-[20px] px-[10px] border-0 outline-0 rounded-[15px]"
-            >
-              {t("apply")}
-            </Link>
+            {exceptionalUrls.filter((url) => pathname.includes(url)).length ===
+              0 && (
+              <>
+                <Link
+                  href="https://admission.kiut.uz/"
+                  className="text-center sm:flex hidden items-center justify-center bg-primary text-white xl:h-[50px] lg:h-[48px] h-[44px] xl:px-[25px] lg:px-[23px] md:px-[20px] px-[10px] border-0 outline-0 rounded-[15px]"
+                >
+                  {t("apply")}
+                </Link>
+              </>
+            )}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="relative xl:hidden flex aspect-square lg:w-[48px] w-[44px] h-auto rounded-[15px] bg-white"
