@@ -67,7 +67,7 @@ const SectionThree = () => {
                         priority
                         alt="teacher"
                         className={`shrink-0 aspect-square w-[80px] md:w-[100px] lg:w-[120px] rounded-full border-[5px] border-white ${
-                          index > 0 ? "sm:ml-[-25px] ml-[-40px]" : "ml-0"
+                          index > 0 ? "md:ml-[-35px] sm:ml-[-5px] max-[400px]:ml-[-20px] max-sm:ml-[-10px] max-[350px]:ml-[-30px] ml-[-50px]" : "ml-0"
                         }`}
                       />
                     ))

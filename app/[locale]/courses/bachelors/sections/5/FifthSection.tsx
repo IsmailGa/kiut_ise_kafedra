@@ -56,11 +56,16 @@ const FifthSection = () => {
                 className={`
               shrink-0 
               aspect-square
+              h-[80px] md:h-[100px] lg:h-[120px]
               w-[80px] md:w-[100px] lg:w-[120px] 
-              rounded-full 
+              rounded-full
               border-[5px] border-white
               object-cover
-              ${index > 0 ? "sm:-ml-6 -ml-10" : ""}
+              ${
+                index > 0
+                  ? "lg:ml-[-10px] md:ml-[-15px] sm:ml-[-5px] max-sm:ml-[-10px] max-[410px]:ml-[-30px] max-[360px]:ml-[-50px]"
+                  : ""
+              }
             `}
               />
             ))
@@ -73,12 +78,12 @@ const FifthSection = () => {
                   width={200}
                   height={200}
                   alt="teacher"
-                  className={`shrink-0 aspect-square w-[80px] md:w-[100px] lg:w-[120px] rounded-full border-[5px] border-white ${
+                  className={`shrink-0 aspect-square h-[80px] md:h-[100px] lg:h-[120px] w-[80px] md:w-[100px] lg:w-[120px] rounded-full border-[5px] border-white ${
                     index > 0 ? "sm:ml-[-35px] ml-[-40px]" : "ml-0"
                   }`}
                 />
               ))}
-        <span className="text-[32px] border-white border-[5px] rounded-full sm:ml-[-35px] ml-[-40px] shrink-0 aspect-square lg:w-[134px] w-[80px] flex items-center justify-center font-medium leading-[140%] text-primary bg-white">
+        <span className="text-[32px] border-white border-[5px] rounded-full lg:ml-[-10px] md:ml-[-15px] sm:ml-[-5px] max-sm:ml-[-10px] max-[410px]:ml-[-30px] max-[360px]:ml-[-50px] shrink-0 aspect-square w-[80px] md:w-[100px] lg:w-[120px] h-[80px] md:h-[100px] lg:h-[120px] flex items-center justify-center font-medium leading-[140%] text-primary bg-white">
           {data?.count}+
         </span>
       </div>
