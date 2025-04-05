@@ -26,6 +26,7 @@ const Navbar = () => {
   const router = useRouter();
 
   const isTeachersOrHome = pathname === "/teachers" || pathname === "/";
+  const exceptionalPath = pathname !== "/";
   const exceptionalUrls = ["/news", "/teachers", "/teachers/*"];
 
   function scrollHandler() {
@@ -70,7 +71,7 @@ const Navbar = () => {
                 alt="logo"
               />
             </Link>
-            {isTeachersOrHome && (
+            {exceptionalPath && (
               <Link
                 href="/courses"
                 className={`md:flex items-center hidden ${
@@ -82,13 +83,14 @@ const Navbar = () => {
                 {t("all_directions")}
               </Link>
             )}
-
-            <div
-              onClick={handleBack}
-              className="cursor-pointer flex items-center bg-primary text-white xl:h-[50px] lg:h-[48px] h-[44px] xl:px-[25px] lg:px-[23px] px-[20px] border-0 outline-0 rounded-[15px]"
-            >
-              {t("back")}
-            </div>
+            {exceptionalPath && (
+              <div
+                onClick={handleBack}
+                className="cursor-pointer flex items-center bg-primary text-white xl:h-[50px] lg:h-[48px] h-[44px] xl:px-[25px] lg:px-[23px] px-[20px] border-0 outline-0 rounded-[15px]"
+              >
+                {t("back")}
+              </div>
+            )}
           </div>
           {/* RIGHT SIDE */}
           <div className="flex items-center xl:gap-[45px] lg:gap-[25px] gap-[14px]">
