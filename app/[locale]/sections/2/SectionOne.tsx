@@ -26,9 +26,9 @@ const SectionTwo = () => {
           </p>
         </div>
         {/* SECTION 2 */}
-        <div className="flex md:items-center md:flex-row flex-col justify-start gap-[64px]">
+        <div className="flex md:items-center md:flex-row flex-col max-2xl:justify-start 2xl:justify-between gap-[64px]">
           {/* CARD 1*/}
-          <div className="flex xl:items-center max-xl:flex-col gap-[30px] flex-1">
+          <div className="flex xl:items-center max-xl:flex-col gap-[30px]">
             <div className="shrink-0 h-[150px] w-[150px] flex flex-col justify-center items-center text-primary border-[#CEDAE0] border-[1px] rounded-[75px]">
               <span className="text-[56px] font-semibold leading-[50px] block">
                 6
@@ -42,7 +42,7 @@ const SectionTwo = () => {
             </p>
           </div>
           {/* CARD 2 */}
-          <div className="flex xl:items-center max-xl:flex-col gap-[30px] flex-1">
+          <div className="flex xl:items-center max-xl:flex-col gap-[30px]">
             {/* CIRCLES */}
             <div className="flex relative">
               <div className="2xl:mr-[-110px] xl:mr-[-125px] mr-[-110px] h-[150px] w-[150px] flex flex-col justify-center items-center text-primary bg-white border-[#CEDAE0] border-[1px] rounded-[75px]"></div>
