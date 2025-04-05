@@ -125,13 +125,22 @@ const NewsInfo = ({ params }: { params: { newsId: string } }) => {
             </div>
             {/* INFO */}
             <div className="flex flex-col gap-[32px] border-b border-[#CEDAE0] mt-[36px] pb-[36px]">
-              <Image
-                src={`http://ai.kiut.uz/${news.images[0]}`}
-                alt="example"
-                className="object-contain w-full h-full aspect-square"
-                width={2000}
-                height={500}
-              />
+              <div className="relative overflow-hidden rounded-xl">
+                <Image
+                  src={`http://ai.kiut.uz/${news.images[0]}`}
+                  alt="example"
+                  className="object-contain w-full h-full z-0 aspect-square max-h-[585px]"
+                  width={2000}
+                  height={500}
+                />
+                <Image
+                  src={`http://ai.kiut.uz/${news.images[0]}`}
+                  alt="example"
+                  className="absolute top-0 left-0 z-[-1] object-cover w-full h-full blur-[15px] scale-[1.1] aspect-square"
+                  width={2000}
+                  height={500}
+                />
+              </div>
               <p className="text-[18px] font-normal leading-[145%]">
                 {news.translations[locale].description}
               </p>
