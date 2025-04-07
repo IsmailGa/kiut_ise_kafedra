@@ -70,17 +70,22 @@ const Teachers = ({ params }: { params: { teachersId: string } }) => {
           {/* INFO ABOUT TEACHER */}
           <div className="flex max-lg:flex-col items-stretch gap-[30px] mt-[25px]">
             {/* LEFT SIDE */}
-            <Image
-              src={
-                error || !data?.image ? "" : `http://ai.kiut.uz/${data?.image}`
-              }
-              alt={fullName || "Teacher profile"} // Added alt text
-              width={350}
-              height={370}
-              loading="lazy"
-              className="max-w-[100%] max-h-[370px] shrink-0 aspect-[1/1] object-contain rounded-[20px] border border-solid"
-              onError={() => setError(null)}
-            />
+            <div className="flex flex-col">
+              <Image
+                src={
+                  error || !data?.image
+                    ? ""
+                    : `http://ai.kiut.uz/${data?.image}`
+                }
+                alt={fullName || "Teacher profile"} // Added alt text
+                width={350}
+                height={370}
+                loading="lazy"
+                className="max-w-[100%] max-h-[370px] shrink-0 aspect-[1/1] object-contain rounded-[20px] border border-solid"
+                onError={() => setError(null)}
+              />
+            </div>
+
             {/* RIGHT SIDE */}
             {data ? (
               <div className="flex flex-col flex-1">
@@ -111,7 +116,6 @@ const Teachers = ({ params }: { params: { teachersId: string } }) => {
               <Error />
             )}
           </div>
-
           <TeacherInfo data={data ?? null} />
         </Container>
       </div>

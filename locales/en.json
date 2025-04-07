@@ -71,7 +71,7 @@
     }
   },
   "courses": {
-    "title": "Our Directions",
+    "title": "Graduate Programs",
     "description": "The universal training program covers many areas of information technology, allowing students to choose their niche",
     "credits": "credits",
     "cards": {
@@ -145,7 +145,7 @@
         "section": "{count} subjects"
       },
       "sectionSeven": {
-        "title": "Structure of program:"
+        "title": "Structure of subjects:"
       }
     },
     "masters": {
@@ -199,7 +199,7 @@
         }
       },
       "sectionSix": {
-        "title": "Program",
+        "title": "Subjects",
         "theoryHours": "123 hours of theory",
         "practiceHours": "360 hours of practice",
         "projects": "56 projects",
