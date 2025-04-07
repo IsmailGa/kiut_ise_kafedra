@@ -27,7 +27,7 @@ const Navbar = () => {
 
   const isTeachersOrHome = pathname === "/teachers" || pathname === "/";
   const exceptionalPath = pathname !== "/";
-  const exceptionalUrls = ["/news", "/teachers", "/teachers/*"];
+  const exceptionalUrls = ["/teachers", "/news", "/courses"];
 
   function scrollHandler() {
     if (window.scrollY >= 20) {
@@ -71,17 +71,20 @@ const Navbar = () => {
                 alt="logo"
               />
             </Link>
-            {exceptionalPath && (
-              <Link
-                href="/courses"
-                className={`md:flex items-center hidden ${
-                  navColour
-                    ? "bg-black/20 backdrop-blur-lg"
-                    : "bg-white/20 backdrop-blur-lg text-white"
-                } xl:h-[50px] lg:h-[48px] h-[44px] xl:px-[25px] lg:px-[23px] px-[20px] border-0 outline-0 rounded-[15px]`}
-              >
-                {t("all_directions")}
-              </Link>
+            {exceptionalUrls.filter((url) => pathname.includes(url)).length !==
+              0 && (
+              <>
+                <Link
+                  href="/courses"
+                  className={`md:flex items-center hidden ${
+                    navColour
+                      ? "bg-black/20 backdrop-blur-lg"
+                      : "bg-black/20 backdrop-blur-lg text-white"
+                  } xl:h-[50px] lg:h-[48px] h-[44px] xl:px-[25px] lg:px-[23px] px-[20px] border-0 outline-0 rounded-[15px]`}
+                >
+                  {t("all_directions")}
+                </Link>
+              </>
             )}
             {exceptionalPath && (
               <div
@@ -104,20 +107,6 @@ const Navbar = () => {
               } max-xl:hidden`}
             >
               <li>
-                <Link
-                  href="/teachers"
-                  className={`block data-[focus]:bg-gray-100 data-[focus]:text-gray-900 data-[focus]:outline-none ${
-                    isTeachersOrHome
-                      ? navColour
-                        ? "text-black"
-                        : "text-white"
-                      : "text-black"
-                  }`}
-                >
-                  {t("teachers")}
-                </Link>
-              </li>
-              <li>
                 <Menu as="div" className="relative inline-block text-left">
                   <MenuButton className="inline-flex w-full justify-center items-center">
                     <span
@@ -129,7 +118,7 @@ const Navbar = () => {
                           : "text-black"
                       }
                     >
-                      {t("directions")}
+                      {t("faculty")}
                     </span>
                     <ChevronDownIcon
                       aria-hidden="true"
@@ -149,18 +138,68 @@ const Navbar = () => {
                     <div className="py-1">
                       <MenuItem>
                         <Link
-                          href="/courses/bachelors"
+                          href="/aboutus"
                           className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 data-[focus]:outline-none"
                         >
-                          {t("bachelors")}
+                          {t("about_us")}
                         </Link>
                       </MenuItem>
                       <MenuItem>
                         <Link
-                          href="/courses/masters"
+                          href="/teachers"
                           className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 data-[focus]:outline-none"
                         >
-                          {t("masters")}
+                          {t("teachers")}
+                        </Link>
+                      </MenuItem>
+                    </div>
+                  </MenuItems>
+                </Menu>
+              </li>
+              <li>
+                <Menu as="div" className="relative inline-block text-left">
+                  <MenuButton className="inline-flex w-full justify-center items-center">
+                    <span
+                      className={
+                        isTeachersOrHome
+                          ? navColour
+                            ? "text-black"
+                            : "text-white"
+                          : "text-black"
+                      }
+                    >
+                      {t("graduate")}
+                    </span>
+                    <ChevronDownIcon
+                      aria-hidden="true"
+                      className={`-mr-1 size-5 ${
+                        isTeachersOrHome
+                          ? navColour
+                            ? "text-black"
+                            : "text-white"
+                          : "text-black"
+                      }`}
+                    />
+                  </MenuButton>
+                  <MenuItems
+                    transition
+                    className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black/5 transition focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in"
+                  >
+                    <div className="py-1">
+                      <MenuItem>
+                        <Link
+                          href="/courses"
+                          className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 data-[focus]:outline-none"
+                        >
+                          {t("program")}
+                        </Link>
+                      </MenuItem>
+                      <MenuItem>
+                        <Link
+                          href="/courses/bachelors/structure-program"
+                          className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 data-[focus]:outline-none"
+                        >
+                          {t("curriculum")}
                         </Link>
                       </MenuItem>
                     </div>
@@ -234,18 +273,12 @@ const Navbar = () => {
                   </button>
                 </div>
                 <div className="flex flex-col gap-[10px]">
-                  <Link
-                    href="/teachers"
-                    className="px-5 py-[10px] w-full text-[24px] font-medium text-black"
-                  >
-                    {t("teachers")}
-                  </Link>
                   <Disclosure as="div">
                     {({ open }) => (
                       <>
                         <DisclosureButton className="flex w-full justify-between items-center rounded-[15px] px-5 py-[10px] font-medium text-black">
                           <div className="text-[24px] font-medium">
-                            {t("directions")}
+                            {t("faculty")}
                           </div>
                           <ChevronDownIcon
                             className={`${
@@ -255,16 +288,46 @@ const Navbar = () => {
                         </DisclosureButton>
                         <DisclosurePanel className="px-4 pb-2 pt-4 text-[20px] text-gray-700">
                           <Link
-                            href="/courses/bachelors"
+                            href="/teachers"
                             className="block px-4 py-2 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 data-[focus]:outline-none"
                           >
-                            {t("bachelors")}
+                            {t("teachers")}
                           </Link>
                           <Link
-                            href="/courses/masters"
+                            href="/aboutus"
                             className="block px-4 py-2 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 data-[focus]:outline-none"
                           >
-                            {t("masters")}
+                            {t("about_us")}
+                          </Link>
+                        </DisclosurePanel>
+                      </>
+                    )}
+                  </Disclosure>
+                  <Disclosure as="div">
+                    {({ open }) => (
+                      <>
+                        <DisclosureButton className="flex w-full justify-between items-center rounded-[15px] px-5 py-[10px] font-medium text-black">
+                          <div className="text-[24px] font-medium">
+                            {t("graduate")}
+                          </div>
+                          <ChevronDownIcon
+                            className={`${
+                              open ? "rotate-180 transform" : ""
+                            } h-7 w-7 text-black`}
+                          />
+                        </DisclosureButton>
+                        <DisclosurePanel className="px-4 pb-2 pt-4 text-[20px] text-gray-700">
+                          <Link
+                            href="/courses"
+                            className="block px-4 py-2 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 data-[focus]:outline-none"
+                          >
+                            {t("program")}
+                          </Link>
+                          <Link
+                            href="/courses/bachelors/structure-program"
+                            className="block px-4 py-2 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 data-[focus]:outline-none"
+                          >
+                            {t("curriculum")}
                           </Link>
                         </DisclosurePanel>
                       </>

@@ -3,12 +3,12 @@
   "all_news": "All news",
   "header": {
     "all_directions": "All directions",
-    "department": "Department",
+    "faculty": "Faculty",
     "about_us": "About us",
-    "teachers": "Teachers",
-    "directions": "Directions",
-    "bachelors": "ISE (Bachelor's)",
-    "masters": "AI (Master's)",
+    "teachers": "Staffs",
+    "graduate": "Gradute",
+    "program": "Graduate Program",
+    "curriculum": "Curriculum",
     "news": "News",
     "apply": "Apply",
     "menu": "Menu",
@@ -41,7 +41,7 @@
       }
     },
     "sectionThree": {
-      "title": "Teachers",
+      "title": "Staffs",
       "description": "The scientific council and course teachers are outstanding Russian scientists, doctors, and candidates of sciences known worldwide. Practicing specialists in preventive, integrative, and anti-aging medicine.",
       "descriptionTwo": "Highly qualified mentors in the field of IT",
       "button": "More"
@@ -213,6 +213,8 @@
     }
   },
   "teachers": {
+    "scopus_link": "Scopus",
+    "email": "Email",
     "banner": {
       "title": "Our Department Staff",
       "description": "Our specialists are experienced professionals who know their job well. Their knowledge and skills help solve tasks of any complexity, and their drive for development makes our team one of the best.",
@@ -246,7 +248,7 @@
     "masters": "AI (Master's)",
     "department": "Department",
     "about_us": "About us",
-    "teachers": "Teachers",
+    "teachers": "Staffs",
     "community": "Community",
     "news": "News",
     "events_calendar": "Events Calendar",
