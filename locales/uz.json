@@ -3,12 +3,12 @@
   "all_news": "Barcha yangiliklar",
   "header": {
     "all_directions": "Barcha yo'nalishlar",
-    "department": "Kafedra",
+    "faculty": "Facultet",
     "about_us": "Biz haqimizda",
     "teachers": "O'qituvchilar",
-    "directions": "Yo'nalishlar",
-    "bachelors": "ISE (Bakalavr)",
-    "masters": "AI (Magistratura)",
+    "graduate": "Bitiruvchilar",
+    "program": "Ta'lim dasturi",
+    "curriculum": "O'quv rejasi",
     "news": "Yangiliklar",
     "apply": "Ariza qoldirish",
     "menu": "Menyu",
@@ -211,6 +211,8 @@
     }
   },
   "teachers": {
+    "scopus_link": "Scopus",
+    "email": "Elektron pochta",
     "banner": {
       "title": "Bizning kafedra xodimlari",
       "description": "Bizning mutaxassislarimiz o'z ishini yaxshi biladigan tajribali professionallar. Ularning bilim va ko'nikmalari har qanday murakkablikdagi vazifalarni hal qilishga yordam beradi va rivojlanishga intilishi jamoamizni eng yaxshilaridan biriga aylantiradi.",

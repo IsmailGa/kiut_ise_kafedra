@@ -7,7 +7,7 @@ import { useTranslations } from "next-intl";
 const SeventhSection = () => {
   const t = useTranslations("courses.bachelors.sectionSeven");
   return (
-    <section className="flex flex-col w-full mt-[120px] gap-[32px]">
+    <section className="flex flex-col w-full mt-[120px] gap-[32px]" id="structure-prpograms">
       <h1 className="lg:text-[56px] md:text-[40px] sm:text-[30px] text-[26px] leading-[140%] font-semibold">
         {t("title")}
       </h1>

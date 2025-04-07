@@ -84,6 +84,21 @@ const Teachers = ({ params }: { params: { teachersId: string } }) => {
                 className="max-w-[100%] max-h-[370px] shrink-0 aspect-[1/1] object-contain rounded-[20px] border border-solid"
                 onError={() => setError(null)}
               />
+              <ul className="flex flex-col gap-[10px] mt-[20px]">
+                <li>
+                  <Link href={`${data?.scopus_link}`} className="text-blue-500">
+                    {t("scopus_link")}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href={`mailto:${data?.email}`}
+                    className="text-blue-500"
+                  >
+                    {t("email")}
+                  </Link>
+                </li>
+              </ul>
             </div>
 
             {/* RIGHT SIDE */}
