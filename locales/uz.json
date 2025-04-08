@@ -9,7 +9,7 @@
     "all_directions": "Barcha yo'nalishlar",
     "department": "Kafedra",
     "about_us": "Biz haqimizda",
-    "teachers": "O'qituvchilar",
+    "teachers": "Xodimlar",
     "graduate": "Bitiruvchilar",
     "program": "Ta'lim dasturi",
     "curriculum": "O'quv rejasi",
@@ -45,7 +45,7 @@
       }
     },
     "sectionThree": {
-      "title": "O'qituvchilar",
+      "title": "Xodimlar",
       "description": "Ilmiy kengash va kurs o'qituvchilari butun dunyo bo'ylab tan olingan ajoyib rus olimlari, doktorlar va fan nomzodlardir. Oldini olish, integrativ va qarishga qarshi tibbiyot sohasidagi amaliyotchi mutaxassislar.",
       "descriptionTwo": "IT sohasida oliygina rivojlangan mentorlar",
       "button": "Ko'proq"
@@ -250,7 +250,7 @@
     "masters": "Sun'iy intellekt (Magistratura)",
     "department": "Kafedra",
     "about_us": "Biz haqimizda",
-    "teachers": "O'qituvchilar",
+    "teachers": "Xodimlar",
     "community": "Hamjamiyat",
     "news": "Yangiliklar",
     "events_calendar": "Tadbirlar taqvimi",
