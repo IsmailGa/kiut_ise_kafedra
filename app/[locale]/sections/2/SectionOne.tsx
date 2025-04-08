@@ -11,7 +11,7 @@ const SectionTwo = () => {
   const subSecThree = useTranslations("main.sectionTwo.subSectionThree");
 
   return (
-    <section className="mt-[65px] flex flex-col w-full gap-[25px]" id="2">
+    <section className="pt-[65px] flex flex-col w-full gap-[25px]" id="about">
       <h1 className="2xl:text-[56px] xl:text-[40px] lg:text-[32px] text-[32px] font-semibold">
         {t("title")}
       </h1>
@@ -64,8 +64,8 @@ const SectionTwo = () => {
         </div>
       </div>
       {/* SECTION 3 */}
-      <div className="bg-laptop relative after:right-0 overflow-hidden bg-primary rounded-[40px] lg:p-[40px] md:p-[30px] p-[20px] w-full flex flex-col 2xl:gap-[40px] gap-[36px] 2xl:mt-[100px] mt-[80px]">
-        <div className="[text-shadow:_50px_50px_#ff0000;]flex flex-col 2xl:gap-[40px] xl:gap-[36px] gap-[18px] 2xl:max-w-[750px] xl:max-w-[580px] max-w-[450px]">
+      <div className="bg-laptop relative after:right-0 overflow-hidden bg-primary rounded-[40px] lg:p-[40px] p-[30px] w-full flex flex-col 2xl:gap-[40px] gap-[36px] 2xl:mt-[100px] mt-[80px]">
+        <div className="flex flex-col 2xl:gap-[40px] xl:gap-[36px] gap-[18px] 2xl:max-w-[750px] xl:max-w-[580px] lg:max-w-[450px] md:max-w-[330px]">
           <h1
             className={`2xl:text-[56px] xl:text-[42px] sm:text-[32px] text-[25px] font-medium ${inter.className} text-white sm:leading-[120%] leading-[100%]`}
           >

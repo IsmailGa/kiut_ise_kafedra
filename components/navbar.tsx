@@ -124,7 +124,7 @@ const Navbar = () => {
                     <div className="py-1">
                       <MenuItem>
                         <Link
-                          href="/aboutus"
+                          href="#about"
                           className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 data-[focus]:outline-none"
                         >
                           {t("about_us")}
@@ -221,7 +221,7 @@ const Navbar = () => {
               <>
                 <Link
                   href="https://admission.kiut.uz/"
-                  className="text-center sm:flex hidden items-center justify-center bg-primary text-white xl:h-[50px] lg:h-[48px] h-[44px] xl:px-[25px] lg:px-[23px] md:px-[20px] px-[10px] border-0 outline-0 rounded-[15px]"
+                  className="text-center sm:flex hidden items-center justify-center bg-primary text-white xl:h-[50px] lg:h-[48px] h-[44px] xl:px-[25px] lg:px-[23px] px-[20px] border-0 outline-0 rounded-[15px]"
                 >
                   {t("apply")}
                 </Link>
@@ -265,7 +265,7 @@ const Navbar = () => {
                       <>
                         <DisclosureButton className="flex w-full justify-between items-center rounded-[15px] px-5 py-[10px] font-medium text-black">
                           <div className="text-[24px] font-medium">
-                            {t("faculty")}
+                            {t("department")}
                           </div>
                           <ChevronDownIcon
                             className={`${
@@ -281,7 +281,7 @@ const Navbar = () => {
                             {t("teachers")}
                           </Link>
                           <Link
-                            href="/aboutus"
+                            href="#about"
                             className="block px-4 py-2 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 data-[focus]:outline-none"
                           >
                             {t("about_us")}
@@ -328,7 +328,7 @@ const Navbar = () => {
                       {t("news")}
                     </Link>
                   </div>
-                  <div className="px-5">
+                  <div className="lang-switch px-5">
                     <LocaleSwitcher />
                   </div>
                   <Link

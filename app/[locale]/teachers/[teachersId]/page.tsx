@@ -9,6 +9,7 @@ import Navbar from "@/components/navbar";
 import { useLocale, useTranslations } from "next-intl";
 import Loader from "@/components/loader";
 import TeacherInfo from "./sections/info";
+import { LinkIcon } from "@/public/icons";
 
 const Error = () => (
   <div className="h-screen w-screen fixed top-0 left-0 bg-white z-[9999] flex items-center justify-center">
@@ -86,23 +87,25 @@ const Teachers = ({ params }: { params: { teachersId: string } }) => {
               />
               <ul className="flex flex-col gap-[10px] mt-[20px]">
                 {data?.scopus_link && data?.scopus_link !== "" && (
-                  <li>
+                  <li className="flex items-center gap-2">
                     <Link
                       href={`${data?.scopus_link}`}
                       className="text-blue-500"
                     >
                       {t("scopus_link")}
                     </Link>
+                    <LinkIcon style={{ width: '15px', height: '15px'}} color="#3b82f6"/>
                   </li>
                 )}
 
-                <li>
+                <li className="flex items-center gap-2">
                   <Link
                     href={`mailto:${data?.email}`}
                     className="text-blue-500"
                   >
                     {t("email")}
                   </Link>
+                  <LinkIcon style={{ width: '15px', height: '15px'}} color="#3b82f6"/>
                 </li>
               </ul>
             </div>

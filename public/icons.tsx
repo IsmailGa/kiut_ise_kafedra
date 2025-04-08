@@ -1,3 +1,5 @@
+import React from "react";
+
 type ArrowRightType = {
   color?: string;
 };
@@ -231,3 +233,46 @@ export const BlueLArrowIcon = ({ style }: { style?: string }) => {
     </svg>
   );
 };
+
+export const LinkIcon = ({
+  style,
+  color = "#666666"
+}: {
+  style?: React.CSSProperties;
+  color?: string;
+}) => {
+  return (
+    <svg
+      style={style}
+      width="32"
+      height="32"
+      viewBox="0 0 32 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M17.3335 14.6667L28.2668 3.73334"
+        stroke={color}
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M29.3331 9.06669V2.66669H22.9331"
+        stroke={color}
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M14.6665 2.66669H11.9998C5.33317 2.66669 2.6665 5.33335 2.6665 12V20C2.6665 26.6667 5.33317 29.3334 11.9998 29.3334H19.9998C26.6665 29.3334 29.3332 26.6667 29.3332 20V17.3334"
+        stroke={color}
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
+
+
