@@ -9,10 +9,20 @@ import "react-slideshow-image/dist/styles.css";
 
 const manrope = Manrope({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "KIUT Ai Kafedra",
-  description: "Created by Vortex Agency and Farrukh Yuldoshev",
-};
+import { getTranslations } from "next-intl/server";
+
+export async function generateMetadata({
+  params: { locale },
+}: {
+  params: { locale: string };
+}): Promise<Metadata> {
+  const t = await getTranslations({ locale, namespace: "metadata" });
+
+  return {
+    title: t("title"),
+    description: t("description"),
+  };
+}
 
 export default async function RootLayout({
   children,
@@ -21,7 +31,9 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: { locale: string };
 }>) {
-  const messages = await getMessages();
+  // Fetch messages for use in your providers and components
+  // @ts-expect-error-next-intl
+  const messages = await getMessages(locale);
 
   return (
     <html lang={locale}>

@@ -103,7 +103,7 @@ const Navbar = () => {
                           : "text-black"
                       }
                     >
-                      {t("faculty")}
+                      {t("department")}
                     </span>
                     <ChevronDownIcon
                       aria-hidden="true"

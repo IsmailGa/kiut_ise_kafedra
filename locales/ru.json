@@ -1,9 +1,13 @@
 {
+  "metadata": {
+    "title": "ТМУК Прикладная информатика",
+    "description": "Your English description here"
+  },
   "button": "Подробнее",
   "all_news": "Все новости",
   "header": {
     "all_directions": "Все направления",
-    "faculty": "Факультет",
+    "department": "Кафедра",
     "about_us": "О нас",
     "teachers": "Преподаватели",
     "graduate": "Выпускники",
@@ -16,7 +20,7 @@
   },
   "main": {
     "sectionOne": {
-      "title": "Информационные системы и технологии",
+      "title": "Кафедра прикладной информатики",
       "description": "Мы обучаем IT-специалистов и помогаем людям освоить технологии и цифровые навыки."
     },
     "sectionTwo": {

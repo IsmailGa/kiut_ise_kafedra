@@ -5,7 +5,7 @@ import Container from "@/components/container";
 import SecondSection from "./sections/2/SecondSection";
 import ThirdSection from "./sections/3/ThirdSection";
 import FourthSection from "./sections/4/FourthSection";
-import FifthSection from "./sections/5/FifthSection";
+// import FifthSection from "./sections/5/FifthSection";
 import SixthSection from "./sections/6/SixthSection";
 import SeventhSection from "./sections/7/SeventhSection";
 
@@ -22,7 +22,7 @@ const BachelorsPage = () => {
         <SecondSection />
         <ThirdSection />
         <FourthSection />
-        <FifthSection />
+        {/* <FifthSection /> */}
         <SixthSection />
         <SeventhSection />
       </Container>

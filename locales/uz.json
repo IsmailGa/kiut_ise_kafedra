@@ -1,9 +1,13 @@
 {
+  "metadata": {
+    "title": "TKXU Amaliy informatika",
+    "description": "Your English description here"
+  },
   "button": "Ko'proq",
   "all_news": "Barcha yangiliklar",
   "header": {
     "all_directions": "Barcha yo'nalishlar",
-    "faculty": "Facultet",
+    "department": "Kafedra",
     "about_us": "Biz haqimizda",
     "teachers": "O'qituvchilar",
     "graduate": "Bitiruvchilar",
@@ -16,7 +20,7 @@
   },
   "main": {
     "sectionOne": {
-      "title": "Axborot tizimlari muhandisligi",
+      "title": "Amaliy informatika kafedrasi",
       "description": "Biz IT mutaxassislarini tayyorlaymiz va odamlarga texnologiya va raqamli ko'nikmalarni o'zlashtirishga yordam beramiz."
     },
     "sectionTwo": {
