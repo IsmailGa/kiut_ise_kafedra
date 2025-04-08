@@ -141,10 +141,10 @@
         }
       },
       "sectionSix": {
-        "title": "Program",
-        "theoryHours": "123 hours of theory",
-        "practiceHours": "360 hours of practice",
-        "projects": "56 projects",
+        "title": "Программа",
+        "theoryHours": "123 часов теории",
+        "practiceHours": "360 часов практики",
+        "projects": "56 проектов",
         "semester": "{semester} семестр",
         "section": "{count} предмета"
       },
