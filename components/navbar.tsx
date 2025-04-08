@@ -71,21 +71,6 @@ const Navbar = () => {
                 alt="logo"
               />
             </Link>
-            {exceptionalUrls.filter((url) => pathname.includes(url)).length !==
-              0 && (
-              <>
-                <Link
-                  href="/courses"
-                  className={`md:flex items-center hidden ${
-                    navColour
-                      ? "bg-black/20 backdrop-blur-lg"
-                      : "bg-black/20 backdrop-blur-lg text-white"
-                  } xl:h-[50px] lg:h-[48px] h-[44px] xl:px-[25px] lg:px-[23px] px-[20px] border-0 outline-0 rounded-[15px]`}
-                >
-                  {t("all_directions")}
-                </Link>
-              </>
-            )}
             {exceptionalPath && (
               <div
                 onClick={handleBack}
@@ -133,6 +118,7 @@ const Navbar = () => {
                   </MenuButton>
                   <MenuItems
                     transition
+                    modal={false}
                     className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black/5 transition focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in"
                   >
                     <div className="py-1">
@@ -183,6 +169,7 @@ const Navbar = () => {
                   </MenuButton>
                   <MenuItems
                     transition
+                    modal={false}
                     className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black/5 transition focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in"
                   >
                     <div className="py-1">
