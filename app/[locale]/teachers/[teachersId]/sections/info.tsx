@@ -240,7 +240,7 @@ const TeacherInfo = ({ data }: Props) => {
                   <div className="flex flex-col md:justify-between sm:flex-row max-md:self-start md:items-center gap-[15px]">
                     {prePrint && (
                       <Link href={prePrint} className="text-xl text-blue-500">
-                        Print
+                        Pre-print link
                       </Link>
                     )}
                     {linkTo && (
