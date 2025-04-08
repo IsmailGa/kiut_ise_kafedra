@@ -19,7 +19,7 @@ const Teachers = () => {
   }, []);
   return (
     <section className="w-full flex flex-col mt-[64px]">
-      <div className="grid lg:grid-cols-2 grid-cols-1 items-center flex-col gap-[30px] mb-[45px]">
+      <div className="grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 items-center flex-col gap-[30px] mb-[45px]">
         {teachers.map((teacher) => (
           <TeacherCard key={teacher.uuid} teacher={teacher} />
         ))}

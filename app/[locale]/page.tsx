@@ -3,7 +3,7 @@ import SectionOne from "./sections/1/SectionOne";
 import SectionTwo from "./sections/2/SectionOne";
 import SectionThree from "./sections/3/SectionThree";
 // import SectionFour from "./sections/4/SectionFour";
-import SectionFive from "./sections/5/SectionFive";
+// import SectionFive from "./sections/5/SectionFive";
 import SectionSix from "./sections/6/SectionSix";
 import Navbar from "@/components/navbar";
 
@@ -20,7 +20,7 @@ export default function Home() {
         <SectionTwo />
         <SectionThree />
         {/* <SectionFour /> */}
-        <SectionFive />
+        {/* <SectionFive /> */}
         <SectionSix />
       </Container>
     </>
