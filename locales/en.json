@@ -1,9 +1,13 @@
 {
+  "metadata": {
+    "title": "KIUT Applied Informatics",
+    "description": "Your English description here"
+  },
   "button": "More",
   "all_news": "All news",
   "header": {
     "all_directions": "All directions",
-    "faculty": "Faculty",
+    "department": "Department",
     "about_us": "About us",
     "teachers": "Staffs",
     "graduate": "Gradute",
