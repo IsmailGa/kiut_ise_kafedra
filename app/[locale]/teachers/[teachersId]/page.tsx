@@ -85,11 +85,17 @@ const Teachers = ({ params }: { params: { teachersId: string } }) => {
                 onError={() => setError(null)}
               />
               <ul className="flex flex-col gap-[10px] mt-[20px]">
-                <li>
-                  <Link href={`${data?.scopus_link}`} className="text-blue-500">
-                    {t("scopus_link")}
-                  </Link>
-                </li>
+                {data?.scopus_link && data?.scopus_link !== "" && (
+                  <li>
+                    <Link
+                      href={`${data?.scopus_link}`}
+                      className="text-blue-500"
+                    >
+                      {t("scopus_link")}
+                    </Link>
+                  </li>
+                )}
+
                 <li>
                   <Link
                     href={`mailto:${data?.email}`}
