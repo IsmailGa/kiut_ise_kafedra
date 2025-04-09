@@ -124,7 +124,7 @@ const Navbar = () => {
                     <div className="py-1">
                       <MenuItem>
                         <Link
-                          href="#about"
+                          href="/#about"
                           className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 data-[focus]:outline-none"
                         >
                           {t("about_us")}
@@ -281,7 +281,7 @@ const Navbar = () => {
                             {t("teachers")}
                           </Link>
                           <Link
-                            href="#about"
+                            href="/#about"
                             className="block px-4 py-2 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 data-[focus]:outline-none"
                           >
                             {t("about_us")}
