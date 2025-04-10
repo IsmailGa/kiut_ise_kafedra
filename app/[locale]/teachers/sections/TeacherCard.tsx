@@ -18,7 +18,7 @@ const TeacherCard = ({ teacher }: Props) => {
   const [imageError, setImageError] = useState(false);
 
   return (
-    <div className="flex flex-1 flex-col h-full p-[25px] gap-[25px] rounded-[25px] bg-[#F4F4F4]/65 relative group">
+    <div className="flex flex-1 flex-col h-full 2xl:p-[25px] p-[20px] 2xl:gap-[25px] gap-[20px] 2xl:rounded-[25px] rounded-[20px] bg-[#F4F4F4]/65 relative group">
       <div className="flex-1 aspect-square">
         <Image
           src={
@@ -38,7 +38,7 @@ const TeacherCard = ({ teacher }: Props) => {
         <div className="h-full flex flex-col justify-between gap-[16px]">
           <div className="flex flex-col gap-[16px]">
             <div className="flex-col gap-[8px] pb-[16px] border-b-[1px] border-[#CEDAE0]">
-              <h3 className="text-[24px] font-semibold">{fullName}</h3>
+              <h3 className="2xl:text-[24px] text-[20px] font-semibold">{fullName}</h3>
               <h5 className="text-[16px] font-medium text-[#666666]">{role}</h5>
             </div>
             <div className="flex flex-col gap-[8px]">
