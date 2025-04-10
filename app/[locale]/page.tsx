@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <div className="bg-[url('/assets/banner-hero.png')] bg-cover bg-center h-screen">
+      <div className="bg-[url('/assets/banner-hero.png')] bg-cover bg-center h-screen max-h-[1080px]">
         <Container>
           <SectionOne />
         </Container>

@@ -4,7 +4,7 @@ import React from "react";
 const SectionOne = () => {
   const t = useTranslations("main.sectionOne");
   return (
-    <section className="h-screen pt-[25px] flex flex-col w-full md:justify-end justify-center md:items-start items-center xl:pb-[65px] lg:pb-[48px] pb-[36px]">
+    <section className="h-screen max-h-[1080px] pt-[25px] flex flex-col w-full md:justify-end justify-center md:items-start items-center xl:pb-[65px] lg:pb-[48px] pb-[36px]">
       <div className="flex w-full justify-between gap-2 md:items-end md:flex-row flex-col">
         <h1 className="text-white 2xl:text-[72px] xl:text-[70px] lg:text-[60px] md:text-[65px] sm:text-[60px] max-sm:text-[34px] 2xl:max-w-[636px] xl:max-w-[500px] lg:max-w-[380px] max-w-[400px] leading-[120%] max-sm:hyphens-auto">
           {t("title")}
