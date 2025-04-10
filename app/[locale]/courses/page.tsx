@@ -8,7 +8,7 @@ import Container from "@/components/container";
 import Navbar from "@/components/navbar";
 import { useTranslations } from "next-intl";
 
-const inter = Inter({ subsets: ["latin"] });
+
 const Courses = () => {
   const t = useTranslations("courses");
 
