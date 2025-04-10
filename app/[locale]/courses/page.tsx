@@ -7,7 +7,6 @@ import { ArrowRotated } from "@/public/icons";
 import Container from "@/components/container";
 import Navbar from "@/components/navbar";
 import { useTranslations } from "next-intl";
-import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
 const Courses = () => {
